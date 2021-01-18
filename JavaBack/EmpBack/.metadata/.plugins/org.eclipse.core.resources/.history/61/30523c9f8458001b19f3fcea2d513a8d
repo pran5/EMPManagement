@@ -1,0 +1,22 @@
+package com.example.EmpManagmentBack;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="resourcerequests")
+public class resourcerequests {
+	
+	@Column(name=" RR_Id")
+	@Id
+	private String  RR_Id;
+	private String  RR_Emp_Id, RR_Name,RR_Description;
+	private int RR_Status;
+	private Date RR_Date;
+	
+
+}

@@ -1,0 +1,26 @@
+package com.example.EmpManagmentBack;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="pushnotification")
+public class pushnotification {
+	@Column(name=" PN_No")
+	@Id
+	private String  PN_No;
+	private String  PN_Subject, PN_Message,PN_Emp_Id;
+	private enum PN_Level{A,M,T};
+	private Date PN_Date_Time;
+	
+	
+	
+	
+	
+	
+
+}

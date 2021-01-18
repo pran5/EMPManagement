@@ -1,0 +1,187 @@
+
+}squid:S00100ƒ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üæHêRMINORZ
+CODE_SMELL
+}squid:S00100ã"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï¬á¥HıRMINORZ
+CODE_SMELL
+|squid:S00100y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‡²‰HèRMINORZ
+CODE_SMELL
+}squid:S00100Ï"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö‘ÚˆHùRMINORZ
+CODE_SMELL
+†squid:S00116H"SRename this field "Emp_Pass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHØRMINORZ
+CODE_SMELL
+asquid:EmptyStatementUsageCheckI"Remove this empty statement.(—éŠşÿÿÿÿHŞRMINORZ
+CODE_SMELL
+}squid:S00100”"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ®ÉĞHƒRMINORZ
+CODE_SMELL
+ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ„ßœHºRMINORZ
+CODE_SMELL
+…squid:S00117Ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡…û‹úÿÿÿÿHµRMINORZ
+CODE_SMELL
+_squid:S1659H"-Declare "Emp_Designation" on a separate line.(‘¥İ¹ÿÿÿÿÿHÇRMINORZ
+CODE_SMELL
+squid:S00116H"\Rename this field "Emp_Qualification" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÖRMINORZ
+CODE_SMELL
+squid:S00100["NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ïß«…úÿÿÿÿHâRMINORZ
+CODE_SMELL
+}squid:S00100¶"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö®ÿ‰HôRMINORZ
+CODE_SMELL
+\squid:S1659H"*Declare "Emp_Lastname" on a separate line.(‘¥İ¹ÿÿÿÿÿHÀRMINORZ
+CODE_SMELL
+‡squid:S00116H"TRename this field "Emp_Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÏRMINORZ
+CODE_SMELL
+[squid:S1659H")Declare "Emp_Address" on a separate line.(‘¥İ¹ÿÿÿÿÿHÂRMINORZ
+CODE_SMELL
+†squid:S00116H"SRename this field "Emp_City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÒRMINORZ
+CODE_SMELL
+‚squid:S00100Ê"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ¶¦ùÿÿÿÿHøRMINORZ
+CODE_SMELL
+|squid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ‚3HïRMINORZ
+CODE_SMELL
+…squid:S00117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì”¤üÿÿÿÿH¸RMINORZ
+CODE_SMELL
+‰squid:S00116€"URename this field "emp_gender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åèùÚşÿÿÿÿHÜRMINORZ
+CODE_SMELL
+…squid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¯ÒúÿÿÿÿH­RMINORZ
+CODE_SMELL
+…squid:S00116M"RRename this field "Emp_Dob" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢šáŞÿÿÿÿÿHÚRMINORZ
+CODE_SMELL
+}squid:S00100Ô"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…ªŠËHúRMINORZ
+CODE_SMELL
+‚squid:S00100ğ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Ğ€ÜûÿÿÿÿHÿRMINORZ
+CODE_SMELL
+„squid:S00117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ïß«…úÿÿÿÿH¨RMINORZ
+CODE_SMELL
+Xsquid:S1659H"&Declare "Emp_Pass" on a separate line.(‘¥İ¹ÿÿÿÿÿHÊRMINORZ
+CODE_SMELL
+€squid:S00117Ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…ªŠËH´RMINORZ
+CODE_SMELL
+‹squid:S00116H"XRename this field "emp_mobile_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÑRMINORZ
+CODE_SMELL
+‰squid:S00116H"VRename this field "Emp_Address" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHĞRMINORZ
+CODE_SMELL
+|squid:S00100j"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã–’¿HåRMINORZ
+CODE_SMELL
+€squid:S00117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üæH¬RMINORZ
+CODE_SMELL
+|squid:S00100e"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÙğHäRMINORZ
+CODE_SMELL
+}squid:S00100‰"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÀˆ¨HëRMINORZ
+CODE_SMELL
+squid:S00116H"ZRename this field "Emp_Designation" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÕRMINORZ
+CODE_SMELL
+€squid:S00117õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†üÀÆH·RMINORZ
+CODE_SMELL
+Ysquid:S1659H"'Declare "Emp_State" on a separate line.(‘¥İ¹ÿÿÿÿÿHÅRMINORZ
+CODE_SMELL
+asquid:S1659H"/Declare "Emp_Qualification" on a separate line.(‘¥İ¹ÿÿÿÿÿHÈRMINORZ
+CODE_SMELL
+}squid:UselessImportCheck"CRemove this unused import 'javax.persistence.PrimaryKeyJoinColumn'.(Ğó§íH½RMINORZ
+CODE_SMELL
+Zsquid:S1659H"(Declare "Emp_Skills" on a separate line.(‘¥İ¹ÿÿÿÿÿHÉRMINORZ
+CODE_SMELL
+‚squid:S00100Ş"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡…û‹úÿÿÿÿHüRMINORZ
+CODE_SMELL
+‡squid:S00116H"TRename this field "Emp_State" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÓRMINORZ
+CODE_SMELL
+|squid:S00100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôé£ÆHáRMINORZ
+CODE_SMELL
+‚squid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¯ÒúÿÿÿÿHìRMINORZ
+CODE_SMELL
+]squid:S1659H"+Declare "emp_mobile_no" on a separate line.(‘¥İ¹ÿÿÿÿÿHÃRMINORZ
+CODE_SMELL
+Ysquid:S1659H"'Declare "Emp_Photo" on a separate line.(‘¥İ¹ÿÿÿÿÿHËRMINORZ
+CODE_SMELL
+‹squid:S00116H"XRename this field "Emp_Firstname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÍRMINORZ
+CODE_SMELL
+‡squid:S00116H"TRename this field "Emp_Photo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÙRMINORZ
+CODE_SMELL
+‚squid:S00100À"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£¹Â‰üÿÿÿÿHöRMINORZ
+CODE_SMELL
+‰squid:S00116H"VRename this field "Emp_Dept_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÔRMINORZ
+CODE_SMELL
+€squid:S00117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıéƒşH®RMINORZ
+CODE_SMELL
+Ysquid:S1659H"'Declare "Emp_Email" on a separate line.(‘¥İ¹ÿÿÿÿÿHÁRMINORZ
+CODE_SMELL
+~squid:S00117o"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óœ¾^HªRMINORZ
+CODE_SMELL
+‚squid:S00100‡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì”¤üÿÿÿÿH‚RMINORZ
+CODE_SMELL
+}squid:S00100è"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŠ‡¼HşRMINORZ
+CODE_SMELL
+|squid:S00100t"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë†ÏŸHçRMINORZ
+CODE_SMELL
+€squid:S00117¶"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö®ÿ‰H±RMINORZ
+CODE_SMELL
+}squid:S00100õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†üÀÆH€RMINORZ
+CODE_SMELL
+squid:S00117y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‡²‰H«RMINORZ
+CODE_SMELL
+…squid:S00117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(” óãûÿÿÿÿH¯RMINORZ
+CODE_SMELL
+}squid:S00100‚"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÿÜíHRMINORZ
+CODE_SMELL
+ysquid:UselessImportCheck":Remove this unused import 'javax.persistence.JoinColumns'.(‡ÛµÇøÿÿÿÿH¼RMINORZ
+CODE_SMELL
+squid:S00116"QRename this field "Emp_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Şœ¾¶HÌRMINORZ
+CODE_SMELL
+|squid:S00100`"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±‹Œ»HãRMINORZ
+CODE_SMELL
+}squid:S00100»"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üŠ½ìHõRMINORZ
+CODE_SMELL
+{squid:S00100o"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óœ¾^HæRMINORZ
+CODE_SMELL
+Xsquid:S1659H"&Declare "Emp_City" on a separate line.(‘¥İ¹ÿÿÿÿÿHÄRMINORZ
+CODE_SMELL
+squid:S00100~"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í†ÙƒûÿÿÿÿHéRMINORZ
+CODE_SMELL
+‚squid:S00100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(” óãûÿÿÿÿHğRMINORZ
+CODE_SMELL
+squid:S00117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÙğH©RMINORZ
+CODE_SMELL
+…squid:S00117Ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ¶¦ùÿÿÿÿH³RMINORZ
+CODE_SMELL
+…squid:S00117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØÖÑøûÿÿÿÿH¹RMINORZ
+CODE_SMELL
+ssquid:UselessImportCheck"9Remove this unused import 'javax.persistence.TypedQuery'.(—Ğİ¦H¾RMINORZ
+CODE_SMELL
+‚squid:S00100§"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´Ã„ùûÿÿÿÿHñRMINORZ
+CODE_SMELL
+Šsquid:S00116H"WRename this field "Emp_Lastname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿHÎRMINORZ
+CODE_SMELL
+rsquid:UselessImportCheck"8Remove this unused import 'javax.persistence.FetchType'.(‡¯¿H¿RMINORZ
+CODE_SMELL
+€squid:S00117¬"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø™›¶H°RMINORZ
+CODE_SMELL
+}squid:S00100¬"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø™›¶HòRMINORZ
+CODE_SMELL
+|squid:S00100±"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´È•iHóRMINORZ
+CODE_SMELL
+[squid:S1659H")Declare "Emp_Dept_Id" on a separate line.(‘¥İ¹ÿÿÿÿÿHÆRMINORZ
+CODE_SMELL
+Šsquid:S00116î"VRename this field "emp_payroll" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û…ˆ üÿÿÿÿHÛRMINORZ
+CODE_SMELL
+\squid:EmptyStatementUsageCheckL"Remove this empty statement.(ğ²ÔÂHàRMINORZ
+CODE_SMELL
+}squid:S00100“"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œãİ‚HíRMINORZ
+CODE_SMELL
+ˆsquid:S00116H"URename this field "Emp_Skills" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥İ¹ÿÿÿÿÿH×RMINORZ
+CODE_SMELL
+[squid:EmptyStatementUsageCheckK"Remove this empty statement.(ËĞyHßRMINORZ
+CODE_SMELL
+€squid:S00117è"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŠ‡¼H¶RMINORZ
+CODE_SMELL
+}squid:S00100˜"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıéƒşHîRMINORZ
+CODE_SMELL
+‚squid:S00100Ù"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èÃ€ùÿÿÿÿHûRMINORZ
+CODE_SMELL
+„squid:S00116’"URename this field "emp_access" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±µá†HİRMINORZ
+CODE_SMELL
+…squid:S00117À"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£¹Â‰üÿÿÿÿH²RMINORZ
+CODE_SMELL
+|squid:S00100Å"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØÂü H÷RMINORZ
+CODE_SMELL
+wsquid:UselessImportCheck"8Remove this unused import 'javax.persistence.ManyToOne'.(ÇÑ²øÿÿÿÿH»RMINORZ
+CODE_SMELL
+‚squid:S00100™"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØÖÑøûÿÿÿÿH„RMINORZ
+CODE_SMELL

@@ -1,0 +1,95 @@
+package com.example.EmpManagmentBack.Model;
+
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Team")
+public class Team {
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Team_M_Id", referencedColumnName = "M_Id",insertable = false, updatable = false)
+    private Manager manager;  
+	
+	
+
+	public Manager getManager() {
+		return manager;
+	}
+
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Emp_Id", referencedColumnName = "Emp_Id",insertable = false, updatable = false)
+    private Employee employee;  
+	
+	
+	public Employee getEmployee() {
+		return employee;
+	}
+
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	private String  Team_M_Id, Emp_Id,Team_Id;
+
+	
+	public Team() {
+		super();
+	}
+
+
+	public String getTeam_M_Id() {
+		return Team_M_Id;
+	}
+
+
+	public void setTeam_M_Id(String team_M_Id) {
+		Team_M_Id = team_M_Id;
+	}
+
+
+	public String getEmp_Id() {
+		return Emp_Id;
+}
+
+
+	public void setEmp_Id(String emp_Id) {
+		Emp_Id = emp_Id;
+	}
+
+
+	public String getTeam_Id() {
+		return Team_Id;
+	}
+
+
+	public void setTeam_Id(String team_Id) {
+		Team_Id = team_Id;
+	}
+}

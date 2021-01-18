@@ -1,0 +1,18 @@
+1610858794348	Rename type 'client'
+1610865805897	Rename type 'department'
+1610883207423	Move compilation units
+1610883335837	Rename type 'payrolls'
+1610883456903	Move compilation units
+1610883496190	Move compilation units
+1610885009481	Copy compilation units
+1610885022076	Delete element
+1610885064540	Copy compilation units
+1610885074741	Delete element
+1610891559114	Rename type 'manager'
+1610896678376	Rename type 'team'
+1610897936617	Rename field 'Emp_Id'
+1610907559691	Rename type 'ticket'
+1610908880031	Rename field 'Emp_Id'
+1610909516326	Rename field 'Project_Id'
+1610910627622	Rename type 'pushnotification'
+1610942554790	Rename type 'resourcerequests'
