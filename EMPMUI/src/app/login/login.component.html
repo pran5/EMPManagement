@@ -1,14 +1,39 @@
 
-        <nb-card>
+        <!-- <nb-card>
             <nb-card-header>Button Hero</nb-card-header>
             <nb-card-body class="example-items-rows">
               <button nbButton hero status="primary" class="sp" (click)="nodeCall()" >Call Node</button>
               <button nbButton hero status="success" class="sp" (click)="springCall()">Call SpringBoot</button>
-              <!-- <button nbButton hero status="info" class="sp">Info</button>
+               <button nbButton hero status="info" class="sp">Info</button>
               <button nbButton hero status="warning"class="sp">Warning</button>
-              <button nbButton hero status="danger"class="sp">Danger</button> -->
+              <button nbButton hero status="danger"class="sp">Danger</button> 
             </nb-card-body>
         
+          </nb-card> -->
+
+          <div class="columns is-mobile is-centered" style="margin-top: 10%;">
+            <div class="column is-two-fifths">
+          <nb-card accent="info">
+           
+            <nb-card-body>
+              <p style="margin-top: 30px;" class="has-text-centered has-text-weight-bold is-size-5">EMPMS</p>
+              <div class="column is-11 is-centered" >
+              <input style="margin-top: 20px; margin-left: 5%;" type="text" nbInput fullWidth status="basic" shape="round" placeholder="Email or Phone no." [(ngModel)] = "uname">
+              <input style="margin-top: 20px; margin-left: 5%;" type="password" nbInput fullWidth status="basic" shape="round" placeholder="password" [(ngModel)] = "pass">
+              </div>
+              <div class="column is-half " style="margin-left: 20%;">
+              <button nbButton fullWidth status="primary" class="sp" (click)="login()" >LOGIN</button>
+              
+              
+            </div>
+            <p style="color: red;">{{ msg }}</p>
+            </nb-card-body>
           </nb-card>
+
+          </div>
+         
+          </div>
+
+          <router-outlet></router-outlet>
           
    

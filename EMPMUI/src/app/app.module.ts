@@ -6,15 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { NbSidebarService, NbThemeModule } from '@nebular/theme';
+import { NbSidebarService, NbThemeModule, NbInputModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule  } from '@nebular/theme';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule  } from '
     NbButtonModule,
     NbCardModule,
     FormsModule,
+    NbInputModule,
     HttpClientModule
 
   ],

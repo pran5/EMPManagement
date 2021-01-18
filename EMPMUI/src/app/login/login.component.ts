@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Emp } from '../EmpModle';
 import { NetServiceService } from '../net-service.service';
 
@@ -11,13 +12,39 @@ import { NetServiceService } from '../net-service.service';
 export class LoginComponent implements OnInit {
 
   e : Emp;
-  constructor(private ser : NetServiceService) {
+  uname: String;
+  pass: String;
+  access: String;
+  msg: String;
+  constructor(private ser : NetServiceService,private router: Router, private route:ActivatedRoute) {
     this.e = new Emp();
+    this.uname = "";
+    this.pass = "";
+    this.msg = "";
+    this.access = 'o';
    }
 
   ngOnInit(): void {
   }
 
+  login(){
+    console.log("login clicked");
+    this.ser.loga({uname:this.uname,pass:this.pass}).subscribe(( data : any)=>{
+      console.log(data);
+      if(data.access == 'a'){
+        this.router.navigate(['./Admin'], { relativeTo: this.route });
+      }
+      else if(data.access == 'm'){
+        this.router.navigate(['./Admin'], { relativeTo: this.route });
+      }
+      else if(data.access == 'e'){
+        this.router.navigate(['./Admin'], { relativeTo: this.route });
+      }
+      else{
+          this.msg = data.msg; 
+      }
+    });
+  }
   nodeCall(){
 
     console.log("click working");
