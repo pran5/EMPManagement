@@ -425,8 +425,14 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_fzXh61j5EeuDsqjxUeTiUQ" elementId="org.eclipse.wst.server.ui.ServersView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Servers" iconURI="platform:/plugin/org.eclipse.wst.server.ui/icons/cview16/servers_view.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.wst.server.ui.internal.cnf.ServersView2"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.wst.server.ui"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Server</tags>
+      <menus xmi:id="_iquAwFlgEeurIdpU3rKP0g" elementId="org.eclipse.wst.server.ui.ServersView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_iquAwVlgEeurIdpU3rKP0g" elementId="org.eclipse.wst.server.ui.ServersView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_fzXh7Fj5EeuDsqjxUeTiUQ" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.datatools.connectivity.ui.dse.views.DataSourceExplorerView"/>
@@ -693,7 +699,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fzXiVlj5EeuDsqjxUeTiUQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Bw9BUFlTEeu-8fQ2bQfcdA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_fzXuzlj5EeuDsqjxUeTiUQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_PznX4FlgEeurIdpU3rKP0g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_fzXuzlj5EeuDsqjxUeTiUQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fzXiY1j5EeuDsqjxUeTiUQ" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -742,7 +748,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fzXi1Vj5EeuDsqjxUeTiUQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BxGyUFlTEeu-8fQ2bQfcdA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_fzXucVj5EeuDsqjxUeTiUQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Pz1aUFlgEeurIdpU3rKP0g" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_fzXucVj5EeuDsqjxUeTiUQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fzXi4Fj5EeuDsqjxUeTiUQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

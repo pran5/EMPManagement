@@ -1809,3 +1809,4 @@
 2021-01-18 11:40:03,509 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2021-01-18 11:40:03,512 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-01-18 11:40:03,513 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\KP CDAC\KP CDAC PROJECT\EMPManagement\JavaBack\EmpBack\EmpManagmentBack\src\test\resources
+2021-01-18 13:09:15,195 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
