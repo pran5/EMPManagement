@@ -1,0 +1,21 @@
+package com.example.EmpManagmentBack;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ticket")
+public class ticket {
+	
+	@Column(name=" Ticket_No")
+	@Id
+	private String  Ticket_No;
+	private String  Project_Id, Emp_Id,Ticket_Type,Ticket_Details,Ticket_Status;
+	private enum Ticket_Priority{H,L,M};
+	private Date Ticket_Update;
+
+}

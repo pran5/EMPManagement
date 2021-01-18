@@ -1,0 +1,52 @@
+package com.example.EmpManagmentBack.Model;
+//package com.example.EmpManagmentBack;
+//
+//import javax.persistence.Entity;
+//
+//import javax.persistence.Table;
+//
+//@Entity
+//@Table(name="team")
+//public class team {
+//	
+//	private String  Team_M_Id, Emp_Id,Team_Id;
+//
+//	
+//	public team() {
+//		super();
+//	}
+//
+//
+//	public String getTeam_M_Id() {
+//		return Team_M_Id;
+//	}
+//
+//
+//	public void setTeam_M_Id(String team_M_Id) {
+//		Team_M_Id = team_M_Id;
+//	}
+//
+//
+//	public String getEmp_Id() {
+//		return Emp_Id;
+//	}
+//
+//
+//	public void setEmp_Id(String emp_Id) {
+//		Emp_Id = emp_Id;
+//	}
+//
+//
+//	public String getTeam_Id() {
+//		return Team_Id;
+//	}
+//
+//
+//	public void setTeam_Id(String team_Id) {
+//		Team_Id = team_Id;
+//	}
+//	
+//
+//	
+//
+//}

@@ -1,0 +1,20 @@
+package com.example.EmpManagmentBack;
+
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class DepartmentServices {
+	@Autowired
+	private DepRepo departmentRepository;
+	
+	// fetching all employees
+	public List<Department> getAllDepartment(){
+		List<Department> dept = (List<Department>)departmentRepository.findAll(); 
+		return dept;
+	}
+	
+}
