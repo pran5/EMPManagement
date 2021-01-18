@@ -15,10 +15,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.EmpManagmentBack.Model.Employee;
 import com.example.EmpManagmentBack.Model.Manager;
+import com.example.EmpManagmentBack.Model.Project;
+import com.example.EmpManagmentBack.Model.Pushnotification;
+import com.example.EmpManagmentBack.Model.Resourcerequests;
 import com.example.EmpManagmentBack.Model.Team;
+import com.example.EmpManagmentBack.Model.Ticket;
 import com.example.EmpManagmentBack.SERVICE.EmployeeService;
 import com.example.EmpManagmentBack.SERVICE.ManagerService;
+import com.example.EmpManagmentBack.SERVICE.ProjectService;
+import com.example.EmpManagmentBack.SERVICE.PushnotificationService;
+import com.example.EmpManagmentBack.SERVICE.ResourcerequestService;
 import com.example.EmpManagmentBack.SERVICE.TeamService;
+import com.example.EmpManagmentBack.SERVICE.TicketService;
 
 
 
@@ -49,6 +57,23 @@ public class RControler {
 	@Autowired
 	private TeamService teamService;
 	
+	@Autowired
+	private TicketService ticketService;
+	
+	
+	@Autowired
+	private PushnotificationService pushnotificationService;
+	
+	@Autowired
+	private ResourcerequestService resourcerequestService;
+	
+	@Autowired
+	private ProjectService projectService;
+	
+	
+	
+	
+	
 	
 	
 	
@@ -76,6 +101,63 @@ public class RControler {
 				public List<Team> getAllTeam(){
 					return teamService.getAllTeam();
 				}
+		
+	// displaying list of all ticket
+		@GetMapping("/ticket")
+		public List<Ticket> getAllTicket(){
+		return ticketService.getAllTicket();
+				}			
+				
+		
+		
+		
+	// displaying list of all ticket
+				@GetMapping("/pushnotification")
+				public List<Pushnotification> getAllPushnotification(){
+				return pushnotificationService.getAllPushnotification();
+						}		 				
+				
+				
+	// displaying list of all Resourcerequest
+				@GetMapping("/resourcereq")
+				public List<Resourcerequests> getAllResourcerequests(){
+				return resourcerequestService.getAllResourcerequests();
+						}						
+				
+	// displaying list of all Project
+				@GetMapping("/project")
+				public List<Project> getAllProject(){
+				return projectService.getAllProject();
+						}								
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

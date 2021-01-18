@@ -2,9 +2,12 @@ package com.example.EmpManagmentBack.Model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,10 +17,43 @@ public class Project {
 	@Id
 	private String  Project_Id;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Project_Client_Id", referencedColumnName = "Client_Id",insertable = false, updatable = false)
+    private Client client; 
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 	
 	
 	
 	
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Project_M_Id", referencedColumnName = "M_Id",insertable = false, updatable = false)
+    private Manager manager; 
+	public Manager getManager() {
+		return manager;
+	}
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+
+
+
+
+
+	
+	
+	
+
 	private String Project_Name, Project_Client_Id,Project_M_Id,Project_Description,Project_Technology;
 	private float Project_Duration;
 	private Date Project_Start_Date;
