@@ -1,0 +1,22 @@
+package com.example.EmpManagmentBack;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="payrolls")
+public class payrolls {
+
+	@Column(name=" Payroll_Id")
+	@Id
+	private enum Payroll_Id{A,B,C,D};
+	
+	
+	
+	
+	
+	
+	
+}

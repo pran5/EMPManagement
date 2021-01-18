@@ -1,0 +1,21 @@
+package com.example.EmpManagmentBack;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+
+public class leaverequests {
+	@Column(name=" Dept_Id")
+	@Id
+	private String  Dept_Id;
+	
+	@OneToOne
+    @PrimaryKeyJoinColumn(name = "Dept_Id")
+	Employee Employee;
+	
+	
+	
+	private String  Dept_Name;
+	private int Dept_Total_Emp;
+}

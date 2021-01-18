@@ -1,0 +1,22 @@
+package com.example.EmpManagmentBack;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="leaverequests")
+public class leaverequests {
+	@Column(name=" LRequest_Id")
+	@Id
+	private String  LRequest_Id;
+	
+	private String  LRequest_Emp_Id, LRequest_Description;
+	private int LRequest_M_Status,LRequest_A_Status;
+	private Date LRequest_From,LRequest_To;
+}
