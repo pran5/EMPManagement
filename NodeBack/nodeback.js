@@ -22,7 +22,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database:"employee"
+    database:"empms"
   });
 
 
