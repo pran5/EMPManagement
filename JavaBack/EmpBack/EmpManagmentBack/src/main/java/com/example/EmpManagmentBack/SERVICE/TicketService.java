@@ -1,6 +1,7 @@
 package com.example.EmpManagmentBack.SERVICE;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,10 @@ public class TicketService {
 		return tk;
 	}
 	
+ // fetching ticket by id
+	public Optional<Ticket> getTicket_No(String id){
+		return ticketRepo.findById(id);
 	
 	
-	
+}
 }

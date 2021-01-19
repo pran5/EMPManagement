@@ -1,6 +1,7 @@
 package com.example.EmpManagmentBack.SERVICE;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class ResourcerequestService {
 		List<Resourcerequests> res = (List<Resourcerequests>)resourceRepo.findAll(); 
 		return res;
 	}
+	// fetching resourcerequests by id
+			public Optional<Resourcerequests> getRR_Id(String id){
+				return resourceRepo.findById(id);
+			}
 	
 
 }

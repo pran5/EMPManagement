@@ -111,7 +111,7 @@ public class RControler {
 		
 		
 		
-// displaying list of all ticket
+// displaying list of all pushnotification
 				@GetMapping("/pushnotification")
 				public List<Pushnotification> getAllPushnotification(){
 				return pushnotificationService.getAllPushnotification();
@@ -151,18 +151,63 @@ public class RControler {
 		}
 		
 	
-// displaying employee by id
+// displaying Manager by id
 	  	@GetMapping("/manager/{id}_A")
 		public Optional<Manager> getManager(@RequestParam String id){
 		return managerService.getM_Id(id);
 				}		
 		
-		
-		
-		
-		
-		
-		
+ // displaying Team by id
+	 	  	@GetMapping("/Team/{id}_A")
+	 		public Optional<Team> getTeam_Id(@RequestParam int id){
+	 		return teamService.getTeam_Id(id);
+	 				}		
+	 		
+	 	  	
+	 	  	
+// displaying ticket by id
+			@GetMapping("/ticket/{id}_A")
+			public Optional<Ticket> getTicket_No(@RequestParam String id){
+			return ticketService.getTicket_No(id);
+					}
+	 	  	
+// displaying pushnotification by id
+	 	  	@GetMapping("/pushnotification/{id}_A")
+	 		public Optional<Pushnotification> getPN_No(@RequestParam String id){
+	 		return pushnotificationService.getPN_No(id);
+	 				}	 	  	
+	 	  	
+// displaying Resourcerequest by id
+	 	  	@GetMapping("/resourcerequest/{id}_A")
+	 		public Optional<Resourcerequests> getRR_Id(@RequestParam String id){
+	 		return resourcerequestService.getRR_Id(id);
+	 				}	 	 	  	
+	 	  	
+	 	  	
+// displaying Project by id
+	 		 	  	@GetMapping("/project/{id}_A")
+	 		 		public Optional<Project> getProject_Id(@RequestParam String id){
+	 		 		return projectService.getProject_Id(id);
+	 		 				}	 	 	  	
+	 		 	  		 	  	
+	 	  	
+// displaying Leaverequests by id
+	 		 	  	@GetMapping("/leaverequests/{id}_A")
+	 		 		public Optional<Leaverequests> getLRequest_Id(@RequestParam String id){
+	 		 		return leaverequests.getLRequest_Id(id);
+	 		 				}	 
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+//******************************************************************************************************************//	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+
+	 	  	
+
 		
 		
 		

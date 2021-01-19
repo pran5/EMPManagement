@@ -1,6 +1,7 @@
 package com.example.EmpManagmentBack.SERVICE;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,11 @@ public class PushnotificationService {
 		List<Pushnotification> push = (List<Pushnotification>)pushRepo.findAll(); 
 		return push;
 	}
-	
+	// fetching Pushnotification by id
+			public Optional<Pushnotification> getPN_No(String id){
+				return pushRepo.findById(id);
+			}
+			
 	
 	
 	

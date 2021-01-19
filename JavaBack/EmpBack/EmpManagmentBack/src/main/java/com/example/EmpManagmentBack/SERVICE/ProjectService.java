@@ -1,6 +1,7 @@
 package com.example.EmpManagmentBack.SERVICE;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,5 +19,8 @@ public class ProjectService {
 		List<Project> proj = (List<Project>)projectRepo.findAll(); 
 		return proj;
 	}
-	
+	// fetching Project by id
+			public Optional<Project> getProject_Id(String id){
+				return projectRepo.findById(id);
+			}
 }
