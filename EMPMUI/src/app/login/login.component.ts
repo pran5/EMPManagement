@@ -21,10 +21,23 @@ export class LoginComponent implements OnInit {
     this.uname = "";
     this.pass = "";
     this.msg = "";
-    this.access = 'o';
+    this.access = "a";
    }
 
   ngOnInit(): void {
+  }
+
+  loginVisible(): boolean{
+    var a = true;
+    console.log("check working");
+    if(this.access=="o"){
+      console.log(a);
+    return a;}
+
+    else {
+      a = false;
+      console.log(a);
+    return a;}
   }
 
   login(){
@@ -33,15 +46,19 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if(data.access == 'a'){
         this.router.navigate(['./Admin'], { relativeTo: this.route });
+        this.access ='a';
       }
       else if(data.access == 'm'){
-        this.router.navigate(['./Admin'], { relativeTo: this.route });
+        this.router.navigate(['./Manager'], { relativeTo: this.route });
+        this.access ='m';
       }
       else if(data.access == 'e'){
-        this.router.navigate(['./Admin'], { relativeTo: this.route });
+        this.router.navigate(['./Employee'], { relativeTo: this.route });
+        this.access ='e';
       }
       else{
           this.msg = data.msg; 
+          this.access ='o';
       }
     });
   }

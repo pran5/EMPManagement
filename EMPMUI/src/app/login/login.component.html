@@ -10,9 +10,9 @@
             </nb-card-body>
         
           </nb-card> -->
-
-          <div class="columns is-mobile is-centered" style="margin-top: 10%;">
-            <div class="column is-two-fifths">
+          
+          <div *ngIf="loginVisible()" class="columns is-mobile is-centered" style="margin-top: 10%;">
+            <div  class="column is-two-fifths">
           <nb-card accent="info">
            
             <nb-card-body>
@@ -33,7 +33,8 @@
           </div>
          
           </div>
+         
 
-          <router-outlet></router-outlet>
+          <router-outlet *ngIf="!loginVisible()" ></router-outlet>
           
    

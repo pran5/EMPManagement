@@ -6,17 +6,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { NbSidebarService, NbThemeModule, NbInputModule } from '@nebular/theme';
+import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule  } from '@nebular/theme';
 import { AdminComponent } from './admin/admin.component';
+import { ManagerComponent } from './manager/manager.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { SidenavComponent } from './admin/sidenav/sidenav.component';
+import { TopnavComponent } from './topnav/topnav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    ManagerComponent,
+    EmployeeComponent,
+    SidenavComponent,
+    TopnavComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,10 @@ import { AdminComponent } from './admin/admin.component';
     NbCardModule,
     FormsModule,
     NbInputModule,
-    HttpClientModule
+    HttpClientModule,
+    NbSidebarModule.forRoot(),
+    NbActionsModule,
+    NbUserModule
 
   ],
   providers: [NbSidebarService],

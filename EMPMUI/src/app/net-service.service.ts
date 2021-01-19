@@ -18,7 +18,7 @@ export class NetServiceService {
 
   loga(obj: any): Observable<any>
   {
-    const url = 'http://192.168.120.244:8081/login';
+    const url = 'http://localhost:8081/login';
     return this.con.post(url, obj);
   }
 
