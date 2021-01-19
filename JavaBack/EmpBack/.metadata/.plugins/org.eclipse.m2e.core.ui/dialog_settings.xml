@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="E:\KP CDAC\KP CDAC PROJECT\EMPMSA\EMPManagement\JavaBack\EmpBack\EmpManagmentBack"/>
 			<item value="E:\KP CDAC\KP CDAC PROJECT\EMPManagement\JavaBack\EmpBack"/>
 		</list>
 		<list key="projectNameTemplate">

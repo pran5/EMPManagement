@@ -1,49 +1,0 @@
-
-„squid:S00117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒîšùÿÿÿÿHÁRMINORZ
-CODE_SMELL
-„squid:S00117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã™ıüÿÿÿÿHÂRMINORZ
-CODE_SMELL
-squid:S00117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©£ºìHÃRMINORZ
-CODE_SMELL
-squid:S00117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô´«ŠHÄRMINORZ
-CODE_SMELL
-„squid:S00117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ½ÿÇúÿÿÿÿHÅRMINORZ
-CODE_SMELL
-ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ„ßœHÆRMINORZ
-CODE_SMELL
-[squid:S1659".Declare "client_mobile_no" on a separate line.(ÓÚ²HÇRMINORZ
-CODE_SMELL
-Vsquid:S1659")Declare "Client_Name" on a separate line.(ÓÚ²HÈRMINORZ
-CODE_SMELL
-Usquid:S1659"(Declare "Client_PAN" on a separate line.(ÓÚ²HÉRMINORZ
-CODE_SMELL
-‡squid:S00116"TRename this field "Client_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’³ºşÿÿÿÿHÊRMINORZ
-CODE_SMELL
-…squid:S00116"WRename this field "Client_Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÚ²HËRMINORZ
-CODE_SMELL
-‰squid:S00116"[Rename this field "client_mobile_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÚ²HÌRMINORZ
-CODE_SMELL
-„squid:S00116"VRename this field "Client_Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÚ²HÍRMINORZ
-CODE_SMELL
-ƒsquid:S00116"URename this field "Client_PAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÚ²HÎRMINORZ
-CODE_SMELL
-|squid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹ùâƒHÏRMINORZ
-CODE_SMELL
-squid:S00100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒîšùÿÿÿÿHĞRMINORZ
-CODE_SMELL
-|squid:S00100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’§¯ŠHÑRMINORZ
-CODE_SMELL
-squid:S00100."NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã™ıüÿÿÿÿHÒRMINORZ
-CODE_SMELL
-|squid:S001004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦®ş©HÓRMINORZ
-CODE_SMELL
-|squid:S00100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©£ºìHÔRMINORZ
-CODE_SMELL
-squid:S00100@"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌÂæ°ùÿÿÿÿHÕRMINORZ
-CODE_SMELL
-|squid:S00100F"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô´«ŠHÖRMINORZ
-CODE_SMELL
-|squid:S00100L"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ò… H×RMINORZ
-CODE_SMELL
-squid:S00100R"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ½ÿÇúÿÿÿÿHØRMINORZ
-CODE_SMELL

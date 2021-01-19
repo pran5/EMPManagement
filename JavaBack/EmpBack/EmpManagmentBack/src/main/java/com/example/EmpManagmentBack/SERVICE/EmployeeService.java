@@ -30,6 +30,25 @@ public class EmployeeService {
 			return employeeRepository.findById(id);
 		}
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	   // inserting employee
 		public void addEmployee(Employee e) {
 			employeeRepository.save(e);

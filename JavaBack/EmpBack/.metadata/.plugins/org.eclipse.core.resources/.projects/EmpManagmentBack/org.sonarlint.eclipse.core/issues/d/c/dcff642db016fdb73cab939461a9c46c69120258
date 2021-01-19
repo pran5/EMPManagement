@@ -1,29 +1,0 @@
-
-{squid:S00100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÁŠ;HãRMINORZ
-CODE_SMELL
-ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ„ßœHŞRMINORZ
-CODE_SMELL
-squid:S001173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÒ‡ÍHÛRMINORZ
-CODE_SMELL
-„squid:S00117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÂ‹èÿÿÿÿÿHİRMINORZ
-CODE_SMELL
-†squid:S00116)"SRename this field "M_Emp_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š”¾şıÿÿÿÿHáRMINORZ
-CODE_SMELL
-„squid:S00117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚±Ÿ›şÿÿÿÿHÜRMINORZ
-CODE_SMELL
-\squid:S1659)"*Declare "M_Project_Id" on a separate line.(Š”¾şıÿÿÿÿHßRMINORZ
-CODE_SMELL
-squid:S00100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÄÿ‡ùÿÿÿÿHçRMINORZ
-CODE_SMELL
-squid:S00100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÂ‹èÿÿÿÿÿHèRMINORZ
-CODE_SMELL
-squid:S001007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¯ÁóşÿÿÿÿHåRMINORZ
-CODE_SMELL
-squid:S00100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚±Ÿ›şÿÿÿÿHæRMINORZ
-CODE_SMELL
-|squid:S001003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÒ‡ÍHäRMINORZ
-CODE_SMELL
-Šsquid:S00116)"WRename this field "M_Project_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š”¾şıÿÿÿÿHâRMINORZ
-CODE_SMELL
-‚squid:S00116"ORename this field "M_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş®ˆÈûÿÿÿÿHàRMINORZ
-CODE_SMELL

@@ -15,7 +15,7 @@ public class PayrollService {
 	@Autowired
 	private PayrollRepo payrollrepo;
 	
-	// fetching all employees
+	// fetching all payrolls
 	public List<Payrolls> getAllPayrolls(){
 		List<Payrolls> pay = (List<Payrolls>)payrollrepo.findAll(); 
 		return pay;

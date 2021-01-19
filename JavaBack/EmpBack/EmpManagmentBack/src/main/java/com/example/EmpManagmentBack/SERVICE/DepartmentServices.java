@@ -16,13 +16,13 @@ public class DepartmentServices {
 	@Autowired
 	private DepRepo departmentRepository;
 	
-	// fetching all employees
+	// fetching all department
 	public List<Department> getAllDepartment(){
 		List<Department> dept = (List<Department>)departmentRepository.findAll(); 
 		return dept;
 	}
 	
-	// fetching employee by id
+	// fetching department  by id
 			public Optional<Department> getDept_Id(String id){
 				return departmentRepository.findById(id);
 			}

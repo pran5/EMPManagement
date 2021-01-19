@@ -13,7 +13,7 @@ public class ProjectService {
 	@Autowired
 	private ProjectRepo projectRepo;
 	
-	// fetching all employees
+	// fetching all project
 	public List<Project> getAllProject(){
 		List<Project> proj = (List<Project>)projectRepo.findAll(); 
 		return proj;

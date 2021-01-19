@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.EmpManagmentBack.Model.Employee;
+import com.example.EmpManagmentBack.Model.Leaverequests;
 import com.example.EmpManagmentBack.Model.Manager;
 import com.example.EmpManagmentBack.Model.Project;
 import com.example.EmpManagmentBack.Model.Pushnotification;
@@ -21,6 +22,7 @@ import com.example.EmpManagmentBack.Model.Resourcerequests;
 import com.example.EmpManagmentBack.Model.Team;
 import com.example.EmpManagmentBack.Model.Ticket;
 import com.example.EmpManagmentBack.SERVICE.EmployeeService;
+import com.example.EmpManagmentBack.SERVICE.LeavereqService;
 import com.example.EmpManagmentBack.SERVICE.ManagerService;
 import com.example.EmpManagmentBack.SERVICE.ProjectService;
 import com.example.EmpManagmentBack.SERVICE.PushnotificationService;
@@ -30,22 +32,9 @@ import com.example.EmpManagmentBack.SERVICE.TicketService;
 
 
 
-
-
-
 @RestController
 public class RControler {
 
-	/*
-	 * private EmpRepo e;
-	 * 
-	 * @Autowired public void setR(EmpRepo e) {
-	 * 
-	 * System.out.println("hey wiring has happened"); this.e = e; }
-	 */
-	
-	
-	
 	
 	
 	@Autowired
@@ -71,6 +60,12 @@ public class RControler {
 	private ProjectService projectService;
 	
 	
+	@Autowired
+	private LeavereqService leaverequests;
+	
+	
+	
+	
 	
 	
 	
@@ -82,27 +77,32 @@ public class RControler {
 	
 	
 	
-	// displaying list of all employees
+	
+//*********************************************************************************************************************************************//	
+	
+	
+	
+// displaying list of all employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployee(){
 		return employeeService.getAllEmployees();
 	}
 	
 	
-	// displaying list of all Manager
+// displaying list of all Manager
 		@GetMapping("/manager")
 		public List<Manager> getAllManager(){
 			return managerService.getAllManager();
 		}
 		
 		
-   // displaying list of all Team
+ // displaying list of all Team
 				@GetMapping("/Team")
 				public List<Team> getAllTeam(){
 					return teamService.getAllTeam();
 				}
 		
-	// displaying list of all ticket
+// displaying list of all ticket
 		@GetMapping("/ticket")
 		public List<Ticket> getAllTicket(){
 		return ticketService.getAllTicket();
@@ -111,63 +111,63 @@ public class RControler {
 		
 		
 		
-	// displaying list of all ticket
+// displaying list of all ticket
 				@GetMapping("/pushnotification")
 				public List<Pushnotification> getAllPushnotification(){
 				return pushnotificationService.getAllPushnotification();
 						}		 				
 				
 				
-	// displaying list of all Resourcerequest
+// displaying list of all Resourcerequest
 				@GetMapping("/resourcereq")
 				public List<Resourcerequests> getAllResourcerequests(){
 				return resourcerequestService.getAllResourcerequests();
 						}						
 				
-	// displaying list of all Project
+// displaying list of all Project
 				@GetMapping("/project")
 				public List<Project> getAllProject(){
 				return projectService.getAllProject();
 						}								
 				
+// displaying list of all Leaverequests
+				@GetMapping("/leaverequests")
+				public List<Leaverequests> getAllLeaverequests(){
+				return leaverequests.getAllLeaverequests();
+						}									
 				
 				
 				
+//************************************************************************************************************************************************************************//		
 				
 				
 				
+							
 				
-				
-				
-				
-				
-				
-				
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	// displaying employee by id
+// displaying employee by id
 		@GetMapping("/employees/{id}_A")
 		public Optional<Employee> getEmployee(@RequestParam String id){
-			return employeeService.getEmp(id);
+		return employeeService.getEmp(id);
 		}
+		
+	
+// displaying employee by id
+	  	@GetMapping("/manager/{id}_A")
+		public Optional<Manager> getManager(@RequestParam String id){
+		return managerService.getM_Id(id);
+				}		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

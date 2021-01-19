@@ -1,7 +1,0 @@
-
-Žsquid:S1488"\Immediately return this expression instead of assigning it to the temporary variable "emps".(¤“°õÿÿÿÿÿH™RMINORZ
-CODE_SMELL
-_squid:S4973("9Use the "equals" method if value comparison was intended.(®ëèÍHšRMAJORZBUG
-_squid:S49739"9Use the "equals" method if value comparison was intended.(®ëèÍH›RMAJORZBUG
-ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÒŠ®ÚHœRMINORZ
-CODE_SMELL
