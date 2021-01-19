@@ -14,7 +14,7 @@ public class ResourcerequestService {
 	@Autowired
 	private ResourceRepo resourceRepo;
 	
-	// fetching all employees
+	// fetching all resourcerequests
 	public List<Resourcerequests> getAllResourcerequests(){
 		List<Resourcerequests> res = (List<Resourcerequests>)resourceRepo.findAll(); 
 		return res;
