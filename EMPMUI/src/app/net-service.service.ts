@@ -15,6 +15,13 @@ export class NetServiceService {
     const url = 'http://localhost:8081/poc1';
     return this.con.post(url, obj);
   }
+
+  loga(obj: any): Observable<any>
+  {
+    const url = 'http://localhost:8081/login';
+    return this.con.post(url, obj);
+  }
+
   allEmpSpring(): Observable<any>
   {
     const url = 'http://localhost:7500/?x=133';

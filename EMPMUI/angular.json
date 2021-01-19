@@ -29,8 +29,9 @@
             ],
             "styles": [
               "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "node_modules/bulma/css/bulma.css",
               "src/styles.css"
-            ],
+           ],
             "scripts": []
           },
           "configurations": {
