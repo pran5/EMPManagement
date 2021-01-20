@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule } from '@nebular/theme';
+import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule, NbFormFieldModule, NbIconComponent, NbIconModule, NbSelectComponent, NbSelectModule, NbDatepickerModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule  } from '@nebular/theme';
 import { AdminComponent } from './admin/admin.component';
@@ -14,6 +14,12 @@ import { ManagerComponent } from './manager/manager.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { SidenavComponent } from './admin/sidenav/sidenav.component';
 import { TopnavComponent } from './topnav/topnav.component';
+import { AemployeeComponent } from './admin/aemployee/aemployee.component';
+import { ProjectComponent } from './admin/project/project.component';
+import { AnotificationComponent } from './admin/anotification/anotification.component';
+import { AleaveComponent } from './admin/aleave/aleave.component';
+import { AresourceComponent } from './admin/aresource/aresource.component';
+
 
 
 @NgModule({
@@ -24,7 +30,12 @@ import { TopnavComponent } from './topnav/topnav.component';
     ManagerComponent,
     EmployeeComponent,
     SidenavComponent,
-    TopnavComponent
+    TopnavComponent,
+    AemployeeComponent,
+    ProjectComponent,
+    AnotificationComponent,
+    AleaveComponent,
+    AresourceComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +51,10 @@ import { TopnavComponent } from './topnav/topnav.component';
     HttpClientModule,
     NbSidebarModule.forRoot(),
     NbActionsModule,
-    NbUserModule
+    NbUserModule,
+    NbFormFieldModule,
+    NbSelectModule,
+    NbDatepickerModule.forRoot()
 
   ],
   providers: [NbSidebarService],
