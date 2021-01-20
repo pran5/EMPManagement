@@ -36,30 +36,29 @@ public class EmployeeService {
 			employeeRepository.save(e);
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	  
-		
-		// updating employee by id
-		public void updateEmployee(Employee emp, String id){
-			if(id == emp.getEmp_Id()) {
-				employeeRepository.save(emp);
-			}
+	// updating employee by id
+	public void updateEmployee(Employee emp, String id){
+	if(id == emp.getEmp_Id()) {
+	employeeRepository.save(emp);
 		}
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//***********************************************************************************************************************************************//
+		
 		
 		// deleting all employees
 		public void deleteAllEmployees(){

@@ -31,7 +31,13 @@ public class ManagerService {
 		managerRepo.save(e);
 	}
 	
-	
+// updating Manager by id
+		public void updateManager(Manager mng, String id){
+		if(id == mng.getM_Id()) {
+			managerRepo.save(mng);
+			}
+		}
+			
 	
 	
 	

@@ -25,12 +25,18 @@ public class TeamService {
 			return TeamRepository.findById(id);
 		}
 		
-    // inserting employee
+    // inserting Team
 			public void addTeam(Team e) {
 				TeamRepository.save(e);
 			}
 				
-		
+	// updating Team by id
+			public void updateTeam(Team tm, int id){
+			if(id == tm.getTeam_Id()) {
+				TeamRepository.save(tm);
+				}
+			}
+					
 		
 		
 		

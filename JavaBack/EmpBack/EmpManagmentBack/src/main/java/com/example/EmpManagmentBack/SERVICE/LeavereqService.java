@@ -28,7 +28,20 @@ public class LeavereqService {
 				return leavereqRepo.findById(id);
 			}
 			
-	
+	// inserting Leaverequests
+			public void addLeaverequests(Leaverequests e) {
+				leavereqRepo.save(e);
+			}
+			
+// updating Leaverequests by id
+			public void updateLeaverequests(Leaverequests Lreq, String id){
+			if(id == Lreq.getLRequest_Id()) {
+				leavereqRepo.save(Lreq);
+				}
+			}
+			
+			
+			
 	
 	
 }

@@ -23,4 +23,25 @@ public class ProjectService {
 			public Optional<Project> getProject_Id(String id){
 				return projectRepo.findById(id);
 			}
+			
+	 // inserting Project
+			public void addProject(Project e) {
+				projectRepo.save(e);
+			}
+			
+			
+// updating Project by id
+			public void updateProject(Project pr, String id){
+			if(id == pr.getProject_Id()) {
+				projectRepo.save(pr);
+				}
+			}		
+			
+		
+			
+			
+			
+			
+			
+			
 }

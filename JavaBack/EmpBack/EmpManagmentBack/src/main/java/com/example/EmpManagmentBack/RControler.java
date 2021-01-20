@@ -232,79 +232,108 @@ public class RControler {
 	 		 	  		}
 	 		 	  
 	 		 	  		
+// inserting ticket
+	 		 	  		@PostMapping("/ticket_B")
+	 		 	  		public void addTicket(@RequestBody Ticket ticket){
+	 		 	  		ticketService.addTicket(ticket);
+	 		 	  		}
+	 		 	  	 	  		
+	 		 	  		
+ // inserting pushnotification
+	 		 		 	  		@PostMapping("/pushnotification_B")
+	 		 		 	  		public void addPushnotification(@RequestBody Pushnotification pushnotification){
+	 		 		 	  		pushnotificationService.addPushnotification(pushnotification);
+	 		 		 	  		}
+	 		 		 	   		 
+	 		 		 	  		
+// inserting Resourcerequest
+	 		 		 	  		@PostMapping("/resourcerequest_B")
+	 		 		 	  		public void addResourcerequests(@RequestBody Resourcerequests resourcerequests){
+	 		 		 	  			resourcerequestService.addResourcerequests(resourcerequests);
+	 		 		 	  		}
+	 		 		 	  		 	  		
 	 		 	  		
 	 		 	  		
+// inserting Project
+	 		 		 	  		@PostMapping("/project_B")
+	 		 		 	  		public void addProject(@RequestBody Project project){
+	 		 		 	  			projectService.addProject(project);
+	 		 		 	  		}
+	 		 		 	  	 	  		
+	 		 	  		
+	 		 		 	   	
+// inserting Leaverequests
+	 		 	 		 	  		@PostMapping("/leaverequests_B")
+	 		 	 		 	  		public void addLeaverequests(@RequestBody Leaverequests leavereq){
+	 		 	 		 	  			leaverequests.addLeaverequests(leavereq);
+	 		 	 		 	  		}
+	 		 	 		 	  
+	 		 	 		 	  				
+//************************************************************************************************************************************************************// 		 	  		
 	 		 	  		
 	 		 	  		
+
+//updating employee by id
+	 		@PostMapping("/employees/{id}_C")
+	 		public void updateEmployee(@RequestBody Employee e, @RequestBody String id){
+			employeeService.updateEmployee(e, id);
+		} 	  		
 	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
-	 		 	  		
+	 		
+//updating manager by id
+	         @PostMapping("/manager/{id}_C")
+	 		 public void updateManager(@RequestBody Manager e, @RequestBody String id){
+	 		 managerService.updateManager(e, id);
+	 		 			} 		 		
+	 		
+//updating Team by id
+	 		@PostMapping("/Team/{id}_C")
+	 		public void updateTeam(@RequestBody Team e, @RequestBody int id){
+	 	 	teamService.updateTeam(e, id);
+	 	 			 			}  		
+	 	
+//updating ticket by id
+			@PostMapping("/ticket/{id}_C")
+	  		public void updateTicket(@RequestBody Ticket e, @RequestBody String id){
+			ticketService.updateTicket(e, id);
+	 			} 	  	 		         
+	         
+ 		 	
+//updating pushnotification by id
+           @PostMapping("/pushnotification/{id}_C")
+           public void updatePushnotification(@RequestBody Pushnotification e, @RequestBody String id){
+           pushnotificationService.updatePushnotification(e, id);
+ 			} 	 		         
+	         
+	         
+//updating Resourcerequest by id
+      	 @PostMapping("/resourcerequest/{id}_C")
+      	 public void updateResourcerequests(@RequestBody Resourcerequests e, @RequestBody String id){
+      	 resourcerequestService.updateResourcerequests(e, id);
+      	 			} 	 	         
+	         
+	         
+//updating Project by id
+    	 @PostMapping("/project/{id}_C")
+    	 public void updateProject(@RequestBody Project e, @RequestBody String id){
+    	 projectService.updateProject(e, id);
+    	 			} 	         
+	         
+
+	 	
+//updating Leaverequests by id
+	 @PostMapping("/leaverequests/{id}_C")
+	 public void updateLeaverequests(@RequestBody Leaverequests e, @RequestBody String id){
+	 leaverequests.updateLeaverequests(e, id);
+	 			} 	  	 		
+	 			 		 		 		 		 	  		
+	 			 		 		 		 		 	  			 	
+	 		 	  	
 	 		 	  		
 	 		 	  	
-	 		 	  /* inserting employee
-	 		 	  		@PostMapping("/employees_B")
-	 		 	  		public void addEmployees(@RequestBody Employee employee){
-	 		 	  			employeeService.addEmployee(employee);
-	 		 	  		}
-	 		 	  */
+	 		 	 
 	 		 	  		
-	 		 	  		
-	 		 	  	
-	 		 	  /* inserting employee
-	 		 	  		@PostMapping("/employees_B")
-	 		 	  		public void addEmployees(@RequestBody Employee employee){
-	 		 	  			employeeService.addEmployee(employee);
-	 		 	  		}
-	 		 	  */
-	 		 	  		
-	 		 	  		
-	 		 	  	
-	 		 	  /* inserting employee
-	 		 	  		@PostMapping("/employees_B")
-	 		 	  		public void addEmployees(@RequestBody Employee employee){
-	 		 	  			employeeService.addEmployee(employee);
-	 		 	  		}
-	 		 	  */
-	 		 	  		
-	 		 	  		
-	 		 	  	
-	 		 	  /* inserting employee
-	 		 	  		@PostMapping("/employees_B")
-	 		 	  		public void addEmployees(@RequestBody Employee employee){
-	 		 	  			employeeService.addEmployee(employee);
-	 		 	  		}
-	 		 	  */
-	 		 	  		
-	 		 	  		
-	 		 	  	
-	 		 	  /* inserting employee
-	 		 	  		@PostMapping("/employees_B")
-	 		 	  		public void addEmployees(@RequestBody Employee employee){
-	 		 	  			employeeService.addEmployee(employee);
-	 		 	  		}
-	 		 	  */
-	 		 	  		
-	 		 	  		
-	 		 	  		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	 		 	 	 			 		
 		
 //*****************************************************************************************************************************//		
 		
@@ -316,11 +345,6 @@ public class RControler {
 		
 		
 		
-		//updating employee by id
-		@PostMapping("/employees/{id}_C")
-		public void updateEmployee(@RequestBody Employee e, @RequestBody String id){
-			employeeService.updateEmployee(e, id);
-		}
 		
 		// deleting all employees
 		@PostMapping("/employees_D")
@@ -334,21 +358,19 @@ public class RControler {
 			employeeService.deleteEmployeeByID(id);
 		}
 
+		
+		
+		
+		
+		
+		
+	/*	// extra
 		// updating/ patching employee by id
 		@PostMapping("employees/{id}_F")
 		public void patchEmployeeByID(@RequestBody Employee e, @RequestBody String id) {
 			employeeService.patchEmployee(e, id);
 		}
-	
-	
-	
+	*/
 
-
-	
-	
-	
-	
-	
-	
 	
 }

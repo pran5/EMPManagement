@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import com.example.EmpManagmentBack.Model.Ticket;
 
 import com.example.EmpManagmentBack.REPO.TicketRepo;
@@ -17,7 +15,7 @@ public class TicketService {
 	@Autowired
 	private TicketRepo ticketRepo;
 	
-	// fetching all ticket
+// fetching all ticket
 	public List<Ticket> getAllTicket(){
 		List<Ticket> tk = (List<Ticket>)ticketRepo.findAll(); 
 		return tk;
@@ -27,6 +25,28 @@ public class TicketService {
 	public Optional<Ticket> getTicket_No(String id){
 		return ticketRepo.findById(id);
 	
-	
 }
+	
+	
+// inserting ticket
+	public void addTicket(Ticket e) {
+		ticketRepo.save(e);
+	}
+	
+		
+// updating ticket by id
+		public void updateTicket(Ticket tk, String id){
+		if(id == tk.getTicket_No()) {
+			ticketRepo.save(tk);
+			}
+		}
+			
+	
+	
+	
+	
+	
+	
+	
+	
 }

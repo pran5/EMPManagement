@@ -24,6 +24,22 @@ public class ResourcerequestService {
 			public Optional<Resourcerequests> getRR_Id(String id){
 				return resourceRepo.findById(id);
 			}
-	
+ // inserting resourcerequests
+			public void addResourcerequests(Resourcerequests e) {
+				resourceRepo.save(e);
+			}
+			
+// updating resourcerequests by id
+			public void updateResourcerequests(Resourcerequests Rreq, String id){
+			if(id == Rreq.getRR_Id()) {
+				resourceRepo.save(Rreq);
+				}
+			}
+
+			
+			
+			
+			
+			
 
 }

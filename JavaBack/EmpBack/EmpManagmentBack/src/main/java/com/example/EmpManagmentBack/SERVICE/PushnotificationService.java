@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import com.example.EmpManagmentBack.Model.Pushnotification;
 
 import com.example.EmpManagmentBack.REPO.PushRepo;
@@ -28,7 +26,19 @@ public class PushnotificationService {
 				return pushRepo.findById(id);
 			}
 			
-	
+ // inserting Pushnotification
+			public void addPushnotification(Pushnotification e) {
+				pushRepo.save(e);
+			}
+			
+			
+// updating Pushnotification by id
+			public void updatePushnotification(Pushnotification pus, String id){
+			if(id == pus.getPN_No()) {
+				pushRepo.save(pus);
+				}
+			}
+							
 	
 	
 	
