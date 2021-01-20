@@ -206,8 +206,95 @@ public class RControler {
 	 	  	
 	 	  	
 
-	 	  	
-
+	 			  	
+// inserting employee
+		 		 	  		@PostMapping("/employees_B")
+		 		 	  		public void addEmployees(@RequestBody Employee employee){
+		 		 	  			employeeService.addEmployee(employee);
+		 		 	  		}
+		 		 	 
+		
+		
+			 			  	
+// inserting manager
+			@PostMapping("/manager_B")
+		 	public void addManager(@RequestBody Manager manager){
+				managerService.addManager(manager);
+		 		 		}
+		 		 	  			 		 	 		
+		
+		
+	 		 
+//  inserting Team
+	 		 	  		@PostMapping("/team_B")
+	 		 	  		public void addTeam(@RequestBody Team team){
+	 		 	  		teamService.addTeam(team);
+	 		 	  		}
+	 		 	  
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  		
+	 		 	  	
+	 		 	  /* inserting employee
+	 		 	  		@PostMapping("/employees_B")
+	 		 	  		public void addEmployees(@RequestBody Employee employee){
+	 		 	  			employeeService.addEmployee(employee);
+	 		 	  		}
+	 		 	  */
+	 		 	  		
+	 		 	  		
+	 		 	  	
+	 		 	  /* inserting employee
+	 		 	  		@PostMapping("/employees_B")
+	 		 	  		public void addEmployees(@RequestBody Employee employee){
+	 		 	  			employeeService.addEmployee(employee);
+	 		 	  		}
+	 		 	  */
+	 		 	  		
+	 		 	  		
+	 		 	  	
+	 		 	  /* inserting employee
+	 		 	  		@PostMapping("/employees_B")
+	 		 	  		public void addEmployees(@RequestBody Employee employee){
+	 		 	  			employeeService.addEmployee(employee);
+	 		 	  		}
+	 		 	  */
+	 		 	  		
+	 		 	  		
+	 		 	  	
+	 		 	  /* inserting employee
+	 		 	  		@PostMapping("/employees_B")
+	 		 	  		public void addEmployees(@RequestBody Employee employee){
+	 		 	  			employeeService.addEmployee(employee);
+	 		 	  		}
+	 		 	  */
+	 		 	  		
+	 		 	  		
+	 		 	  	
+	 		 	  /* inserting employee
+	 		 	  		@PostMapping("/employees_B")
+	 		 	  		public void addEmployees(@RequestBody Employee employee){
+	 		 	  			employeeService.addEmployee(employee);
+	 		 	  		}
+	 		 	  */
+	 		 	  		
+	 		 	  		
+	 		 	  		
 		
 		
 		
@@ -217,12 +304,18 @@ public class RControler {
 		
 		
 		
-		// inserting employee
-		@PostMapping("/employees_B")
-		public void addEmployees(@RequestBody Employee employee){
-			employeeService.addEmployee(employee);
-		}
-
+		
+		
+//*****************************************************************************************************************************//		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//updating employee by id
 		@PostMapping("/employees/{id}_C")
 		public void updateEmployee(@RequestBody Employee e, @RequestBody String id){

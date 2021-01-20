@@ -31,28 +31,28 @@ public class EmployeeService {
 		}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	   // inserting employee
+	 // inserting employee
 		public void addEmployee(Employee e) {
 			employeeRepository.save(e);
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	  
 		
 		// updating employee by id
 		public void updateEmployee(Employee emp, String id){

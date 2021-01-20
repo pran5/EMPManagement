@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import com.example.EmpManagmentBack.Model.Team;
 import com.example.EmpManagmentBack.REPO.TeamRepo;
 
@@ -26,4 +24,23 @@ public class TeamService {
 		public Optional<Team> getTeam_Id(int id){
 			return TeamRepository.findById(id);
 		}
+		
+    // inserting employee
+			public void addTeam(Team e) {
+				TeamRepository.save(e);
+			}
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }
