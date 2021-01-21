@@ -34,10 +34,11 @@ public class LeavereqService {
 			}
 			
 // updating Leaverequests by id
-			public void updateLeaverequests(Leaverequests Lreq, String id){
-			if(id == Lreq.getLRequest_Id()) {
-				leavereqRepo.save(Lreq);
-				}
+			public Leaverequests updateLeaverequests(Leaverequests lr){
+			
+				leavereqRepo.save(lr);
+				return lr;
+				
 			}
 			
 			

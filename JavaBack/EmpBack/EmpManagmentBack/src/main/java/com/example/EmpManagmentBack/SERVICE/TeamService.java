@@ -31,10 +31,11 @@ public class TeamService {
 			}
 				
 	// updating Team by id
-			public void updateTeam(Team tm, int id){
-			if(id == tm.getTeam_Id()) {
-				TeamRepository.save(tm);
-				}
+			public Team updateTeam(Team id){
+			 
+				TeamRepository.save(id);
+				return id;
+				
 			}
 					
 		

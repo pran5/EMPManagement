@@ -31,10 +31,11 @@ public class ProjectService {
 			
 			
 // updating Project by id
-			public void updateProject(Project pr, String id){
-			if(id == pr.getProject_Id()) {
-				projectRepo.save(pr);
-				}
+			public Project updateProject( Project pp){
+		
+				projectRepo.save(pp);
+				return pp;
+				
 			}		
 			
 		

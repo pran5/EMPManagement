@@ -30,10 +30,10 @@ public class ResourcerequestService {
 			}
 			
 // updating resourcerequests by id
-			public void updateResourcerequests(Resourcerequests Rreq, String id){
-			if(id == Rreq.getRR_Id()) {
-				resourceRepo.save(Rreq);
-				}
+			public Resourcerequests updateResourcerequests( Resourcerequests req){
+			
+				resourceRepo.save(req);
+				return req;
 			}
 
 			

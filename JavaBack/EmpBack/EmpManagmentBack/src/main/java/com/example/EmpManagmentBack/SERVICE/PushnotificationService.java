@@ -33,10 +33,10 @@ public class PushnotificationService {
 			
 			
 // updating Pushnotification by id
-			public void updatePushnotification(Pushnotification pus, String id){
-			if(id == pus.getPN_No()) {
+			public Pushnotification updatePushnotification( Pushnotification pus){
+			
 				pushRepo.save(pus);
-				}
+				return pus;
 			}
 							
 	

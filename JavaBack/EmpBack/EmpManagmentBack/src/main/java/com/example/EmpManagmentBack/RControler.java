@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.EmpManagmentBack.Model.Department;
 import com.example.EmpManagmentBack.Model.Employee;
 import com.example.EmpManagmentBack.Model.Leaverequests;
 import com.example.EmpManagmentBack.Model.Manager;
@@ -22,6 +26,7 @@ import com.example.EmpManagmentBack.Model.Pushnotification;
 import com.example.EmpManagmentBack.Model.Resourcerequests;
 import com.example.EmpManagmentBack.Model.Team;
 import com.example.EmpManagmentBack.Model.Ticket;
+import com.example.EmpManagmentBack.SERVICE.DepartmentServices;
 import com.example.EmpManagmentBack.SERVICE.EmployeeService;
 import com.example.EmpManagmentBack.SERVICE.LeavereqService;
 import com.example.EmpManagmentBack.SERVICE.ManagerService;
@@ -64,7 +69,9 @@ public class RControler {
 	@Autowired
 	private LeavereqService leaverequests;
 	
-	
+
+	@Autowired
+	private DepartmentServices ddepartmentServices;
 	
 	
 	
@@ -275,57 +282,64 @@ public class RControler {
 	 		 	  		
 
 //updating employee by id
-	 		@PutMapping("/employees/{id}_C")
-	 		public void updateEmployee(@RequestBody Employee e, @RequestBody String id){
-			employeeService.updateEmployee(e, id);
+	 		@PutMapping("/employees_C")
+	 		public Employee updateEmployee(@RequestBody Employee e){
+			employeeService.updateEmployee(e);
+			return e;
 		} 	  		
 	 		 	  		
 	 		
 //updating manager by id
-	         @PostMapping("/manager/{id}_C")
-	 		 public void updateManager(@RequestBody Manager e, @RequestBody String id){
-	 		 managerService.updateManager(e, id);
+	 		@PutMapping("/manager_C")
+	 		 public Manager  updateManager( @RequestBody Manager e){
+	 		 managerService.updateManager(e);
+	 		return e;
 	 		 			} 		 		
-	 		
+	 		 		
 //updating Team by id
-	 		@PostMapping("/Team/{id}_C")
-	 		public void updateTeam(@RequestBody Team e, @RequestBody int id){
-	 	 	teamService.updateTeam(e, id);
+	 		@PutMapping("/Team_C")
+	 		public Team updateTeam( @RequestBody Team id){
+	 	 	teamService.updateTeam(id);
+	 	 	return id;
 	 	 			 			}  		
 	 	
+ 		
 //updating ticket by id
-			@PostMapping("/ticket/{id}_C")
-	  		public void updateTicket(@RequestBody Ticket e, @RequestBody String id){
-			ticketService.updateTicket(e, id);
+	 		@PutMapping("/ticket_C")
+	  		public Ticket updateTicket( @RequestBody Ticket t){
+			ticketService.updateTicket(t);
+			return t;
 	 			} 	  	 		         
 	         
  		 	
-//updating pushnotification by id
-           @PostMapping("/pushnotification/{id}_C")
-           public void updatePushnotification(@RequestBody Pushnotification e, @RequestBody String id){
-           pushnotificationService.updatePushnotification(e, id);
- 			} 	 		         
-	         
-	         
-//updating Resourcerequest by id
-      	 @PostMapping("/resourcerequest/{id}_C")
-      	 public void updateResourcerequests(@RequestBody Resourcerequests e, @RequestBody String id){
-      	 resourcerequestService.updateResourcerequests(e, id);
-      	 			} 	 	         
-	         
-	         
-//updating Project by id
-    	 @PostMapping("/project/{id}_C")
-    	 public void updateProject(@RequestBody Project e, @RequestBody String id){
-    	 projectService.updateProject(e, id);
-    	 			} 	         
-	         
 
-	 	
+//updating pushnotification by id
+	 		@PutMapping("/pushnotification_C")
+           public Pushnotification updatePushnotification( @RequestBody Pushnotification pu){
+           pushnotificationService.updatePushnotification(pu);
+           return pu;
+ 			} 	 		         
+	
+                  
+//updating Resourcerequest by id
+	 		@PutMapping("/resourcerequest_C")
+      	 public Resourcerequests updateResourcerequests( @RequestBody Resourcerequests rq){
+      	 resourcerequestService.updateResourcerequests(rq);
+      	 return rq;
+      	 			} 	 	         
+	  
+//updating Project by id
+	 		@PutMapping("/project_C")
+    	 public Project updateProject(@RequestBody Project pr){
+    	 projectService.updateProject(pr);
+    	 return pr;
+    	 			} 	         
+	        
 //updating Leaverequests by id
-    	 @GetMapping("/leaverequests/{id}_C")
-	 public void updateLeaverequests(@RequestParam Leaverequests e, @RequestParam String id){
-	 leaverequests.updateLeaverequests(e, id);
+	 		@PutMapping("/leaverequests_C")
+	 public Leaverequests updateLeaverequests( @RequestBody Leaverequests leav){
+	 leaverequests.updateLeaverequests(leav);
+	 return leav;
 	 			} 	  	 		
 	 			 		 		 		 		 	  		
 	 			 		 		 		 		 	  			 	
@@ -337,14 +351,43 @@ public class RControler {
 	 		 	 			 		
 		
 //*****************************************************************************************************************************//		
-		
-		
-		
-		
-		
-		
-		
-		
+
+ 		
+ 		
+    	// deleting employee by id
+    		@GetMapping("employees/{id}")
+    		public int deleteEmployeeByID( @PathVariable String id){
+    			
+    			employeeService.deleteEmployeeByID(id);
+				return 0;
+					
+    		}
+ 		
+    		// deleting employee by id
+    		@DeleteMapping("Department/{id}_D")
+    		public void deleteDepartmentByID( @PathVariable String id){
+    			ddepartmentServices.deleteDepartmentByID(id);
+			
+					
+    		}
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
 		
 		
 		// deleting all employees
@@ -353,30 +396,17 @@ public class RControler {
 			employeeService.deleteAllEmployees();
 		}
 
-		// deleting employee by id
-		@GetMapping("employees/{id}_E")
-		public void deleteEmployeeByID(@RequestParam Employee e, @RequestParam String id){
-			employeeService.deleteEmployeeByID(id);
-		}
 
 		
-		
-		
-		
-		
-		
-	/*	// extra
-		// updating/ patching employee by id
-		@PostMapping("employees/{id}_F")
-		public void patchEmployeeByID(@RequestBody Employee e, @RequestBody String id) {
+	// updating/ patching employee by id
+		@PatchMapping("employees/{id}_F")
+		public void patchEmployeeByID(@RequestBody  Employee e, @PathVariable String id) {
 			employeeService.patchEmployee(e, id);
 		}
-	*/
+	
 
 	
-<<<<<<< HEAD
-}
-=======
+
 	
 	
 	
@@ -384,4 +414,4 @@ public class RControler {
 	
 	
 }
->>>>>>> nikhil-branch
+

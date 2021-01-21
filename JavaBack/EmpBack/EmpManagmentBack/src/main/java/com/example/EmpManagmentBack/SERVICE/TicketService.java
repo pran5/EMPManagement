@@ -35,10 +35,11 @@ public class TicketService {
 	
 		
 // updating ticket by id
-		public void updateTicket(Ticket tk, String id){
-		if(id == tk.getTicket_No()) {
+		public Ticket updateTicket(Ticket tk){
+		
 			ticketRepo.save(tk);
-			}
+			return tk;
+		
 		}
 			
 	

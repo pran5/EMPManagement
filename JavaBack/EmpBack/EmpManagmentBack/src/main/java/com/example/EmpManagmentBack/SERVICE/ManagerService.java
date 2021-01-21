@@ -32,19 +32,15 @@ public class ManagerService {
 	}
 	
 // updating Manager by id
-		public void updateManager(Manager mng, String id){
-		if(id == mng.getM_Id()) {
-			managerRepo.save(mng);
-			}
+		public Manager updateManager( Manager id) {
+		//if(id == mng.getM_Id()) 
+		
+			return managerRepo.save(id);
+			
 		}
 			
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }

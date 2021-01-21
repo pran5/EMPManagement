@@ -36,11 +36,18 @@ public class EmployeeService {
 			employeeRepository.save(e);
 		}
 		
+		
+		
+		
+		
+		
 	// updating employee by id
-	public void updateEmployee(Employee emp, String id){
-	if(id == emp.getEmp_Id()) {
+	public Employee updateEmployee(Employee emp){
+//	if(id == emp.getEmp_Id())
+		
 	employeeRepository.save(emp);
-		}
+	return  emp;
+		
 	}
 		
 		
@@ -59,16 +66,46 @@ public class EmployeeService {
 		
 //***********************************************************************************************************************************************//
 		
+	
+	// deleting employee by id
+	public void deleteEmployeeByID(String id){
+		
+		employeeRepository.deleteById(id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 		// deleting all employees
 		public void deleteAllEmployees(){
 			employeeRepository.deleteAll();
 		}
 		
-		// deleting employee by id
-		public void deleteEmployeeByID(String id){
-			employeeRepository.deleteById(id);
-		}
+		
 		
 		//patching/updating employee by id
 		public void patchEmployee(Employee emp, String id) {
