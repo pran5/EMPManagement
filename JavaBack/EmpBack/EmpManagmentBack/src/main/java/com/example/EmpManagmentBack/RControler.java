@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -274,7 +275,7 @@ public class RControler {
 	 		 	  		
 
 //updating employee by id
-	 		@PostMapping("/employees/{id}_C")
+	 		@PutMapping("/employees/{id}_C")
 	 		public void updateEmployee(@RequestBody Employee e, @RequestBody String id){
 			employeeService.updateEmployee(e, id);
 		} 	  		
@@ -322,8 +323,8 @@ public class RControler {
 
 	 	
 //updating Leaverequests by id
-	 @PostMapping("/leaverequests/{id}_C")
-	 public void updateLeaverequests(@RequestBody Leaverequests e, @RequestBody String id){
+    	 @GetMapping("/leaverequests/{id}_C")
+	 public void updateLeaverequests(@RequestParam Leaverequests e, @RequestParam String id){
 	 leaverequests.updateLeaverequests(e, id);
 	 			} 	  	 		
 	 			 		 		 		 		 	  		
@@ -333,7 +334,7 @@ public class RControler {
 	 		 	  	
 	 		 	 
 	 		 	  		
-	 		 	 	 			 		
+	 		 	 			 		
 		
 //*****************************************************************************************************************************//		
 		
@@ -353,8 +354,8 @@ public class RControler {
 		}
 
 		// deleting employee by id
-		@PostMapping("employees/{id}_E")
-		public void deleteEmployeeByID(@RequestBody Employee e, @RequestBody String id){
+		@GetMapping("employees/{id}_E")
+		public void deleteEmployeeByID(@RequestParam Employee e, @RequestParam String id){
 			employeeService.deleteEmployeeByID(id);
 		}
 
