@@ -374,4 +374,14 @@ public class RControler {
 	*/
 
 	
+<<<<<<< HEAD
 }
+=======
+	
+	
+	
+	
+	
+	
+}
+>>>>>>> nikhil-branch

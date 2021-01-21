@@ -1,0 +1,49 @@
+<div>
+    <!-- <nav class="main-menu" [ngClass]="status ? 'hide' :'show'" style="z-index:1;"> -->
+    <nav class="main-menu" style="z-index:4;">
+      <div class="main-menu-inner">
+        <ul style="padding-left:0px">
+          <li>
+            <div class="nav-item nav-icon">
+              <a routerLink ="editemp" class="nav-item nav-icon nav-inner ">
+                <img src="../../assets/images/lg.png" height="30px" width="20px"
+                  style="position:fixed;left:30px;top:30px;transform: scale(1.5)">
+              </a>
+            </div>
+          </li> <br>
+         
+          <li routerLink ="editemp" routerLinkActive="active-nav" class="side-icon">
+            <i class="fas fa-users" title="Edit Employee"></i>
+          </li>
+          <li routerLink ="project" routerLinkActive="active-nav" class="side-icon">
+            <i class="fas fa-code-branch" title="Project"></i>
+          </li>
+          <li routerLink ="notification" routerLinkActive="active-nav" class="side-icon">
+            <i class="far fa-bell" title="Notification"></i>
+          </li>
+          <li  routerLink ="leave" routerLinkActive="active-nav" class="side-icon">
+            <i class="fas fa-running" title="Leave Requests"></i>
+          </li>
+          <li routerLink ="resource" routerLinkActive="active-nav" class="side-icon">
+            <i class="fas fa-tools" title="Resource Request"></i>
+          </li>
+          <!-- <li [routerLink]="['/home/customer-level','fuzzy analysis']" routerLinkActive="active-nav" class="side-icon">
+            <i class="sl sl-icon-eye" title="fuzzy analysis"></i>
+          </li>
+          <li [routerLink]="['/home/customer-level','rule discovery']" routerLinkActive="active-nav" class="side-icon">
+            <i class="sl sl-icon-magnifier" title="rule descovery"></i>
+          </li>
+          <li [routerLink]="['/home/customer-level','anomaly detection']" routerLinkActive="active-nav" class="side-icon">
+            <i class="sl sl-icon-ban"></i>
+          </li>
+          <li [routerLink]="['/home/customer-level','business-vallidation']" routerLinkActive="active-nav" class="side-icon">
+            <i class="sl sl-icon-wallet"></i>
+          </li>
+          <li [routerLink]="['/home/customer-level','customer segment']" routerLinkActive="active-nav" class="side-icon">
+            <i class="sl sl-icon-puzzle " title="data-rule"></i>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+    <!-- <app-header (closed)="hideDiv()" style="position:fixed;left:25px;bottom:20px;z-index: 10;" [opt]="'ffft'"  class="i6"></app-header> -->
+  </div>
