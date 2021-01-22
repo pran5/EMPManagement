@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule, NbFormFieldModule, NbIconComponent, NbIconModule, NbSelectComponent, NbSelectModule, NbDatepickerModule } from '@nebular/theme';
+import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule, NbFormFieldModule, NbIconComponent, NbIconModule, NbSelectComponent, NbSelectModule, NbDatepickerModule, NbStepperModule, NbTabsetModule, NbAccordionModule, NbProgressBarModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule  } from '@nebular/theme';
 import { AdminComponent } from './admin/admin.component';
@@ -19,6 +19,11 @@ import { ProjectComponent } from './admin/project/project.component';
 import { AnotificationComponent } from './admin/anotification/anotification.component';
 import { AleaveComponent } from './admin/aleave/aleave.component';
 import { AresourceComponent } from './admin/aresource/aresource.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChartsModule } from 'ng2-charts';
+
+ 
+
 
 
 
@@ -54,8 +59,14 @@ import { AresourceComponent } from './admin/aresource/aresource.component';
     NbUserModule,
     NbFormFieldModule,
     NbSelectModule,
-    NbDatepickerModule.forRoot()
-
+    NbDatepickerModule.forRoot(),
+    NbStepperModule,
+    NbTabsetModule,
+    NbAccordionModule,
+    BrowserAnimationsModule,
+    ChartsModule,
+    NbProgressBarModule,
+    NbUserModule
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent]

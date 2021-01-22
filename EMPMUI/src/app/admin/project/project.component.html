@@ -1,1 +1,255 @@
-<p>project works!</p>
+<div class="column " >
+
+    <nb-card accent="info">
+       
+        <nb-card-body>
+            <nb-tabset fullWidth>
+                <nb-tab tabTitle="New Project">
+                    <div class="column" style="height: 300px;">
+                    <nb-stepper orientation="vertical">
+                        <nb-step label="Add Client Details">
+                          <div class="columns"  style="z-index: -1;">
+                            
+                                <div class="column is-4">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Clent ID (Ex. C001)">
+                                </div>
+                                <div class="column is-4">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Full Name">
+                                </div>
+                                <div class="column is-4">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Mobile No.">
+                                </div>
+                            
+                           
+                          </div>
+                          <div class="columns"  style="z-index: -1;">
+                            
+                            <div class="column is-4">
+                                <input type="text" nbInput fullWidth status="primary" placeholder="Email">
+                            </div>
+                            <div class="column is-4">
+                                <input type="text" nbInput fullWidth status="primary" placeholder="PAN No.">
+                            </div>
+                            
+                        
+                       
+                      </div>
+                      <div class="columns"  style="z-index: -1;">
+                            
+                        <div class="column is-2 is-offset-10" style="margin-top: 90px;">
+                            <button nbButton nbStepperNext>next</button>
+                        </div>
+                        
+                    
+                   
+                  </div>
+                         
+                          
+                          
+                        </nb-step>
+                        <nb-step label="Add Project Details">
+                            <div class="columns"  style="z-index: -1;">
+                            
+                                <div class="column is-4">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Project ID (Ex. P001)">
+                                </div>
+                                <div class="column is-4">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Project Name">
+                                </div>
+                                <div class="column is-4">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Client ID">
+                                </div>
+                            
+                           
+                          </div>
+                          <div class="columns"  style="z-index: -1;">
+                            
+                            
+                            <div class="column is-6">
+                            
+                                <textarea nbInput fullWidth placeholder="Technology will be used"status="primary" ></textarea>
+                               
+                            </div>
+                            <div class="column is-6">
+                                
+                                <textarea nbInput fullWidth placeholder="Project Description"status="primary" ></textarea>
+                  
+                            </div>
+                            
+                        
+                       
+                      </div>
+                      <div class="columns"  style="z-index: -1;">
+                            
+                        <div class="column is-4">
+                            <input type="text" nbInput fullWidth status="primary" placeholder="Assigned Manager ID">
+                        </div>
+                      
+                        <div class="column is-4">
+                            <input type="text" nbInput fullWidth status="primary" placeholder="Expacted Duration in Hr.">
+                        </div>
+
+                        <div class="column is-3">
+                            <input nbInput placeholder="Start Date" status="primary" [nbDatepicker]="dateTimePicker">
+                            <nb-datepicker #dateTimePicker></nb-datepicker>
+                        </div>
+                        
+                      
+                    
+                   
+                  </div>
+                      <div class="columns"  style="z-index: -1;">
+                            
+                        <div class="column is-2 is-offset-10">
+                            <button nbButton nbStepperPrevious>prev</button>
+                        </div>
+                        
+                    
+                   
+                  </div>
+                          
+                         
+                          
+                          
+                        </nb-step>
+                       
+                        
+                      </nb-stepper>
+                    </div>
+                </nb-tab>
+                <nb-tab tabTitle="Teams on Project">
+
+
+                    <nb-accordion multi>
+                        <nb-accordion-item>
+                          <nb-accordion-item-header>
+                            Project name 1
+                          </nb-accordion-item-header>
+                          <nb-accordion-item-body>
+                            <table class="table is-striped is-hoverable">
+                                <tbody>
+                                    <tr>
+                                        <th>Employee Id</th>
+                                        <th>Name</th>
+                                        <th>Roll</th>
+                                        <th>Other Project</th>
+                                        <th>Performance</th>
+                                    </tr>
+                                    <tr >
+                                       <td>E001</td>
+                                       <td>Nikhil Bhati</td>
+                                       <td>Developer</td>
+                                       <td>2</td>
+                                       <td><div class="column is-8 " style="padding: 0;">
+                                        <nb-progress-bar [value]="80" status="primary" [displayValue]="true"></nb-progress-bar>
+                                    </div>
+                                       </td>
+                                    </tr> 
+                                </tbody>
+                            </table>
+                          </nb-accordion-item-body>
+                        </nb-accordion-item>
+                      
+                        <nb-accordion-item>
+                          <nb-accordion-item-header>
+                            Project name 2
+                          </nb-accordion-item-header>
+                          <nb-accordion-item-body>
+                            <table class="table is-striped is-hoverable">
+                                <tbody>
+                                    <tr>
+                                        <th>Employee Id</th>
+                                        <th>Name</th>
+                                        <th>Roll</th>
+                                        <th>Other Project</th>
+                                        <th>Performance</th>
+                                    </tr>
+                                    <tr>
+                                       <td>E001</td>
+                                       <td>Nikhil Bhati</td>
+                                       <td>Developer</td>
+                                       <td>2</td>
+                                       <td> <div class="column is-8 " style="padding: 0;">
+                                        <nb-progress-bar [value]="80" status="primary" [displayValue]="true"></nb-progress-bar>
+                                    </div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>E002</td>
+                                        <td>Amit Mishra</td>
+                                        <td>Tester</td>
+                                        <td>1</td>
+                                        <td> <div class="column is-8 " style="padding: 0;">
+                                            <nb-progress-bar [value]="60" status="primary" [displayValue]="true"></nb-progress-bar>
+                                        </div></td>
+                                     </tr>
+                                </tbody>
+                            </table>
+                          </nb-accordion-item-body>
+                        </nb-accordion-item>
+                      
+                        
+                      </nb-accordion>
+                   
+
+
+                </nb-tab>
+                <nb-tab tabTitle="Project Progress">
+                   
+                   <div class="columns is-multiline" >
+                       <div class="column is-3 card" style="margin-top: 20px;">
+                           <div class="columns is-centered" style="margin-top: 30px;">
+                        <nb-user size="large"
+                        name="Judo Bank"
+                        
+                        onlyPicture>
+                        </nb-user>
+
+                        </div>
+                        <div class="columns is-centered" style="margin-top: 10px;"><h4>Judo Bank</h4></div>
+                        <div class="columns is-centered" style="margin-top: -10%;"><h6>Manager Id: M002</h6></div>
+                        <div class="columns is-centered" > 
+                            <div class=" column is-10" style="margin-bottom: 20px;"><nb-progress-bar [value]="80" status="primary" [displayValue]="true"></nb-progress-bar>
+                            </div>
+                        </div>
+                       </div>
+                       <div class="column is-3 card is-offset-1" style="margin-top: 20px;">
+                        <div class="columns is-centered" style="margin-top: 30px;">
+                            <nb-user size="large"
+                            name="AID School"
+                            
+                            onlyPicture>
+                            </nb-user>
+    
+                            </div>
+                            <div class="columns is-centered" style="margin-top: 10px;"><h4>AID School</h4></div>
+                            <div class="columns is-centered" style="margin-top: -10%;"><h6>Manager Id: M003</h6></div>
+                            <div class="columns is-centered" > 
+                                <div class=" column is-10" style="margin-bottom: 20px;"><nb-progress-bar [value]="66" status="primary" [displayValue]="true"></nb-progress-bar>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="column is-3 card is-offset-1" style="margin-top: 20px;">
+                        <div class="columns is-centered" style="margin-top: 30px;">
+                            <nb-user size="large"
+                            name="Apolo Hospital"
+                            
+                            onlyPicture>
+                            </nb-user>
+    
+                            </div>
+                            <div class="columns is-centered" style="margin-top: 10px;"><h4>Apolo Hospital</h4></div>
+                            <div class="columns is-centered" style="margin-top: -10%;"><h6>Manager Id: M001</h6></div>
+                            <div class="columns is-centered" > 
+                                <div class=" column is-10" style="margin-bottom: 20px;"><nb-progress-bar [value]="72" status="primary" [displayValue]="true"></nb-progress-bar>
+                                </div>
+                            </div>
+                       </div>
+                      
+                       
+                   </div>
+                  </nb-tab>
+              </nb-tabset>
+        </nb-card-body>
+        
+        </nb-card>
+        </div>
