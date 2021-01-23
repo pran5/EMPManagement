@@ -40,7 +40,13 @@ public class ManagerService {
 		}
 			
 	
-
+		
+		// deleting Manager by id
+			public void deleteManagerByID(String id){
+				managerRepo.deleteman(id);
+				
+			
+			}
 	
 	
 }

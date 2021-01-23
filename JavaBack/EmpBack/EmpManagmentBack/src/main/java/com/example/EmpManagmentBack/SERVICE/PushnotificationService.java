@@ -39,7 +39,12 @@ public class PushnotificationService {
 				return pus;
 			}
 							
-	
+			
+			// deleting all Pushnotification
+			public void deleteAllPushnotification(){
+				pushRepo.deleteAll();
+			}
+			
 	
 	
 

@@ -14,7 +14,7 @@ public class Client {
 	private String  Client_Id;
 	
 	
-	
+
 	private String Client_Email,client_mobile_no,Client_Name,Client_PAN;
 
 

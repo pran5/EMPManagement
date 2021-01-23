@@ -13,6 +13,7 @@ import com.example.EmpManagmentBack.REPO.EmpRepo;
 
 
 
+
 @Service
 public class EmployeeService {
 
@@ -42,10 +43,9 @@ public class EmployeeService {
 		
 		
 	// updating employee by id
-	public Employee updateEmployee(Employee emp){
+	public Employee updateEmployee(Employee emp){	
 //	if(id == emp.getEmp_Id())
-		
-	employeeRepository.save(emp);
+		employeeRepository.save(emp);
 	return  emp;
 		
 	}
@@ -65,17 +65,17 @@ public class EmployeeService {
 		
 		
 //***********************************************************************************************************************************************//
-		
-	
+
 	// deleting employee by id
-	public void deleteEmployeeByID(String id){
+	 public void deleteEmployeeByID(String id){
+		 
+		//@Query(value="delete from employee b where b.Emp_Id=?1", nativeQuery=true)
 		
+		// @Query(value="select * from employee b where b.Emp_Id=?1", nativeQuery=true)
+			
 		employeeRepository.deleteById(id);
 	}
-	
-	
-	
-	
+		
 	
 	
 	

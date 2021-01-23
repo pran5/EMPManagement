@@ -1,23 +1,20 @@
 package com.example.EmpManagmentBack;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.EmpManagmentBack.Model.Department;
+import com.example.EmpManagmentBack.Model.Client;
 import com.example.EmpManagmentBack.Model.Employee;
 import com.example.EmpManagmentBack.Model.Leaverequests;
 import com.example.EmpManagmentBack.Model.Manager;
@@ -26,6 +23,8 @@ import com.example.EmpManagmentBack.Model.Pushnotification;
 import com.example.EmpManagmentBack.Model.Resourcerequests;
 import com.example.EmpManagmentBack.Model.Team;
 import com.example.EmpManagmentBack.Model.Ticket;
+import com.example.EmpManagmentBack.Model.test;
+import com.example.EmpManagmentBack.SERVICE.ClientService;
 import com.example.EmpManagmentBack.SERVICE.DepartmentServices;
 import com.example.EmpManagmentBack.SERVICE.EmployeeService;
 import com.example.EmpManagmentBack.SERVICE.LeavereqService;
@@ -37,11 +36,12 @@ import com.example.EmpManagmentBack.SERVICE.TeamService;
 import com.example.EmpManagmentBack.SERVICE.TicketService;
 
 
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController 
 
-@RestController
 public class RControler {
 
-	
+	List<List<Team>> t = new ArrayList<List<Team>>() ;
 	
 	@Autowired
 	private EmployeeService employeeService;
@@ -74,6 +74,8 @@ public class RControler {
 	private DepartmentServices ddepartmentServices;
 	
 	
+	@Autowired
+	private ClientService clientService;
 	
 	
 	
@@ -81,7 +83,6 @@ public class RControler {
 	
 	
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	
 	
 	
@@ -144,6 +145,54 @@ public class RControler {
 				return leaverequests.getAllLeaverequests();
 						}									
 				
+// displaying list of all Client
+				@GetMapping("/client")
+				public List<Client> getAllClient(){
+				return clientService.getAllClient();
+						}		
+				
+				
+				
+		//$$$$$$$$$$$$$$		
+				
+		@GetMapping("/projectexpnddata")
+				public test getAllProjectt(){
+			test testt = new test();
+			List<Team> t2;
+	
+				List<Project> p = projectService.getAllProject();
+				 System.out.println("hello----------------------------------");
+				 for(int i = 0; i < p.size(); i++) {
+			            System.out.println(p.get(i).getProject_M_Id());
+			            System.out.println("hello----------------------------------");
+			            t2=  teamService.getTeam_MId(p.get(i).getProject_M_Id());
+			            t.add(t2);
+			          
+			        }
+				 testt.setPp(p);
+				 testt.setTt(t);
+				 
+				
+				return testt;
+						}								
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 //************************************************************************************************************************************************************************//		
@@ -169,7 +218,12 @@ public class RControler {
 	 	  	@GetMapping("/Team/{id}_A")
 	 		public Optional<Team> getTeam_Id(@RequestParam int id){
 	 		return teamService.getTeam_Id(id);
-	 				}		
+	 				}	
+	//$$$$$$$$$$$$$$$$$$ 	  	
+	 	  	@GetMapping("/Team/{id}_B")
+	 		public List<Team> getTeam_MId(@RequestParam String id){
+	 		return teamService.getTeam_MId(id); 
+	 				}	
 	 		
 	 	  	
 	 	  	
@@ -218,6 +272,8 @@ public class RControler {
 // inserting employee
 		 		 	  		@PostMapping("/employees_B")
 		 		 	  		public void addEmployees(@RequestBody Employee employee){
+		 		 	  			
+		 		 	  		System.out.println("Jai shree Krishna" + employee.getEmp_Id());
 		 		 	  			employeeService.addEmployee(employee);
 		 		 	  		}
 		 		 	 
@@ -276,10 +332,18 @@ public class RControler {
 	 		 	 		 	  			leaverequests.addLeaverequests(leavereq);
 	 		 	 		 	  		}
 	 		 	 		 	  
-	 		 	 		 	  				
+//inserting Client
+ 		 	 		 	  		@PostMapping("/client_B")
+ 		 	 		 	  		public void addClient(@RequestBody Client sli){
+ 		 	 		 	  			System.out.println(sli.getClient_Id());
+ 		 	 		 	  		clientService.addClient(sli);
+ 		 	 		 	  		}
+ 		 	 		 	    				
 //************************************************************************************************************************************************************// 		 	  		
 	 		 	  		
-	 		 	  		
+	 		 	  	
+	 		 	 		 	  		
+	 		 	 		 	  		
 
 //updating employee by id
 	 		@PutMapping("/employees_C")
@@ -344,26 +408,52 @@ public class RControler {
 	 			 		 		 		 		 	  		
 	 			 		 		 		 		 	  			 	
 	 		 	  	
-	 		 	  		
-	 		 	  	
-	 		 	 
-	 		 	  		
-	 		 	 			 		
-		
+	
+	
 //*****************************************************************************************************************************//		
 
- 		
- 		
-    	// deleting employee by id
-    		@GetMapping("employees/{id}")
-    		public int deleteEmployeeByID( @PathVariable String id){
-    			
-    			employeeService.deleteEmployeeByID(id);
-				return 0;
-					
-    		}
- 		
-    		// deleting employee by id
+// working delete with client
+	 		@DeleteMapping("/clientaaaaa/{id}")
+	 		public String deleteClientByID(@PathVariable String id){
+	 			clientService.deleteClient(id);
+				return "okay gud";}
+				
+			
+	 		
+	 		
+	 		
+	 		
+	 		
+//Delete by id for employee	
+	 		
+	 		@DeleteMapping("/employees_d/{id}")
+	 		public String deleteEmployeeByID(@PathVariable String id){
+	 			employeeService.deleteEmployeeByID(id);
+				return "okay gud";}
+				
+	 		
+	 		
+	 		
+	 		
+	 		
+	 /*
+	 		@DeleteMapping("/delete/{id}")
+	 		public ResponseEntity<?> deleteEmployeeByID(@PathVariable String id){
+	 			String status = employeeService.deleteEmployeeByID(id);
+	 			if(status==null)
+	 			{
+	 				return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	 			}
+	 			return new ResponseEntity<Void>(HttpStatus.OK);
+	 			
+	 		}*/
+	 		
+	 		
+	 		
+	 		
+	 		
+	 		
+	/*// deleting employee by id
     		@DeleteMapping("Department/{id}_D")
     		public void deleteDepartmentByID( @PathVariable String id){
     			ddepartmentServices.deleteDepartmentByID(id);
@@ -373,27 +463,31 @@ public class RControler {
  		
  		
  		
+ 		*/
  		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
+
  		
  		
 		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+   /* 		
 		
 		// deleting all employees
-		@PostMapping("/employees_D")
-		public void deleteAllEmployees(){
-			employeeService.deleteAllEmployees();
+	 		@DeleteMapping("/pushnotification_D")
+		public void deleteAllPushnotification(){
+			pushnotificationService.deleteAllPushnotification();
 		}
 
 
@@ -402,15 +496,26 @@ public class RControler {
 		@PatchMapping("employees/{id}_F")
 		public void patchEmployeeByID(@RequestBody  Employee e, @PathVariable String id) {
 			employeeService.patchEmployee(e, id);
-		}
+		}*/
 	
+	/*	@Autowired
+		private EmpRepo employeeRepository;
+	
+		 @RequestMapping(value = "/employeeDelete", method = RequestMethod.GET )
+		    public String delete(@RequestParam("id") String id) {
+			 employeeRepository.deleteById(id);
+		        return "JAI SHREE ";
+		    }
 
-	
 
+*/
 	
 	
 	
-	
+		
+		
+		
+		
 	
 	
 }

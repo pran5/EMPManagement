@@ -25,6 +25,10 @@ public class TeamService {
 			return TeamRepository.findById(id);
 		}
 		
+		public List<Team> getTeam_MId(String id){
+			return TeamRepository.findM(id);
+		}
+		
     // inserting Team
 			public void addTeam(Team e) {
 				TeamRepository.save(e);
