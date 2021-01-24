@@ -11,13 +11,13 @@
                           <div class="columns"  style="z-index: -1;">
                             
                                 <div class="column is-4">
-                                    <input type="text" nbInput fullWidth status="primary" placeholder="Clent ID (Ex. C001)">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Clent ID (Ex. C001)" [(ngModel)]="client.client_Id">
                                 </div>
                                 <div class="column is-4">
-                                    <input type="text" nbInput fullWidth status="primary" placeholder="Full Name">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Full Name" [(ngModel)]="client.client_Name">
                                 </div>
                                 <div class="column is-4">
-                                    <input type="text" nbInput fullWidth status="primary" placeholder="Mobile No.">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Mobile No." [(ngModel)]="client.client_MobileNo">
                                 </div>
                             
                            
@@ -25,10 +25,10 @@
                           <div class="columns"  style="z-index: -1;">
                             
                             <div class="column is-4">
-                                <input type="text" nbInput fullWidth status="primary" placeholder="Email">
+                                <input type="text" nbInput fullWidth status="primary" placeholder="Email" [(ngModel)]="client.client_Email">
                             </div>
                             <div class="column is-4">
-                                <input type="text" nbInput fullWidth status="primary" placeholder="PAN No.">
+                                <input type="text" nbInput fullWidth status="primary" placeholder="PAN No." [(ngModel)]="client.client_PAN">
                             </div>
                             
                         
@@ -37,7 +37,7 @@
                       <div class="columns"  style="z-index: -1;">
                             
                         <div class="column is-2 is-offset-10" style="margin-top: 90px;">
-                            <button nbButton nbStepperNext>next</button>
+                            <button nbButton nbStepperNext (click)="addClient(client)">next</button>
                         </div>
                         
                     
@@ -51,13 +51,13 @@
                             <div class="columns"  style="z-index: -1;">
                             
                                 <div class="column is-4">
-                                    <input type="text" nbInput fullWidth status="primary" placeholder="Project ID (Ex. P001)">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Project ID (Ex. P001)" [(ngModel)]="project.project_Id">
                                 </div>
                                 <div class="column is-4">
-                                    <input type="text" nbInput fullWidth status="primary" placeholder="Project Name">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Project Name" [(ngModel)]="project.project_Name">
                                 </div>
                                 <div class="column is-4">
-                                    <input type="text" nbInput fullWidth status="primary" placeholder="Client ID">
+                                    <input type="text" nbInput fullWidth status="primary" placeholder="Client ID" [(ngModel)]="project.project_Client_Id">
                                 </div>
                             
                            
@@ -67,12 +67,12 @@
                             
                             <div class="column is-6">
                             
-                                <textarea nbInput fullWidth placeholder="Technology will be used"status="primary" ></textarea>
+                                <textarea nbInput fullWidth placeholder="Technology will be used"status="primary" [(ngModel)]="project.project_Technology"></textarea>
                                
                             </div>
                             <div class="column is-6">
                                 
-                                <textarea nbInput fullWidth placeholder="Project Description"status="primary" ></textarea>
+                                <textarea nbInput fullWidth placeholder="Project Description"status="primary" [(ngModel)]="project.project_Description"></textarea>
                   
                             </div>
                             
@@ -82,15 +82,15 @@
                       <div class="columns"  style="z-index: -1;">
                             
                         <div class="column is-4">
-                            <input type="text" nbInput fullWidth status="primary" placeholder="Assigned Manager ID">
+                            <input type="text" nbInput fullWidth status="primary" placeholder="Assigned Manager ID" [(ngModel)]="project.project_M_Id">
                         </div>
                       
                         <div class="column is-4">
-                            <input type="text" nbInput fullWidth status="primary" placeholder="Expacted Duration in Hr.">
+                            <input type="text" nbInput fullWidth status="primary" placeholder="Expacted Duration in Hr." [(ngModel)]="project.project_Duration">
                         </div>
 
                         <div class="column is-3">
-                            <input nbInput placeholder="Start Date" status="primary" [nbDatepicker]="dateTimePicker">
+                            <input nbInput placeholder="Start Date" status="primary" [nbDatepicker]="dateTimePicker" [(ngModel)]="project.project_Start_Date">
                             <nb-datepicker #dateTimePicker></nb-datepicker>
                         </div>
                         
@@ -100,8 +100,11 @@
                   </div>
                       <div class="columns"  style="z-index: -1;">
                             
-                        <div class="column is-2 is-offset-10">
-                            <button nbButton nbStepperPrevious>prev</button>
+                        <div class="column is-2 is-offset-8">
+                            <button nbButton nbStepperPrevious >prev</button>
+                        </div>
+                        <div class="column is-2">
+                            <button nbButton (click)="addProject(project)" >Submit</button>
                         </div>
                         
                     
@@ -121,9 +124,9 @@
 
 
                     <nb-accordion multi>
-                        <nb-accordion-item>
+                        <nb-accordion-item *ngFor ="let c of custom; index as i">
                           <nb-accordion-item-header>
-                            Project name 1
+                            {{c.projectName}}
                           </nb-accordion-item-header>
                           <nb-accordion-item-body>
                             <table class="table is-striped is-hoverable">
@@ -135,10 +138,10 @@
                                         <th>Other Project</th>
                                         <th>Performance</th>
                                     </tr>
-                                    <tr >
-                                       <td>E001</td>
-                                       <td>Nikhil Bhati</td>
-                                       <td>Developer</td>
+                                    <tr *ngFor ="let d of c.employeeName; index as j" >
+                                       <td>{{c.employeeId[j]}}</td>
+                                       <td>{{d}}</td>
+                                       <td>{{c.roll[j]}}</td>
                                        <td>2</td>
                                        <td><div class="column is-8 " style="padding: 0;">
                                         <nb-progress-bar [value]="80" status="primary" [displayValue]="true"></nb-progress-bar>
