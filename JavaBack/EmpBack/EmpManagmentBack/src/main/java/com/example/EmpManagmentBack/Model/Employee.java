@@ -1,5 +1,6 @@
 package com.example.EmpManagmentBack.Model;
 
+
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -13,9 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
-@Entity
-@Table(name="employee")
 
+
+
+
+
+@Entity(name="employee")
+@Table(name="employee")
 
 public class Employee {
 	
@@ -24,12 +29,12 @@ public class Employee {
 	private String  Emp_Id;
 	
 
+	
 
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Emp_Dept_Id", referencedColumnName = "Dept_Id",insertable = false, updatable = false)
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval=true)
+    @JoinColumn( name = "Emp_Dept_Id", referencedColumnName = "Dept_Id",insertable = false, updatable = false)
+
     private Department department;  
-	
-	
 	public Department getDepartment() {
 		return department;
 	}
@@ -41,7 +46,7 @@ public class Employee {
 	}
 
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL,  orphanRemoval=true)
     @JoinColumn(name = "Emp_Payroll", referencedColumnName = "Payroll_Id",insertable = false, updatable = false)
     private Payrolls payrolls;  
 	
@@ -57,6 +62,34 @@ public class Employee {
 	}
 
 
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -111,7 +144,7 @@ public class Employee {
 	}
 
 
-	public void setEmp_Email(String emp_Email) {
+	public void setEmp_Email(String emp_Email) { 
 		Emp_Email = emp_Email;
 	}
 
