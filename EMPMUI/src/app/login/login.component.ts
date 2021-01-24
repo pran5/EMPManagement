@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.e = new Emp();
     this.uname = "";
     this.pass = "";
-    this.msg = "";
+    this.msg = ""; 
     this.access = "o";
    }
 
