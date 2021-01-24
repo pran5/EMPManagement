@@ -70,10 +70,10 @@ export class LoginComponent implements OnInit {
       {
         console.log(data.content);
       
-          this.e.EmpId = data.content[0].Emp_id;
-          this.e.EmpName = data.content[0].Emp_name;
+          // this.e.EmpId = data.content[0].Emp_id;
+          // this.e.EmpName = data.content[0].Emp_name;
 
-          this.e.EmpEmail = data.content[0].Emp_email;
+          // this.e.EmpEmail = data.content[0].Emp_email;
          
         
       }
