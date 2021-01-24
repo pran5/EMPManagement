@@ -24,10 +24,29 @@ public class TeamService {
 		public Optional<Team> getTeam_Id(int id){
 			return TeamRepository.findById(id);
 		}
+	
 		
+		
+		// fetching count by employee id		
+				public Long getT_Emp_Id(String id){
+					return TeamRepository.aMethodNameOrSomething(id);
+				}	
+		
+		
+		
+		
+		
+		
+		
+		
+	//fetching Team by manager id
 		public List<Team> getTeam_MId(String id){
 			return TeamRepository.findM(id);
 		}
+		
+		
+		
+		
 		
     // inserting Team
 			public void addTeam(Team e) {

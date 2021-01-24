@@ -41,7 +41,7 @@ import com.example.EmpManagmentBack.SERVICE.TicketService;
 
 public class RControler {
 
-	List<List<Team>> t = new ArrayList<List<Team>>() ;
+	
 	
 	@Autowired
 	private EmployeeService employeeService;
@@ -159,7 +159,7 @@ public class RControler {
 				public test getAllProjectt(){
 			test testt = new test();
 			List<Team> t2;
-	
+			List<List<Team>> t = new ArrayList<List<Team>>() ;
 				List<Project> p = projectService.getAllProject();
 				 System.out.println("hello----------------------------------");
 				 for(int i = 0; i < p.size(); i++) {
@@ -219,7 +219,34 @@ public class RControler {
 	 		public Optional<Team> getTeam_Id(@RequestParam int id){
 	 		return teamService.getTeam_Id(id);
 	 				}	
-	//$$$$$$$$$$$$$$$$$$ 	  	
+	 	  	
+// display count by employee id			
+			
+	 				@GetMapping("/teamempid") 	
+	 				public Long getT_Emp_Id(@RequestParam String id)
+	 				{
+	 					return teamService.getT_Emp_Id(id);
+	 				}
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+	 	  	
+//$$$$$$$$$$$$$$$$$$ 	  	
 	 	  	@GetMapping("/Team/{id}_B")
 	 		public List<Team> getTeam_MId(@RequestParam String id){
 	 		return teamService.getTeam_MId(id); 
@@ -231,7 +258,18 @@ public class RControler {
 			@GetMapping("/ticket/{id}_A")
 			public Optional<Ticket> getTicket_No(@RequestParam String id){
 			return ticketService.getTicket_No(id);
-					}
+	}
+			
+//$$$$$$$$$$$$$$$$$$ 	  	
+	 	  	@GetMapping("/ticket/{id}_B")
+	 		public List<Ticket> getEmp_Id(@RequestParam String id){
+	 		return ticketService.getEmp_Id(id); 
+	 				}			
+			
+			
+			
+			
+			
 	 	  	
 // displaying pushnotification by id
 	 	  	@GetMapping("/pushnotification/{id}_A")

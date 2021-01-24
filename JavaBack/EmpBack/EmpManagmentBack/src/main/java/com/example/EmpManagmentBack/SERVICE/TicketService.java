@@ -28,6 +28,20 @@ public class TicketService {
 }
 	
 	
+	
+//fetching Team by manager id
+	public List<Ticket> getEmp_Id(String id){
+		return ticketRepo.findT(id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 // inserting ticket
 	public void addTicket(Ticket e) {
 		ticketRepo.save(e);

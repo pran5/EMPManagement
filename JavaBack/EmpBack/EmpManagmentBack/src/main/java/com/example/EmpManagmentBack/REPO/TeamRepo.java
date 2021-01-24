@@ -12,7 +12,16 @@ import com.example.EmpManagmentBack.Model.Team;
 @Repository
  public interface TeamRepo extends CrudRepository<Team,Integer>{
 
+	
+	
+	 @Query("SELECT COUNT(u) FROM Team u WHERE u.T_Emp_Id=:id")
+	    long aMethodNameOrSomething(@Param("id") String id);
+		
+	
+	
+	
 	@Query("from Team where Team_M_Id = :x")
 	List<Team> findM(@Param("x") String x);
+	
 
 }
