@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="project")
 public class Project {
@@ -19,7 +20,8 @@ public class Project {
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Project_Client_Id", referencedColumnName = "Client_Id",insertable = false, updatable = false)
-    private Client client; 
+	private Client client;
+    
 	public Client getClient() {
 		return client;
 	}

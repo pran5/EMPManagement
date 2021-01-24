@@ -1,0 +1,91 @@
+<div class="column " >
+
+    <nb-card accent="info">
+        <nb-card-header>Resource Requests</nb-card-header>
+            <nb-card-body>
+                <nb-accordion multi>
+                    <nb-accordion-item>
+                      <nb-accordion-item-header>
+                       Active Requests
+                      </nb-accordion-item-header>
+                      <nb-accordion-item-body>
+                        <table class="table is-striped is-hoverable">
+                            <tbody>
+                                <tr>
+                                    <th>Employee Id</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Resource Name</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr >
+                                   <td>E001</td>
+                                   <td>Nikhil Bhati</td>
+                                   <td>My laptop is broken</td>
+                                   <td>Laptop</td>
+                                   <td><div class="columns is-8 ">
+                                    <div><button nbButton size="tiny" status="success" style="margin: 10px;">Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;">Reject</button></div>
+                                </div>
+                                   </td>
+                                </tr> 
+
+                                <tr >
+                                    <td>E002</td>
+                                    <td>Amit Mishra</td>
+                                    <td>Mouse not Working</td>
+                                   <td>Mouse</td>
+                                    <td><div class="columns is-8 ">
+                                     <div><button nbButton size="tiny" status="success" style="margin: 10px;">Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;">Reject</button></div>
+                                 </div>
+                                    </td>
+                                 </tr> 
+                            </tbody>
+                        </table>
+                      </nb-accordion-item-body>
+                    </nb-accordion-item>
+                  
+                    <nb-accordion-item>
+                      <nb-accordion-item-header>
+                        Old Requests
+                      </nb-accordion-item-header>
+                      <nb-accordion-item-body>
+                        <table class="table is-striped is-hoverable">
+                            <tbody>
+                                <tr>
+                                    <th>Employee Id</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Resource Name</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr >
+                                   <td>E001</td>
+                                   <td>Nikhil Bhati</td>
+                                   <td>Laptop is broken</td>
+                                   <td>Laptop</td>
+                                   <td>
+                                    <p style="color: green;"><b>Accepted</b></p>
+                                    
+                                   </td>
+                                </tr> 
+
+                                <tr >
+                                    <td>E002</td>
+                                    <td>Amit Mishra</td>
+                                    <td>Mouse is not working</td>
+                                    <td>Mouse</td>
+                                    <td>
+                                        <p style="color:red;"><b>Rejected</b></p>
+                                    </td>
+                                 </tr> 
+                            </tbody>
+                        </table>
+                      </nb-accordion-item-body>
+                    </nb-accordion-item>
+                  
+                    
+                  </nb-accordion>
+            </nb-card-body>
+    </nb-card>
+</div>
+

@@ -24,7 +24,7 @@ public class Pushnotification {
 	
 	
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL,  orphanRemoval=true)
     @JoinColumn(name = "PN_Emp_Id", referencedColumnName = "Emp_Id",insertable = false, updatable = false)
     private Employee employee;  
 	
