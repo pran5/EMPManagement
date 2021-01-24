@@ -5,46 +5,46 @@
         <nb-card-body>
             <div class="columns" style="z-index: -1;">
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Employee Id (Ex. E001)">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Employee Id (Ex. E001)" [(ngModel)] = "employee.emp_Id" (blur) = "select(employee.emp_Id)">
                 </div>
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="First Name">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="First Name" [(ngModel)] = "employee.emp_Firstname">
                 </div>
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Last Name">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Last Name"[(ngModel)] = "employee.emp_Lastname">
                 </div>
              </div>
              <div class="columns">
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Email">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Email" [(ngModel)] = "employee.emp_Email">
                 </div>
                 <div class="column is-8">
-                    <textarea nbInput fullWidth placeholder="Address"status="primary" ></textarea>
+                    <textarea nbInput fullWidth placeholder="Address"status="primary" [(ngModel)] = "employee.emp_Address"></textarea>
                     
                 </div>
                 
              </div>
              <div class="columns">
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Mobile No.">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Mobile No." [(ngModel)] = "employee.emp_mobile_no">
                 </div>
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="City">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="City" [(ngModel)] = "employee.emp_City">
                 </div>
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="State">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="State" [(ngModel)] = "employee.emp_State">
                 </div>
                 
              </div>
              <div class="columns">
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Department ID">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Department ID" [(ngModel)] = "employee.emp_Dept_Id">
                 </div>
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Designation">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Designation" [(ngModel)] = "employee.emp_Designation">
                 </div>
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Give Default Password">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Give Default Password" [(ngModel)] = "employee.emp_Pass">
                  
                 </div>
                 
@@ -52,11 +52,11 @@
 
              <div class="columns">
                 <div class="column is-3">
-                    <input nbInput placeholder="Pick Date" status="primary" [nbDatepicker]="dateTimePicker">
+                    <input nbInput placeholder="Pick Date" status="primary" [nbDatepicker]="dateTimePicker" [(ngModel)] = "employee.emp_Dob">
                     <nb-datepicker #dateTimePicker></nb-datepicker>
                 </div>
                 <div class="column is-3">
-                    <nb-select placeholder="Select Gender" status="primary" [(selected)]="Gender">
+                    <nb-select placeholder="Select Gender" status="primary" [(selected)]="Gender" [(ngModel)] = "employee.emp_gender">
                         
                         <nb-option value="M">Male</nb-option>
                         <nb-option value="F">Female</nb-option>
@@ -66,7 +66,7 @@
                       </nb-select>
                 </div>
                 <div class="column is-3">
-                    <nb-select placeholder="Select Pay Slab" status="primary" [(selected)]="selectedPaySlab">
+                    <nb-select placeholder="Select Pay Slab" status="primary" [(selected)]="selectedPaySlab" [(ngModel)] = "employee.emp_payroll">
                         
                         <nb-option value="A">A</nb-option>
                         <nb-option value="B">B</nb-option>
@@ -76,7 +76,7 @@
                       </nb-select>
                 </div>
                 <div class="column is-3">
-                    <nb-select placeholder="Application Access" status="primary" [(selected)]="selectAccesLevel">
+                    <nb-select placeholder="Application Access" status="primary" [(selected)]="selectAccesLevel" [(ngModel)] = "employee.emp_access">
                         
                         <nb-option value="A">Admin Level</nb-option>
                         <nb-option value="M">Manager Level</nb-option>
@@ -89,11 +89,11 @@
              <div class="columns">
 
                 <div class="column is-6">
-                    <textarea nbInput fullWidth placeholder="Add Quallifications"status="primary" ></textarea>
+                    <textarea nbInput fullWidth placeholder="Add Quallifications"status="primary" [(ngModel)] = "employee.emp_Qualification"></textarea>
                     
                 </div>
                 <div class="column is-6">
-                    <textarea nbInput fullWidth placeholder="Skills"status="primary" ></textarea>
+                    <textarea nbInput fullWidth placeholder="Skills"status="primary" [(ngModel)] = "employee.emp_Skills"></textarea>
                     
                 </div>
              </div>
@@ -103,13 +103,13 @@
              <div class="columns ">
 
                 <div class="column is-2 is-offset-5" >
-                    <button nbButton hero status="primary">Add New Employee</button>
+                    <button nbButton hero status="primary" (click) = "addEmp(employee)">Add New Employee</button>
                     
                  
                 </div>
                 <div class="column is-2" style="margin-left: 20px;">
                     
-                    <button nbButton hero status="primary">Update Employee</button>
+                    <button nbButton hero status="primary" (click) = "update(employee)">Update Employee</button>
                     
                  
                 </div>
