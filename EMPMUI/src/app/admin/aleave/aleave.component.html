@@ -19,29 +19,23 @@
                                     <th>To</th>
                                     <th>Status</th>
                                 </tr>
-                                <tr >
-                                   <td>E001</td>
-                                   <td>Nikhil Bhati</td>
-                                   <td>I will have fever tommorow</td>
-                                   <td>10/06/2021</td>
-                                   <td>13/06/2021</td>
+                                <ng-container *ngFor ="let c of LR; index as i">
+                                <tr *ngIf="showp(c)" >
+                                  
+                                   <td>{{c.lrequest_Emp_Id}}</td>
+                                   <td>{{c.lemp_Name}}</td>
+                                   <td>{{c.lrequest_Description}}</td>
+                                   <td>{{c.lrequest_From | date}}</td>
+                                   <td>{{c.lrequest_To | date}}</td>
                                    <td><div class="columns is-8 ">
-                                    <div><button nbButton size="tiny" status="success" style="margin: 10px;">Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;">Reject</button></div>
+                                    <div><button nbButton size="tiny" status="success" style="margin: 10px;" (click) = "btt(c)" >Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;" (click) = "bttt(c)" >Reject</button></div>
                                 </div>
                                    </td>
+                                   
                                 </tr> 
+                              </ng-container>
 
-                                <tr >
-                                    <td>E002</td>
-                                    <td>Amit Mishra</td>
-                                    <td>I have opration of harniya</td>
-                                    <td>15/06/2021</td>
-                                    <td>18/06/2021</td>
-                                    <td><div class="columns is-8 ">
-                                     <div><button nbButton size="tiny" status="success" style="margin: 10px;">Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;">Reject</button></div>
-                                 </div>
-                                    </td>
-                                 </tr> 
+                                
                             </tbody>
                         </table>
                       </nb-accordion-item-body>
@@ -62,28 +56,20 @@
                                     <th>To</th>
                                     <th>Status</th>
                                 </tr>
-                                <tr >
-                                   <td>E001</td>
-                                   <td>Nikhil Bhati</td>
-                                   <td>I will have fever tommorow</td>
-                                   <td>10/06/2021</td>
-                                   <td>13/06/2021</td>
+                                <ng-container *ngFor ="let c of LR; index as i">
+                                  <tr *ngIf="showR(c)" >
+                                    <td>{{c.lrequest_Emp_Id}}</td>
+                                    <td>{{c.lemp_Name}}</td>
+                                    <td>{{c.lrequest_Description}}</td>
+                                    <td>{{c.lrequest_From | date}}</td>
+                                    <td>{{c.lrequest_To | date}}</td>
                                    <td>
-                                    <p style="color: green;"><b>Accepted</b></p>
-                                    
+                                    <p style="color: green;" *ngIf="showStatus(c.lrequest_A_Status)" ><b >Accepted</b></p>
+                                    <p style="color:red;" *ngIf="!showStatus(c.lrequest_A_Status)" ><b >Rejected</b></p>
                                    </td>
                                 </tr> 
-
-                                <tr >
-                                    <td>E002</td>
-                                    <td>Amit Mishra</td>
-                                    <td>I have opration of harniya</td>
-                                    <td>15/06/2021</td>
-                                    <td>18/06/2021</td>
-                                    <td>
-                                        <p style="color:red;"><b>Rejected</b></p>
-                                    </td>
-                                 </tr> 
+                                </ng-container>
+                               
                             </tbody>
                         </table>
                       </nb-accordion-item-body>
