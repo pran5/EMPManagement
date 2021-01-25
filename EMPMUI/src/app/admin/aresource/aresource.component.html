@@ -18,21 +18,27 @@
                                     <th>Resource Name</th>
                                     <th>Status</th>
                                 </tr>
-                                <ng-container *ngFor ="let c of RR; index as i">
-                                  <tr *ngIf="showpen(c)" >
-                                    
-                                     <td>{{c.rr_Emp_Id}}</td>
-                                     <td>{{c.lemp_Name}}</td>
-                                     <td>{{c.rr_Description}}</td>
-                                     <td>{{c.rr_Name}}</td>
-                                
-                                     <td><div class="columns is-8 ">
-                                      <div><button nbButton size="tiny" status="success" style="margin: 10px;" (click) = "bto(c)" >Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;" (click) = "bttoo(c)" >Reject</button></div>
-                                  </div>
-                                     </td>
-                                     
-                                  </tr> 
-                                </ng-container>
+                                <tr >
+                                   <td>E001</td>
+                                   <td>Nikhil Bhati</td>
+                                   <td>My laptop is broken</td>
+                                   <td>Laptop</td>
+                                   <td><div class="columns is-8 ">
+                                    <div><button nbButton size="tiny" status="success" style="margin: 10px;">Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;">Reject</button></div>
+                                </div>
+                                   </td>
+                                </tr> 
+
+                                <tr >
+                                    <td>E002</td>
+                                    <td>Amit Mishra</td>
+                                    <td>Mouse not Working</td>
+                                   <td>Mouse</td>
+                                    <td><div class="columns is-8 ">
+                                     <div><button nbButton size="tiny" status="success" style="margin: 10px;">Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;">Reject</button></div>
+                                 </div>
+                                    </td>
+                                 </tr> 
                             </tbody>
                         </table>
                       </nb-accordion-item-body>
@@ -52,19 +58,26 @@
                                     <th>Resource Name</th>
                                     <th>Status</th>
                                 </tr>
-                                <ng-container *ngFor ="let c of RR; index as i">
-                                  <tr *ngIf="showRes(c)" >
-                                    <td>{{c.rr_Emp_Id}}</td>
-                                    <td>{{c.lemp_Name}}</td>
-                                    <td>{{c.rr_Description}}</td>
-                                    <td>{{c.rr_Name}}</td>
-                                    
+                                <tr >
+                                   <td>E001</td>
+                                   <td>Nikhil Bhati</td>
+                                   <td>Laptop is broken</td>
+                                   <td>Laptop</td>
                                    <td>
-                                    <p style="color: green;" *ngIf="showStatus(c.rr_Status)" ><b >Accepted</b></p>
-                                    <p style="color:red;" *ngIf="!showStatus(c.rr_Status)" ><b >Rejected</b></p>
+                                    <p style="color: green;"><b>Accepted</b></p>
+                                    
                                    </td>
                                 </tr> 
-                                </ng-container>
+
+                                <tr >
+                                    <td>E002</td>
+                                    <td>Amit Mishra</td>
+                                    <td>Mouse is not working</td>
+                                    <td>Mouse</td>
+                                    <td>
+                                        <p style="color:red;"><b>Rejected</b></p>
+                                    </td>
+                                 </tr> 
                             </tbody>
                         </table>
                       </nb-accordion-item-body>

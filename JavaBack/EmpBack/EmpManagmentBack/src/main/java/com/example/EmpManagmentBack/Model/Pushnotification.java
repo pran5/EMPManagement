@@ -8,8 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -20,11 +18,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="pushnotification")
 public class Pushnotification {
-	
- 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name=" PN_No")
-    private int  PN_No;
+	@Id
+	private String  PN_No;
 	
 	
 	
@@ -59,11 +55,11 @@ public class Pushnotification {
 		super();
 	}
 
-	public int getPN_No() {
+	public String getPN_No() {
 		return PN_No;
 	}
 
-	public void setPN_No(int pN_No) {
+	public void setPN_No(String pN_No) {
 		PN_No = pN_No;
 	}
 
