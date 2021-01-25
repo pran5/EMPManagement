@@ -20,7 +20,6 @@ import { AnotificationComponent } from './admin/anotification/anotification.comp
 import { AleaveComponent } from './admin/aleave/aleave.component';
 import { AresourceComponent } from './admin/aresource/aresource.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ChartsModule } from 'ng2-charts';
 
  
 
@@ -64,7 +63,6 @@ import { ChartsModule } from 'ng2-charts';
     NbTabsetModule,
     NbAccordionModule,
     BrowserAnimationsModule,
-    ChartsModule,
     NbProgressBarModule,
     NbUserModule
   ],

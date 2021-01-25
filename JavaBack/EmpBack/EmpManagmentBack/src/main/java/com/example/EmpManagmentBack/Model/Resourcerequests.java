@@ -40,12 +40,8 @@ public class Resourcerequests {
 	
 	
 	private String  RR_Emp_Id, RR_Name,RR_Description;
-	private boolean RR_Status;
+	private int RR_Status;
 	private Date RR_Date;
-	
-	public Resourcerequests() {
-		super();
-	}
 
 	public String getRR_Id() {
 		return RR_Id;
@@ -60,12 +56,13 @@ public class Resourcerequests {
 	}
 
 	public void setRR_Emp_Id(String rR_Emp_Id) {
-	RR_Emp_Id = rR_Emp_Id;
+		RR_Emp_Id = rR_Emp_Id;
 	}
 
 	public String getRR_Name() {
 		return RR_Name;
-}
+	}
+
 	public void setRR_Name(String rR_Name) {
 		RR_Name = rR_Name;
 	}
@@ -75,15 +72,14 @@ public class Resourcerequests {
 	}
 
 	public void setRR_Description(String rR_Description) {
-	RR_Description = rR_Description;
+		RR_Description = rR_Description;
 	}
 
-	
-	public boolean isRR_Status() {
+	public int getRR_Status() {
 		return RR_Status;
 	}
 
-	public void setRR_Status(boolean rR_Status) {
+	public void setRR_Status(int rR_Status) {
 		RR_Status = rR_Status;
 	}
 
@@ -95,7 +91,7 @@ public class Resourcerequests {
 		RR_Date = rR_Date;
 	}
 	
-	
+
 
 
 }
