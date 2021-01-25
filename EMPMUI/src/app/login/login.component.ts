@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.uname = "";
     this.pass = "";
     this.msg = "";
-    this.access = "o";
+    this.access = "o"; 
    }
 
   ngOnInit(): void {

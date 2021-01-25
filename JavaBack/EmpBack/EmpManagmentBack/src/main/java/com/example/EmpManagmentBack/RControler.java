@@ -153,7 +153,7 @@ public class RControler {
 				
 				
 				
-		//$$$$$$$$$$$$$$		
+		//$$$$$$$$$$$$$$		by Nikhil project details plus team details
 				
 		@GetMapping("/projectexpnddata")
 				public test getAllProjectt(){
@@ -246,7 +246,7 @@ public class RControler {
 	 	  	
 	 	  	
 	 	  	
-//$$$$$$$$$$$$$$$$$$ 	  	
+//$$$$$$$$$$$$$$$$$$ 	by Nikhil  	team by manger id
 	 	  	@GetMapping("/Team/{id}_B")
 	 		public List<Team> getTeam_MId(@RequestParam String id){
 	 		return teamService.getTeam_MId(id); 
