@@ -5,14 +5,13 @@
             <nb-card-body>
                 <div class="columns is-multiline" style="z-index: -1;">
                     <div class="column is-6">
-                        <input type="text" nbInput fullWidth status="primary" placeholder="Subject" [(ngModel)]= "NT.pn_Subject">
+                        <input type="text" nbInput fullWidth status="primary" placeholder="Subject">
                     </div>
                     <div class="column is-10">
-                        <textarea nbInput fullWidth placeholder="Enter Message..."status="primary" [(ngModel)]="NT.pn_Message" ></textarea>
+                        <textarea nbInput fullWidth placeholder="Enter Message..."status="primary" ></textarea>
                     </div>
-
-                    <div class="column  is-offset-7"><button nbButton hero status="primary" (click) ="sendtoM(NT)">Send to Managers</button></div>
-                    <div class="column "><button nbButton hero status="primary"(click) ="sendtoE(NT)">Send to Employee</button></div>
+                    <div class="column  is-offset-7"><button nbButton hero status="primary">Send to Managers</button></div>
+                    <div class="column "><button nbButton hero status="primary">Send to Employee</button></div>
                
                 </div>
             </nb-card-body>
