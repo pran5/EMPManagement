@@ -20,6 +20,13 @@ import { AnotificationComponent } from './admin/anotification/anotification.comp
 import { AleaveComponent } from './admin/aleave/aleave.component';
 import { AresourceComponent } from './admin/aresource/aresource.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EsidenavComponent } from './employee/esidenav/esidenav.component';
+import { DashbordComponent } from './employee/dashbord/dashbord.component';
+import { TeamComponent } from './employee/team/team.component';
+import { LeaveComponent } from './employee/leave/leave.component';
+import { ResourceComponent } from './employee/resource/resource.component';
+import { TicketComponent } from './employee/dashbord/ticket/ticket.component';
+import { ProgressComponent } from './employee/dashbord/progress/progress.component';
 
  
 
@@ -39,7 +46,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProjectComponent,
     AnotificationComponent,
     AleaveComponent,
-    AresourceComponent
+    AresourceComponent,
+    EsidenavComponent,
+    DashbordComponent,
+    TeamComponent,
+    LeaveComponent,
+    ResourceComponent,
+    TicketComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,

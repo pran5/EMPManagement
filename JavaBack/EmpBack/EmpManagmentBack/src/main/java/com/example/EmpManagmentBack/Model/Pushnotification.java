@@ -24,13 +24,7 @@ public class Pushnotification {
  
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name=" PN_No")
-<<<<<<< HEAD
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id 
-	private String  PN_No;
-=======
     private int  PN_No;
->>>>>>> 489a7d39bb02c78b2d9f96895179815450f7f0ed
 	
 	
 	

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log("login clicked");
+    console.log("login  clicked");
     this.ser.loga({uname:this.uname,pass:this.pass}).subscribe(( data : any)=>{
       console.log(data);
       if(data.access == 'a'){

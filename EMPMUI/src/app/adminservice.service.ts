@@ -91,7 +91,7 @@ export class AdminserviceService {
     return this.con.get(url);
   }
 
-  ResourceAres(obj:Leave): Observable<any>{
+  ResourceAres(obj:Leave): Observable<any> {
     const url = 'http://localhost:6500/resourcerequest_C';
     return this.con.put(url,obj);
   }
