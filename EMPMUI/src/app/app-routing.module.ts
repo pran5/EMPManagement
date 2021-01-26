@@ -9,12 +9,18 @@ import { ProjectComponent } from './admin/project/project.component';
 import { AnotificationComponent } from './admin/anotification/anotification.component';
 import { AleaveComponent } from './admin/aleave/aleave.component';
 import { AresourceComponent } from './admin/aresource/aresource.component';
+import { MProjectprogressComponent } from './manager/mprojectprogress/mprojectprogress.component';
+import { MLeaverequestComponent } from './manager/mleaverequest/mleaverequest.component';
+import { MRRequestComponent } from './manager/mrrequest/mrrequest.component';
+import { MaddmemberComponent } from './manager/maddmember/maddmember.component';
+import { MTicketComponent } from './manager/mticket/mticket.component';
+
 
 const routes: Routes = [
   {path : 'login' , 
     component: LoginComponent,
     children:[
-      {path : './Admin' , component: AdminComponent}
+      {path : './Admin' , component: AdminComponent }
     ]
   },
   {path : 'Admin' , component: AdminComponent, children:[{
@@ -36,7 +42,23 @@ const routes: Routes = [
   
 
 },
-  {path : 'Manager' , component: ManagerComponent},
+  {path : 'Manager' , component: ManagerComponent ,children:[{
+    path: 'mprojectprogress', component:MProjectprogressComponent
+  },
+{
+  path: 'mleaverequest', component:MLeaverequestComponent
+},
+{
+  path: 'maddmember', component:MaddmemberComponent
+},
+{
+  path: 'mticket', component:MTicketComponent
+},
+{
+  path: 'mrrequest', component:MRRequestComponent
+}
+]
+}, 
   {path : 'Employee' , component: EmployeeComponent},
   
 

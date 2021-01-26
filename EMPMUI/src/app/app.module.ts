@@ -20,6 +20,12 @@ import { AnotificationComponent } from './admin/anotification/anotification.comp
 import { AleaveComponent } from './admin/aleave/aleave.component';
 import { AresourceComponent } from './admin/aresource/aresource.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MsidenavComponent } from './manager/msidenav/msidenav.component';
+import { MLeaverequestComponent } from './manager/mleaverequest/mleaverequest.component';
+import { MProjectprogressComponent } from './manager/mprojectprogress/mprojectprogress.component';
+import { MRRequestComponent } from './manager/mrrequest/mrrequest.component';
+import { MaddmemberComponent } from './manager/maddmember/maddmember.component';
+import { MTicketComponent } from './manager/mticket/mticket.component';
 
  
 
@@ -39,7 +45,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProjectComponent,
     AnotificationComponent,
     AleaveComponent,
-    AresourceComponent
+    AresourceComponent,
+    MsidenavComponent,
+    MProjectprogressComponent,
+    MLeaverequestComponent,
+    MRRequestComponent,
+    MaddmemberComponent,
+    MTicketComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+.circle {
+    background-color: rgb(245, 245, 245);
+    border: 3px solid RGB(15, 145, 239);
+    border-radius: 40px;
+    box-shadow: 0 0 8px #888;
+    height: 80px;
+    width: 80px;
+    margin-left: 25%;
+  }
