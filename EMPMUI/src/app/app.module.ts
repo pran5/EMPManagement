@@ -20,12 +20,22 @@ import { AnotificationComponent } from './admin/anotification/anotification.comp
 import { AleaveComponent } from './admin/aleave/aleave.component';
 import { AresourceComponent } from './admin/aresource/aresource.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { MsidenavComponent } from './manager/msidenav/msidenav.component';
 import { MLeaverequestComponent } from './manager/mleaverequest/mleaverequest.component';
 import { MProjectprogressComponent } from './manager/mprojectprogress/mprojectprogress.component';
 import { MRRequestComponent } from './manager/mrrequest/mrrequest.component';
 import { MaddmemberComponent } from './manager/maddmember/maddmember.component';
 import { MTicketComponent } from './manager/mticket/mticket.component';
+=======
+import { EsidenavComponent } from './employee/esidenav/esidenav.component';
+import { DashbordComponent } from './employee/dashbord/dashbord.component';
+import { TeamComponent } from './employee/team/team.component';
+import { LeaveComponent } from './employee/leave/leave.component';
+import { ResourceComponent } from './employee/resource/resource.component';
+import { TicketComponent } from './employee/dashbord/ticket/ticket.component';
+import { ProgressComponent } from './employee/dashbord/progress/progress.component';
+>>>>>>> nikhil-branch
 
  
 
@@ -46,6 +56,7 @@ import { MTicketComponent } from './manager/mticket/mticket.component';
     AnotificationComponent,
     AleaveComponent,
     AresourceComponent,
+<<<<<<< HEAD
     MsidenavComponent,
     MProjectprogressComponent,
     MLeaverequestComponent,
@@ -53,6 +64,15 @@ import { MTicketComponent } from './manager/mticket/mticket.component';
     MaddmemberComponent,
     MTicketComponent
     
+=======
+    EsidenavComponent,
+    DashbordComponent,
+    TeamComponent,
+    LeaveComponent,
+    ResourceComponent,
+    TicketComponent,
+    ProgressComponent
+>>>>>>> nikhil-branch
   ],
   imports: [
     BrowserModule,
