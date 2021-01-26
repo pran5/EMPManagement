@@ -7,7 +7,7 @@ import com.example.EmpManagmentBack.Model.Employee;
 import org.springframework.data.repository.CrudRepository;
 
 @Repository
-public interface EmpRepo extends CrudRepository<Employee,String> {
+public interface EmpRepo extends CrudRepository<Employee,String> { 
 
 
 
