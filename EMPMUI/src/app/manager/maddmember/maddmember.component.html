@@ -1,11 +1,11 @@
-<p>maddmember works!</p>
+
 
 <div class="column " >
 
   <nb-card accent="info">
     <nb-card-header>Add Project Member</nb-card-header>
     <nb-card-body>
-        <div class="columns" style="z-index: -1;">
+        <div class="columns is-multiline" style="z-index: -1;">
             <div class="column is-4">
                 <input type="text" nbInput fullWidth status="primary" placeholder="Employee Id (Ex. E001)">
             </div>
@@ -15,19 +15,86 @@
           <div class="column is-4">
               <input type="text" nbInput fullWidth status="primary" placeholder="Last Name">
           </div>
-          </div>
+          <div class="column is-4">
+            <input type="text" nbInput fullWidth status="primary" placeholder="Designation">
+        </div>
+        <div class="column is-6">
+          <input type="text" nbInput fullWidth status="primary" placeholder="Skills">
+      </div>
+      
+      <div class=" column is-2 is-offset-9 " >
+                    
+        <button nbButton hero status="primary" >Add To Project</button>
+        
+     
+    </div></div>
+          
     </nb-card-body>
   </nb-card>
 
+
+  <nb-card accent="info">
+       
+    <nb-card-body>
+<nb-accordion multi>
+<!-- <nb-accordion-item *ngFor ="let c of custom; index as i">
+  <nb-accordion-item-header>
+    {{c.projectName}}
+  </nb-accordion-item-header>
+  <nb-accordion-item-body>
+    <table class="table is-striped is-hoverable">
+        <tbody>
+            <tr>
+                <th>Employee Id</th>
+                <th>Name</th>
+                <th>Roll</th>
+                
+            </tr>
+            <tr *ngFor ="let d of c.employeeName; index as j" >
+               <td>{{c.employeeId[j]}}</td>
+               <td>{{d}}</td>
+               <td>{{c.roll[j]}}</td>
+              
+            </tr> 
+        </tbody>
+    </table>
+  </nb-accordion-item-body>
+</nb-accordion-item> -->
+
+<nb-accordion-item>
+  <nb-accordion-item-header>
+    Project name (Team Members)
+  </nb-accordion-item-header>
+  <nb-accordion-item-body>
+    <table class="table is-striped is-hoverable">
+        <tbody>
+            <tr>
+                <th>Employee Id</th>
+                <th>Name</th>
+                <th>Roll</th>
+                
+            </tr>
+            <tr>
+               <td>E001</td>
+               <td>Nikhil Bhati</td>
+               <td>Developer</td>
+               
+            </tr>
+            <tr>
+                <td>E002</td>
+                <td>Amit Mishra</td>
+                <td>Tester</td>
+                
+             </tr>
+        </tbody>
+    </table>
+  </nb-accordion-item-body>
+</nb-accordion-item>
+
+
+</nb-accordion>
+</nb-card-body>
+</nb-card>
 
 </div>
 
-<nb-card status="success">
-    <nb-card-header>Nebula</nb-card-header>
-    <nb-card-body>
-      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-      Originally, nebula was a name for any diffuse astronomical object,
-      including galaxies beyond the Milky Way.
-    </nb-card-body>
-    <nb-card-footer>By Wikipedia</nb-card-footer>
-  </nb-card>

@@ -1,97 +1,171 @@
-<p>mleaverequest works!</p>
+<div style="margin-top: 5%;">
+<nb-card >
+  <nb-card-body>
 
-<div class="column " >
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="Team Leave Request">
+       
+        <nb-accordion multi>
+          <nb-accordion-item>
+            <nb-accordion-item-header>
+             Active Requests
+            </nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <table class="table is-striped is-hoverable">
+                  <tbody>
+                      <tr>
+                          <th>Employee Id</th>
+                          <th>Name</th>
+                          <th>Description</th>
+                          <th>From</th>
+                          <th>To</th>
+                          <th>Status</th>
+                      </tr>
+                      <ng-container *ngFor ="let c of LR; index as i">
+                      <tr *ngIf="showp(c)" >
+                        
+                         <td>{{c.lrequest_Emp_Id}}</td>
+                         <td>{{c.lemp_Name}}</td>
+                         <td>{{c.lrequest_Description}}</td>
+                         <td>{{c.lrequest_From | date}}</td>
+                         <td>{{c.lrequest_To | date}}</td>
+                         <td><div class="columns is-8 ">
+                          <div><button nbButton size="tiny" status="success" style="margin: 10px;" (click) = "btt(c)" >Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;" (click) = "bttt(c)" >Reject</button></div>
+                      </div>
+                         </td>
+                         
+                      </tr> 
+                    </ng-container>
 
-  <nb-card accent="info">
-      <nb-card-header>Employee Leave Request</nb-card-header>
-          <nb-card-body>
-              <nb-accordion multi>
-                  <nb-accordion-item>
-                    <nb-accordion-item-header>
-                     Active Requests
-                    </nb-accordion-item-header>
-                    <nb-accordion-item-body>
-                      <table class="table is-striped is-hoverable">
-                          <tbody>
-                              <tr>
-                                  <th>Employee Id</th>
-                                  <th>Name</th>
-                                  <th>Description</th>
-                                  <th>From</th>
-                                  <th>To</th>
-                                  <th>Status</th>
-                              </tr>
-                              <ng-container *ngFor ="let c of LR; index as i">
-                              <tr *ngIf="showp(c)" >
-                                
-                                 <td>{{c.lrequest_Emp_Id}}</td>
-                                 <td>{{c.lemp_Name}}</td>
-                                 <td>{{c.lrequest_Description}}</td>
-                                 <td>{{c.lrequest_From | date}}</td>
-                                 <td>{{c.lrequest_To | date}}</td>
-                                 <td><div class="columns is-8 ">
-                                  <div><button nbButton size="tiny" status="success" style="margin: 10px;" (click) = "btt(c)" >Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;" (click) = "bttt(c)" >Reject</button></div>
-                              </div>
-                                 </td>
-                                 
-                              </tr> 
-                            </ng-container>
+                      
+                  </tbody>
+              </table>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        
+          <nb-accordion-item>
+            <nb-accordion-item-header>
+              Old Requests
+            </nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <table class="table is-striped is-hoverable">
+                  <tbody>
+                      <tr>
+                          <th>Employee Id</th>
+                          <th>Name</th>
+                          <th>Description</th>
+                          <th>From</th>
+                          <th>To</th>
+                          <th>Status</th>
+                      </tr>
+                      <ng-container *ngFor ="let c of LR; index as i">
+                        <tr *ngIf="showR(c)" >
+                          <td>{{c.lrequest_Emp_Id}}</td>
+                          <td>{{c.lemp_Name}}</td>
+                          <td>{{c.lrequest_Description}}</td>
+                          <td>{{c.lrequest_From | date}}</td>
+                          <td>{{c.lrequest_To | date}}</td>
+                         <td>
+                          <p style="color: green;" *ngIf="showStatus(c.lrequest_A_Status)" ><b >Accepted</b></p>
+                          <p style="color:red;" *ngIf="!showStatus(c.lrequest_A_Status)" ><b >Rejected</b></p>
+                         </td>
+                      </tr> 
+                      </ng-container>
+                     
+                  </tbody>
+              </table>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        
+          
+        </nb-accordion>
+      </nb-tab>
+      <nb-tab tabTitle="Generate Leave Request">
+        <div class="column "  >
 
+          <nb-card >
+              <nb-card-header>Generate Leave Request</nb-card-header>
+              <nb-card-body>
+                  <div class="columns is-multiline" style="z-index: -1;">
+                      <div class="column is-6">
+                          <input type="text" nbInput fullWidth status="primary" placeholder="Description" >
+                      </div>
+                      <div class="column"> <input nbInput placeholder="From Date" status="primary" [nbDatepicker]="dateTimePicker">
+                          <nb-datepicker #dateTimePicker></nb-datepicker></div>
+                          <div class="column"> <input nbInput placeholder="To Date" status="primary" [nbDatepicker]="dateTimePickerr" >
+                              <nb-datepicker #dateTimePickerr></nb-datepicker></div>
+                     
+      
+                      <div class="column is-offset-9" ><button nbButton hero status="primary" >Generate Request</button></div>
+                     
+                 
+                  </div>
+              </nb-card-body>
+          </nb-card>
+      
+          <nb-accordion multi>
+              <!-- <nb-accordion-item *ngFor ="let c of custom; index as i">
+                <nb-accordion-item-header>
+                  {{c.projectName}}
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <table class="table is-striped is-hoverable">
+                      <tbody>
+                          <tr>
+                              <th>Employee Id</th>
+                              <th>Name</th>
+                              <th>Roll</th>
                               
-                          </tbody>
-                      </table>
-                    </nb-accordion-item-body>
-                  </nb-accordion-item>
-                
-                  <nb-accordion-item>
-                    <nb-accordion-item-header>
-                      Old Requests
-                    </nb-accordion-item-header>
-                    <nb-accordion-item-body>
-                      <table class="table is-striped is-hoverable">
-                          <tbody>
-                              <tr>
-                                  <th>Employee Id</th>
-                                  <th>Name</th>
-                                  <th>Description</th>
-                                  <th>From</th>
-                                  <th>To</th>
-                                  <th>Status</th>
-                              </tr>
-                              <ng-container *ngFor ="let c of LR; index as i">
-                                <tr *ngIf="showR(c)" >
-                                  <td>{{c.lrequest_Emp_Id}}</td>
-                                  <td>{{c.lemp_Name}}</td>
-                                  <td>{{c.lrequest_Description}}</td>
-                                  <td>{{c.lrequest_From | date}}</td>
-                                  <td>{{c.lrequest_To | date}}</td>
-                                 <td>
-                                  <p style="color: green;" *ngIf="showStatus(c.lrequest_A_Status)" ><b >Accepted</b></p>
-                                  <p style="color:red;" *ngIf="!showStatus(c.lrequest_A_Status)" ><b >Rejected</b></p>
-                                 </td>
-                              </tr> 
-                              </ng-container>
+                          </tr>
+                          <tr *ngFor ="let d of c.employeeName; index as j" >
+                             <td>{{c.employeeId[j]}}</td>
+                             <td>{{d}}</td>
+                             <td>{{c.roll[j]}}</td>
+                            
+                          </tr> 
+                      </tbody>
+                  </table>
+                </nb-accordion-item-body>
+              </nb-accordion-item> -->
+            
+              <nb-accordion-item>
+                <nb-accordion-item-header>
+                  Request Status
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <table class="table is-striped is-hoverable">
+                      <tbody>
+                          <tr>
+                              <th>Description</th>
+                              <th>From</th>
+                              <th>To</th>
+                              <th>Status</th>
+                              
+                          </tr>
+                          <tr>
+                             <td>xyz <div class=""></div></td>
+                             <td>11/02/20</td>
+                             <td>15/02/20</td>
+                             <td>Pandding</td>
                              
-                          </tbody>
-                      </table>
-                    </nb-accordion-item-body>
-                  </nb-accordion-item>
-                
-                  
-                </nb-accordion>
-          </nb-card-body>
-  </nb-card>
+                          </tr>
+                          <tr>
+                              <td>xyz <div class=""></div></td>
+                              <td>2/02/20</td>
+                              <td>5/02/20</td>
+                              <td>Accepted</td>
+                              
+                           </tr>
+                      </tbody>
+                  </table>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+              </nb-accordion>
+      </div>
+      </nb-tab>
+    </nb-tabset>
+
+  </nb-card-body>
+</nb-card>
+
 </div>
-
-
-
-<nb-card status="success">
-    <nb-card-header>Nebula</nb-card-header>
-    <nb-card-body>
-      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-      Originally, nebula was a name for any diffuse astronomical object,
-      including galaxies beyond the Milky Way.
-    </nb-card-body>
-    <nb-card-footer>By Wikipedia</nb-card-footer>
-  </nb-card>
-

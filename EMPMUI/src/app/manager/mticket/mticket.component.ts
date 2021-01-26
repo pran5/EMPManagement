@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MTicketComponent implements OnInit {
 
+  priority = "";
   constructor() { }
 
   ngOnInit(): void {
