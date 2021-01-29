@@ -44,6 +44,11 @@ public class TeamService {
 			return TeamRepository.findM(id);
 		}
 		
+	// get all team by Employee id
+		public List<Team> getAllTeamByEid(String id){
+			return TeamRepository.getAllbyEid(id);
+		}
+		
 		
 		
 		

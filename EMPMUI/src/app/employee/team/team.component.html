@@ -28,11 +28,11 @@
       </nb-accordion-item-body>
     </nb-accordion-item> -->
   
-    <nb-accordion-item>
+    <nb-accordion-item *ngFor = "let p of apidataa;index as i">
       <nb-accordion-item-header>
-        Project name 2
+        {{p.projectName}}
       </nb-accordion-item-header>
-      <nb-accordion-item-body>
+      <nb-accordion-item-body >
         <table class="table is-striped is-hoverable">
             <tbody>
                 <tr>
@@ -41,23 +41,20 @@
                     <th>Roll</th>
                     
                 </tr>
+                <ng-container *ngFor = "let e of p.employeeName;index as j">
                 <tr>
-                   <td>E001</td>
-                   <td>Nikhil Bhati</td>
-                   <td>Developer</td>
+                   <td>{{p.employeeId[j]}}</td>
+                   <td>{{e}}</td>
+                   <td>{{p.roll[j]}}</td>
                    
                 </tr>
-                <tr>
-                    <td>E002</td>
-                    <td>Amit Mishra</td>
-                    <td>Tester</td>
-                    
-                 </tr>
+              </ng-container>
+                
             </tbody>
         </table>
       </nb-accordion-item-body>
     </nb-accordion-item>
-  
+
     
   </nb-accordion>
   </nb-card-body>

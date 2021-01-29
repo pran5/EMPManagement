@@ -5,15 +5,15 @@
         <nb-card-body>
             <div class="columns is-multiline" style="z-index: -1;">
                 <div class="column is-6">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Description" >
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Description" [(ngModel)]="lev.lrequest_Description">
                 </div>
-                <div class="column"> <input nbInput placeholder="From Date" status="primary" [nbDatepicker]="dateTimePicker">
+                <div class="column"> <input nbInput placeholder="From Date" status="primary" [nbDatepicker]="dateTimePicker" [(ngModel)]="lev.lrequest_From">
                     <nb-datepicker #dateTimePicker></nb-datepicker></div>
-                    <div class="column"> <input nbInput placeholder="To Date" status="primary" [nbDatepicker]="dateTimePickerr" >
+                    <div class="column"> <input nbInput placeholder="To Date" status="primary" [nbDatepicker]="dateTimePickerr" [(ngModel)]="lev.lrequest_To" >
                         <nb-datepicker #dateTimePickerr></nb-datepicker></div>
                
 
-                <div class="column is-offset-9" ><button nbButton hero status="primary" >Generate Request</button></div>
+                <div class="column is-offset-9" ><button nbButton hero status="primary" (click)="insLeave(lev)" >Generate Request</button></div>
                
            
             </div>
@@ -59,20 +59,16 @@
                         <th>Status</th>
                         
                     </tr>
+                    <ng-container *ngFor = "let l of olev; index as i">
                     <tr>
-                       <td>xyz <div class=""></div></td>
-                       <td>11/02/20</td>
-                       <td>15/02/20</td>
-                       <td>Pandding</td>
+                       <td>{{l.lrequest_Description}} <div class=""></div></td>
+                       <td>{{l.lrequest_From | date}}</td>
+                       <td>{{l.lrequest_To | date}}</td>
+                       <td ><p *ngIf="gr(getr(l.lrequest_A_Status,l.lrequest_M_Status))" style="color: green;">{{getr(l.lrequest_A_Status,l.lrequest_M_Status)}}</p><p *ngIf="bl(getr(l.lrequest_A_Status,l.lrequest_M_Status))" style="color: blue;">{{getr(l.lrequest_A_Status,l.lrequest_M_Status)}}</p><p *ngIf="rd(getr(l.lrequest_A_Status,l.lrequest_M_Status))" style="color: red;">{{getr(l.lrequest_A_Status,l.lrequest_M_Status)}}</p></td>
                        
                     </tr>
-                    <tr>
-                        <td>xyz <div class=""></div></td>
-                        <td>2/02/20</td>
-                        <td>5/02/20</td>
-                        <td>Accepted</td>
-                        
-                     </tr>
+                  </ng-container>
+                    
                 </tbody>
             </table>
           </nb-accordion-item-body>

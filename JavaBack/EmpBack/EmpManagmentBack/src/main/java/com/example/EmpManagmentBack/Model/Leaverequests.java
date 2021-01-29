@@ -4,6 +4,8 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -13,8 +15,8 @@ import javax.persistence.Table;
 @Table(name="leaverequests")
 public class Leaverequests {
 	@Column(name=" LRequest_Id")
-	@Id
-	private String  LRequest_Id;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int  LRequest_Id;
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
@@ -45,11 +47,11 @@ public class Leaverequests {
 		super();
 	}
 
-	public String getLRequest_Id() {
+	public int getLRequest_Id() {
 		return LRequest_Id;
 	}
 
-	public void setLRequest_Id(String lRequest_Id) {
+	public void setLRequest_Id(int lRequest_Id) {
 		LRequest_Id = lRequest_Id;
 	}
 

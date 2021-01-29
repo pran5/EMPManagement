@@ -5,15 +5,15 @@
         <nb-card-body>
             <div class="columns is-multiline" style="z-index: -1;">
                 <div class="column is-3">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Resource Name" >
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Resource Name" [(ngModel)] = "res.rr_Name" >
                 </div>
                 <div class="column is-6">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Description" >
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Description" [(ngModel)] = "res.rr_Description" >
                 </div>
                    
                
 
-                <div class="column is-offset-9" ><button nbButton hero status="primary" >Generate Request</button></div>
+                <div class="column " ><button nbButton hero status="primary" (click) = "genrateReq(res)" >Generate Request</button></div>
                
            
             </div>
@@ -21,7 +21,7 @@
     </nb-card>
 
     <nb-accordion multi>
-        <!-- <nb-accordion-item *ngFor ="let c of custom; index as i">
+        <!-- <nb-accordion-item *ngFor ="let c of custom; index as i" >
           <nb-accordion-item-header>
             {{c.projectName}}
           </nb-accordion-item-header>
@@ -53,26 +53,24 @@
             <table class="table is-striped is-hoverable">
                 <tbody>
                     <tr>
+                      <th>Date</th>
                         <th>Resource</th>
                         <th>Description</th>
                         
                         <th>Status</th>
                         
                     </tr>
-                    <tr>
-                       <td>Mouse <div class=""></div></td>
-                       <td>mouse is not working</td>
+                    <ng-container>
+                    <tr *ngFor = "let re of r; index as i">
+                      <td>{{re.rr_Date|date}}</td>
+                       <td>{{re.rr_Name}} <div class=""></div></td>
+                       <td>{{re.rr_Description}}</td>
                        
-                       <td>Pandding</td>
+                       <td><p *ngIf="gr(re.rr_Status)" style="color: green;">Accepted</p><p *ngIf="bl(re.rr_Status)" style="color: blue;">Pandding</p><p *ngIf="rd(re.rr_Status)" style="color: red;">Rejected</p></td>
                        
                     </tr>
-                    <tr>
-                        <td>Monitor <div class=""></div></td>
-                        <td>Monitor is not working</td>
-                        
-                        <td>Accepted</td>
-                        
-                     </tr>
+                  </ng-container>
+                   
                 </tbody>
             </table>
           </nb-accordion-item-body>

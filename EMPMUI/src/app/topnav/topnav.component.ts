@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NetServiceService } from '../net-service.service';
+import { Emp } from '../EmpModle';
+import { Subscription } from 'rxjs';
+import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Component({
   selector: 'app-topnav',
@@ -7,12 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopnavComponent implements OnInit {
 
-
+ 
+  public emp : any ;
+  name = "";
+  Des = "";
+ 
   avatar = '../../../assets/images/avatars/alan.jpg';
-  constructor() { }
+  constructor(private ser:NetServiceService) { 
+    
+   console.log(ser.A);
+   console.log(ser.e);
+   this.emp = ser.e;
+   console.log(this.emp);
+   this.name = this.emp.Emp_Firstname+" "+this.emp.Emp_Lastname;
+   this.Des = this.emp.Emp_Designation;
+   
+    
+    
+  }
 
 
   ngOnInit(): void {
+    this.ser.loginCheck().subscribe((x:any)=>{console.log("============= "+x.message + x.access)});
   }
 
 }

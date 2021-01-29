@@ -41,6 +41,12 @@ public class LeavereqService {
 				
 			}
 			
+			// get employe leave by empid
+			
+			public List<Leaverequests> getLeaveByEmpId(String Id){
+				return leavereqRepo.getbyEid(Id);
+			}
+			
 			
 			
 	

@@ -174,9 +174,33 @@ public class RControler {
 				 
 				
 				return testt;
-						}								
-					
-				
+						}	
+		
+		
+		
+		@GetMapping("/projectddataByEmp")
+		public test getAllProjectByEmp(@RequestParam String id){
+			test testt = new test();
+			List<Team> t2;
+			List<Team> t3;
+			List<List<Team>> t = new ArrayList<List<Team>>() ;
+			List<Project> p = new ArrayList<Project>();
+			Project Pro ;
+			 
+			t2 = teamService.getAllTeamByEid(id);
+			for(int i = 0; i < t2.size(); i++){
+				t3 = teamService.getTeam_MId(t2.get(i).getTeam_M_Id());
+				t.add(t3);
+				System.out.println(t2.get(i).getTeam_M_Id()+"=======================");
+			 Pro = projectService.getByMAnagerID(t2.get(i).getTeam_M_Id());
+			 p.add(Pro);
+			}
+			testt.setPp(p);
+			 testt.setTt(t);
+			 
+			 return testt;
+			
+		}
 				
 				
 				
@@ -253,6 +277,12 @@ public class RControler {
 	 				}	
 	 		
 	 	  	
+// team by Emp id
+	 	  	@GetMapping("/Team/byEmpid")
+	 		public List<Team> getTeamByEid(@RequestParam String id){
+	 		return teamService.getAllTeamByEid(id); 
+	 				}
+	 	  	
 	 	  	
 // displaying ticket by id
 			@GetMapping("/ticket/{id}_A")
@@ -295,8 +325,20 @@ public class RControler {
 	 		 	  	@GetMapping("/leaverequests/{id}_A")
 	 		 		public Optional<Leaverequests> getLRequest_Id(@RequestParam String id){
 	 		 		return leaverequests.getLRequest_Id(id);
-	 		 				}	 
-	 	  	
+	 		 				}	
+	 		 	  	
+// display Leave Request By Employee id
+	 		 	  	
+	 		 	  @GetMapping("/leaverequests/getleave")
+	 		 		public List<Leaverequests> getLreqByEmpId(@RequestParam String id){
+	 		 		return leaverequests.getLeaveByEmpId(id);
+	 		 				}	
+// display Resource Request By Employee id
+	 		 	  
+	 		 	  @GetMapping("/Resource/ByEid")
+	 		 	  public List<Resourcerequests> getReqByID(@RequestParam String id){
+	 		 		  return resourcerequestService.getResourceByEmpId(id);
+	 		 	  }
 	 	  	
 	 	  	
 	 	  	
