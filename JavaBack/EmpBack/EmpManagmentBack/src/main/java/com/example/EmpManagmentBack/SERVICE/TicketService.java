@@ -35,6 +35,14 @@ public class TicketService {
 		return ticketRepo.findT(id);
 	}
 	
+	public int getopenbyEid(String id){
+		return ticketRepo.getOpencount(id);
+	}
+	
+	public int getclosebyEid(String id){
+		return ticketRepo.getClosecount(id);
+	}
+	
 	
 	
 	
@@ -61,6 +69,8 @@ public class TicketService {
 			// TODO Auto-generated method stub
 			return ticketRepo.findTByProjectID(project_Id);
 		}
+
+		
 			
 	
 	

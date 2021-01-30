@@ -70,6 +70,11 @@ public class TeamService {
 				// TODO Auto-generated method stub
 				return TeamRepository.findByMidnEid(m_Id, eeid);
 			}
+
+			public int getcountbyid(String t_Emp_Id) {
+				// TODO Auto-generated method stub
+				return TeamRepository.getcount(t_Emp_Id);
+			}
 					
 		
 		

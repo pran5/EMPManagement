@@ -15,7 +15,7 @@ import com.example.EmpManagmentBack.Model.Team;
 	
 	
 	 @Query("SELECT COUNT(u) FROM Team u WHERE u.T_Emp_Id=:id")
-	    long aMethodNameOrSomething(@Param("id") String id);
+	    int getcount(@Param("id") String id);
 		
 	 
 	

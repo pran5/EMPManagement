@@ -82,8 +82,15 @@
                       <div class="columns"  style="z-index: -1;">
                             
                         <div class="column is-4">
-                            <input type="text" nbInput fullWidth status="primary" placeholder="Assigned Manager ID" [(ngModel)]="project.project_M_Id">
-                        </div>
+                            <nb-select placeholder="Assign Manager" status="primary" [(selected)]="m" [(ngModel)] = "project.project_M_Id">
+                                
+                                <nb-option *ngFor ="let mm of Mid" value={{mm}}>{{mm}}</nb-option>
+                              
+                                
+                                
+                                
+                              </nb-select>
+                             </div>
                       
                         <div class="column is-4">
                             <input type="text" nbInput fullWidth status="primary" placeholder="Expacted Duration in Hr." [(ngModel)]="project.project_Duration">
@@ -100,7 +107,8 @@
                   </div>
                       <div class="columns"  style="z-index: -1;">
                             
-                        <div class="column is-2 is-offset-8">
+                        <div class="column is-5">{{msg}}</div>
+                        <div class="column is-2 is-offset-3">
                             <button nbButton nbStepperPrevious >prev</button>
                         </div>
                         <div class="column is-2">
@@ -142,10 +150,11 @@
                                        <td>{{c.employeeId[j]}}</td>
                                        <td>{{d}}</td>
                                        <td>{{c.roll[j]}}</td>
-                                       <td>2</td>
-                                       <td><div class="column is-8 " style="padding: 0;">
-                                        <nb-progress-bar [value]="80" status="primary" [displayValue]="true"></nb-progress-bar>
+                                       <td>{{c.otherProject[j]}}</td>
+                                       <td><div *ngIf = "fl(c.performance[j])" class="column is-8 " style="padding: 0;">
+                                        <nb-progress-bar [value]="c.performance[j]" status="primary" [displayValue]="true"></nb-progress-bar>
                                     </div>
+                                    <div *ngIf = "!fl(c.performance[j])" class="column is-8 " style="padding: 0;"><b>Data Not Available</b></div>
                                        </td>
                                     </tr> 
                                 </tbody>

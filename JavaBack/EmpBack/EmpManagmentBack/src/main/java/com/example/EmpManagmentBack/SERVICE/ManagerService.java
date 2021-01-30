@@ -55,6 +55,11 @@ public class ManagerService {
 				
 				return managerRepo.getManagerbyEid(id);
 			}
+
+			public List<Manager> getM_Idnull() {
+				// TODO Auto-generated method stub
+				return managerRepo.getallmanagernull();
+			}
 	
 	
 }

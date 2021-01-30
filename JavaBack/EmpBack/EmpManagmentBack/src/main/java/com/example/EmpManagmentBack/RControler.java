@@ -23,6 +23,7 @@ import com.example.EmpManagmentBack.Model.Pushnotification;
 import com.example.EmpManagmentBack.Model.Resourcerequests;
 import com.example.EmpManagmentBack.Model.Team;
 import com.example.EmpManagmentBack.Model.Ticket;
+import com.example.EmpManagmentBack.Model.Tstatus;
 import com.example.EmpManagmentBack.Model.test;
 import com.example.EmpManagmentBack.SERVICE.ClientService;
 import com.example.EmpManagmentBack.SERVICE.DepartmentServices;
@@ -159,18 +160,35 @@ public class RControler {
 				public test getAllProjectt(){
 			test testt = new test();
 			List<Team> t2;
+			List<Integer> l1;
 			List<List<Team>> t = new ArrayList<List<Team>>() ;
+			List<List<Integer>> l2 = new ArrayList<List<Integer>>();
+			List<List<Tstatus>> a2 = new ArrayList<List<Tstatus>>();
 				List<Project> p = projectService.getAllProject();
 				 System.out.println("hello----------------------------------");
 				 for(int i = 0; i < p.size(); i++) {
 			            System.out.println(p.get(i).getProject_M_Id());
 			            System.out.println("hello----------------------------------");
 			            t2=  teamService.getTeam_MId(p.get(i).getProject_M_Id());
+			            l1 = new ArrayList<Integer>();
+			            List<Tstatus> a1 = new ArrayList<Tstatus>();
+			            for(int j = 0 ; j < t2.size(); j++){
+			            	Tstatus a = new Tstatus();
+			            	int pcount = teamService.getcountbyid(t2.get(j).getT_Emp_Id());
+			            	a.setOpen(ticketService.getopenbyEid(t2.get(j).getT_Emp_Id()));
+			            	a.setClose(ticketService.getopenbyEid(t2.get(j).getT_Emp_Id()));
+			            	l1.add(pcount);
+			            	a1.add(a);
+			            }
 			            t.add(t2);
+			            l2.add(l1);
+			            a2.add(a1);
 			          
 			        }
 				 testt.setPp(p);
 				 testt.setTt(t);
+				 testt.setPc(l2);
+				 testt.setTc(a2);
 				 
 				
 				return testt;
@@ -236,7 +254,12 @@ public class RControler {
 	  	@GetMapping("/manager/{id}_A")
 		public Optional<Manager> getManager(@RequestParam String id){
 		return managerService.getM_Id(id);
-				}		
+				}	
+	 // displaying all Manager by null project id	  	
+	  	@GetMapping("/manager/{id}_k")
+		public List<Manager> getalManager(){
+		return managerService.getM_Idnull();
+				}
 		
  // displaying Team by id
 	 	  	@GetMapping("/Team/{id}_A")

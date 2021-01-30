@@ -1,11 +1,11 @@
 <div class="column " >
 
     <nb-card accent="info">
-        <nb-card-header>Employee ( Add Update Delete )</nb-card-header>
+        <nb-card-header>Employee Data</nb-card-header>
         <nb-card-body>
             <div class="columns" style="z-index: -1;">
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Employee Id (Ex. E001)" [(ngModel)] = "employee.emp_Id" (blur) = "select(employee.emp_Id)">
+                    <input type="text" nbInput fullWidth status="primary" placeholder="Employee Id (Ex. E001)" [(ngModel)] = "id" (blur) = "select(id)">
                 </div>
                 <div class="column is-4">
                     <input type="text" nbInput fullWidth status="primary" placeholder="First Name" [(ngModel)] = "employee.emp_Firstname">
@@ -38,10 +38,32 @@
              </div>
              <div class="columns">
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Department ID" [(ngModel)] = "employee.emp_Dept_Id">
+                   
+                    <nb-select placeholder="Select Department" status="primary" [(selected)]="Department" [(ngModel)] = "employee.emp_Dept_Id">
+                        
+                        <nb-option value="DP_01">Accounts</nb-option>
+                        <nb-option value="DP_02">Development</nb-option>
+                        <nb-option value="DP_03">Support</nb-option>
+                        <nb-option value="DP_04">Administration</nb-option>
+                        
+                        
+                        
+                      </nb-select>
                 </div>
                 <div class="column is-4">
-                    <input type="text" nbInput fullWidth status="primary" placeholder="Designation" [(ngModel)] = "employee.emp_Designation">
+                   
+                    <nb-select placeholder="Select Designation" status="primary" [(selected)]="Designation" [(ngModel)] = "employee.emp_Designation">
+                        
+                        <nb-option value="Devloper">Devloper</nb-option>
+                        <nb-option value="Designer">Designer</nb-option>
+                        <nb-option value="Manager">Manager</nb-option>
+                        <nb-option value="HR">HR</nb-option>
+                        <nb-option value="Data Analyst">Data Analyst</nb-option>
+                        <nb-option value="Tester">Tester</nb-option>
+                        <nb-option value="Consultant">Consultant</nb-option>
+                        
+                        
+                      </nb-select>
                 </div>
                 <div class="column is-4">
                     <input type="text" nbInput fullWidth status="primary" placeholder="Give Default Password" [(ngModel)] = "employee.emp_Pass">
@@ -103,22 +125,24 @@
 
              <div class="columns ">
 
-                <div class="column is-2 is-offset-5" >
+                <div class="column is-5" style="color: red;">{{msg}}</div>
+
+                <div class="column is-2 is-offset-2 " >
                     <button nbButton hero status="primary" (click) = "addEmp(employee)">Add New Employee</button>
                     
                  
                 </div>
-                <div class="column is-2" style="margin-left: 20px;">
+                <div class="column is-2 " style="margin-left: 20px;">
                     
                     <button nbButton hero status="primary" (click) = "update(employee)">Update Employee</button>
                     
                  
                 </div>
-                <div class="column is-2" style="margin-left: 10px;">
+                <!-- <div class="column is-2" style="margin-left: 10px;">
                    
                     <button nbButton hero status="danger">Delete Employee</button>
                  
-                </div>
+                </div> -->
                 
              </div>
            
