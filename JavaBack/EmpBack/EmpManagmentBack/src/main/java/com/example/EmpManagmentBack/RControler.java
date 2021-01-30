@@ -294,9 +294,47 @@ public class RControler {
 	 	  	@GetMapping("/ticket/{id}_B")
 	 		public List<Ticket> getEmp_Id(@RequestParam String id){
 	 		return ticketService.getEmp_Id(id); 
-	 				}			
-			
-			
+	 				}	
+
+	 	  	
+//get all ticket by manger id
+	 	  	@GetMapping("/ticket/{id}_nc")
+	 		public List<Ticket> getByM_Id(@RequestParam String id){
+	 	  		Manager m = managerService.getByEid(id);
+	 	  		Project p  = projectService.getByMAnagerID(m.getM_Id());
+	 		return ticketService.getByProjectId(p.getProject_Id()); 
+	 				}
+	 	  	
+	 	  	
+// get all team member of manager by manager empid
+	 	  	@GetMapping("/team/ofmanager")
+	 	  	public List<Team> getByMeid(@RequestParam String id){
+	 	  		Manager m = managerService.getByEid(id);
+	 	  		return teamService.getTeam_MId(m.getM_Id());
+	 	  	}
+
+//get employee from team by manager empid and employee empid
+	 	  	
+	 	  	@GetMapping("/team/Bymangeridnempid")
+	 	  	public Team getEmpByMeid(@RequestParam String meid,@RequestParam String eeid){
+	 	  		Manager m = managerService.getByEid(meid);
+	 	  		return teamService.getTeam_MId_EId(m.getM_Id(),eeid);
+	 	  	}
+	 	  	
+// get employee leave request under one manager
+	 	  	
+	 	  	@GetMapping("/allLeave/Bymangerid")
+	 	  	public List<List<Leaverequests>> getAllLeaveByMid(@RequestParam String meid){
+	 	  		Manager m = managerService.getByEid(meid);
+	 	  		List<Team> t =  teamService.getTeam_MId(m.getM_Id());
+	 	  		List<Leaverequests> l1 = new ArrayList<Leaverequests>();
+	 	  		List<List<Leaverequests>> l2 =  new ArrayList<List<Leaverequests>>()  ;
+	 	  		for(int i = 0; i < t.size(); i++){
+	 	  			l1 = leaverequests.getLeaveByEmpId(t.get(i).getT_Emp_Id());
+	 	  			l2.add(l1);
+	 	  		}
+	 	  		return l2;
+	 	  	}
 			
 			
 			

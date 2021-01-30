@@ -83,84 +83,80 @@
       <nb-tab tabTitle="Generate Leave Request">
         <div class="column "  >
 
-          <nb-card >
-              <nb-card-header>Generate Leave Request</nb-card-header>
-              <nb-card-body>
-                  <div class="columns is-multiline" style="z-index: -1;">
-                      <div class="column is-6">
-                          <input type="text" nbInput fullWidth status="primary" placeholder="Description" >
-                      </div>
-                      <div class="column"> <input nbInput placeholder="From Date" status="primary" [nbDatepicker]="dateTimePicker">
-                          <nb-datepicker #dateTimePicker></nb-datepicker></div>
-                          <div class="column"> <input nbInput placeholder="To Date" status="primary" [nbDatepicker]="dateTimePickerr" >
-                              <nb-datepicker #dateTimePickerr></nb-datepicker></div>
-                     
-      
-                      <div class="column is-offset-9" ><button nbButton hero status="primary" >Generate Request</button></div>
-                     
-                 
-                  </div>
-              </nb-card-body>
-          </nb-card>
-      
-          <nb-accordion multi>
-              <!-- <nb-accordion-item *ngFor ="let c of custom; index as i">
-                <nb-accordion-item-header>
-                  {{c.projectName}}
-                </nb-accordion-item-header>
-                <nb-accordion-item-body>
-                  <table class="table is-striped is-hoverable">
-                      <tbody>
-                          <tr>
-                              <th>Employee Id</th>
-                              <th>Name</th>
-                              <th>Roll</th>
-                              
-                          </tr>
-                          <tr *ngFor ="let d of c.employeeName; index as j" >
-                             <td>{{c.employeeId[j]}}</td>
-                             <td>{{d}}</td>
-                             <td>{{c.roll[j]}}</td>
+          <nb-card accent="info">
+            <nb-card-header>Generate Leave Request</nb-card-header>
+            <nb-card-body>
+                <div class="columns is-multiline" style="z-index: -1;">
+                    <div class="column is-6">
+                        <input type="text" nbInput fullWidth status="primary" placeholder="Description" [(ngModel)]="lev.lrequest_Description">
+                    </div>
+                    <div class="column"> <input nbInput placeholder="From Date" status="primary" [nbDatepicker]="dateTimePicker" [(ngModel)]="lev.lrequest_From">
+                        <nb-datepicker #dateTimePicker></nb-datepicker></div>
+                        <div class="column"> <input nbInput placeholder="To Date" status="primary" [nbDatepicker]="dateTimePickerr" [(ngModel)]="lev.lrequest_To" >
+                            <nb-datepicker #dateTimePickerr></nb-datepicker></div>
+                   
+    
+                    <div class="column is-offset-9" ><button nbButton hero status="primary" (click)="insLeave(lev)" >Generate Request</button></div>
+                   
+               
+                </div>
+            </nb-card-body>
+        </nb-card>
+    
+        <nb-accordion multi>
+            <!-- <nb-accordion-item *ngFor ="let c of custom; index as i">
+              <nb-accordion-item-header>
+                {{c.projectName}}
+              </nb-accordion-item-header>
+              <nb-accordion-item-body>
+                <table class="table is-striped is-hoverable">
+                    <tbody>
+                        <tr>
+                            <th>Employee Id</th>
+                            <th>Name</th>
+                            <th>Roll</th>
                             
-                          </tr> 
-                      </tbody>
-                  </table>
-                </nb-accordion-item-body>
-              </nb-accordion-item> -->
-            
-              <nb-accordion-item>
-                <nb-accordion-item-header>
-                  Request Status
-                </nb-accordion-item-header>
-                <nb-accordion-item-body>
-                  <table class="table is-striped is-hoverable">
-                      <tbody>
-                          <tr>
-                              <th>Description</th>
-                              <th>From</th>
-                              <th>To</th>
-                              <th>Status</th>
-                              
-                          </tr>
-                          <tr>
-                             <td>xyz <div class=""></div></td>
-                             <td>11/02/20</td>
-                             <td>15/02/20</td>
-                             <td>Pandding</td>
-                             
-                          </tr>
-                          <tr>
-                              <td>xyz <div class=""></div></td>
-                              <td>2/02/20</td>
-                              <td>5/02/20</td>
-                              <td>Accepted</td>
-                              
-                           </tr>
-                      </tbody>
-                  </table>
-                </nb-accordion-item-body>
-              </nb-accordion-item>
-              </nb-accordion>
+                        </tr>
+                        <tr *ngFor ="let d of c.employeeName; index as j" >
+                           <td>{{c.employeeId[j]}}</td>
+                           <td>{{d}}</td>
+                           <td>{{c.roll[j]}}</td>
+                          
+                        </tr> 
+                    </tbody>
+                </table>
+              </nb-accordion-item-body>
+            </nb-accordion-item> -->
+          
+            <nb-accordion-item>
+              <nb-accordion-item-header>
+                Request Status
+              </nb-accordion-item-header>
+              <nb-accordion-item-body>
+                <table class="table is-striped is-hoverable">
+                    <tbody>
+                        <tr>
+                            <th>Description</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Status</th>
+                            
+                        </tr>
+                        <ng-container *ngFor = "let l of olev; index as i">
+                        <tr>
+                           <td>{{l.lrequest_Description}} <div class=""></div></td>
+                           <td>{{l.lrequest_From | date}}</td>
+                           <td>{{l.lrequest_To | date}}</td>
+                           <td ><p *ngIf="gr(getr(l.lrequest_A_Status,l.lrequest_M_Status))" style="color: green;">{{getr(l.lrequest_A_Status,l.lrequest_M_Status)}}</p><p *ngIf="bl(getr(l.lrequest_A_Status,l.lrequest_M_Status))" style="color: blue;">{{getr(l.lrequest_A_Status,l.lrequest_M_Status)}}</p><p *ngIf="rd(getr(l.lrequest_A_Status,l.lrequest_M_Status))" style="color: red;">{{getr(l.lrequest_A_Status,l.lrequest_M_Status)}}</p></td>
+                           
+                        </tr>
+                      </ng-container>
+                        
+                    </tbody>
+                </table>
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+            </nb-accordion>
       </div>
       </nb-tab>
     </nb-tabset>

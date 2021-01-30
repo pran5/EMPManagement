@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     // this.ser.loginCheck().subscribe((x:any)=>{console.log("============= " + x.Emp_Access); this.check(x);});
-   
+    this.access = "O";
   }
 
   loginVisible(): boolean{

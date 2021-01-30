@@ -26,5 +26,8 @@ import com.example.EmpManagmentBack.Model.Team;
 	@Query("from Team where Team_M_Id = :x")
 	List<Team> findM(@Param("x") String x);
 	
+	@Query("from Team where Team_M_Id = :x and T_Emp_Id = :y")
+	Team findByMidnEid(@Param("x") String x,@Param("y") String y);
+	
 
 }

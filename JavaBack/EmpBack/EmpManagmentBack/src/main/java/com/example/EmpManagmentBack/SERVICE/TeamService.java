@@ -65,6 +65,11 @@ public class TeamService {
 				return id;
 				
 			}
+
+			public Team getTeam_MId_EId(String m_Id, String eeid) {
+				// TODO Auto-generated method stub
+				return TeamRepository.findByMidnEid(m_Id, eeid);
+			}
 					
 		
 		

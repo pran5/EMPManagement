@@ -35,7 +35,7 @@ this.ser.getsTeams(this.empid).subscribe((data:any)=>{
     temp.employeeName = [];
     temp.employeeId = []; 
       temp.projectName = data.pp[i].project_Name;
-      for(let j = 0 ; j < data.tt[i].length; j++){
+      for(let j = 0 ; j < data.tt[i].length; j++) {
         temp.roll.push(data.tt[i][j].employee.emp_Designation);
         temp.employeeName.push(data.tt[i][j].employee.emp_Firstname+" "+data.tt[i][j].employee.emp_Lastname);
         temp.employeeId.push(data.tt[i][j].employee.emp_Id);

@@ -56,6 +56,11 @@ public class TicketService {
 			return tk;
 		
 		}
+
+		public List<Ticket> getByProjectId(String project_Id) {
+			// TODO Auto-generated method stub
+			return ticketRepo.findTByProjectID(project_Id);
+		}
 			
 	
 	

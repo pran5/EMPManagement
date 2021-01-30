@@ -17,7 +17,8 @@ public interface TicketRepo extends CrudRepository<Ticket,String>{
 	
 	
 	
-	
+	@Query("from Ticket where KProject_Id = :x")
+	List<Ticket> findTByProjectID(@Param("x") String x);
 	
 	
 	
