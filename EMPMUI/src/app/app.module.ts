@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule, NbFormFieldModule, NbIconComponent, NbIconModule, NbSelectComponent, NbSelectModule, NbDatepickerModule, NbStepperModule, NbTabsetModule, NbAccordionModule, NbProgressBarModule } from '@nebular/theme';
+import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule, NbFormFieldModule, NbIconComponent, NbIconModule, NbSelectComponent, NbSelectModule, NbDatepickerModule, NbStepperModule, NbTabsetModule, NbAccordionModule, NbProgressBarModule, NbChatModule, NbDialogModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule  } from '@nebular/theme';
 import { AdminComponent } from './admin/admin.component';
@@ -33,6 +33,10 @@ import { LeaveComponent } from './employee/leave/leave.component';
 import { ResourceComponent } from './employee/resource/resource.component';
 import { TicketComponent } from './employee/dashbord/ticket/ticket.component';
 import { ProgressComponent } from './employee/dashbord/progress/progress.component';
+import { ChatComponent } from './topnav/chat/chat.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { NotiComponent } from './topnav/noti/noti.component';
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: { secure: true, transports: [ "flashsocket","polling","websocket" ] }  };
 
  
 
@@ -65,7 +69,9 @@ import { ProgressComponent } from './employee/dashbord/progress/progress.compone
     LeaveComponent,
     ResourceComponent,
     TicketComponent,
-    ProgressComponent
+    ProgressComponent,
+    ChatComponent,
+    NotiComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +96,10 @@ import { ProgressComponent } from './employee/dashbord/progress/progress.compone
     NbAccordionModule,
     BrowserAnimationsModule,
     NbProgressBarModule,
-    NbUserModule
+    NbUserModule,
+    NbChatModule,
+    NbDialogModule.forRoot(),
+    SocketIoModule.forRoot(config)
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent]

@@ -6,5 +6,8 @@ export interface Custom{
     roll?: Array<String>;
     otherProject?: Array<number>;
     performance?: Array<number>;
+    open?:Number;
+    close?:Number;
+    MangerId?:String;
    
 }

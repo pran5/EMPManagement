@@ -27,11 +27,11 @@ public class TeamService {
 	
 		
 		
-		// fetching count by employee id		
-				public Long getT_Emp_Id(String id){
-					return TeamRepository.aMethodNameOrSomething(id);
-				}	
-		
+//		// fetching count by employee id		
+//				public Long getT_Emp_Id(String id){
+//					return TeamRepository.aMethodNameOrSomething(id);
+//				}	
+//		
 		
 		
 		

@@ -1,8 +1,9 @@
 <div class="columns cardd" style="position:fixed;width:103%;z-index: 3;">
    
-    <div style="margin-left:75%" class="column is-4">
+    <div style="margin-left:70%" class="column is-4">
       <nb-actions size="large">
-        <nb-action> <i class="sl sl-icon-bell"><span class="new-circle gelatine"></span></i></nb-action>
+        <nb-action> <i class="sl sl-icon-bell" (click)="openWithBackdropnClick()"><span class="new-circle gelatine"></span></i></nb-action>
+        <nb-action> <i class="sl sl-icon-bubbles" (click)="openWithBackdropClick()"><span class="new-circle gelatine"></span></i></nb-action>
         <nb-action > <i class="sl sl-icon-logout" (click)="logout()"></i></nb-action>
         <nb-action>
           <nb-user size="large" name={{name}} title={{Des}} [picture]="avatar" >
@@ -11,3 +12,5 @@
       </nb-actions>
     </div>
   </div>
+
+  

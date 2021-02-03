@@ -49,4 +49,10 @@ export class NetServiceService {
     const url = 'http://localhost:7500/?x=133';
     return this.con.get(url);
   }
+
+  getnotification(): Observable<any>{
+    
+    const url = 'http://localhost:6500/pushnotification';
+    return this.con.get(url);
+  }
 }

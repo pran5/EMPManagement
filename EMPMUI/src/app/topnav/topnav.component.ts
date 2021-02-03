@@ -4,6 +4,10 @@ import { Emp } from '../EmpModle';
 import { Subscription } from 'rxjs';
 import { CompileShallowModuleMetadata } from '@angular/compiler';
 import { Router } from '@angular/router';
+import { NbDialogService } from '@nebular/theme';
+import { ChatComponent } from './chat/chat.component'
+import { NotiComponent } from './noti/noti.component';
+
 
 @Component({
   selector: 'app-topnav',
@@ -18,7 +22,7 @@ export class TopnavComponent implements OnInit {
   Des = "";
  
   avatar = '../../../assets/images/avatars/alan.jpg';
-  constructor(private ser:NetServiceService, private router: Router) { 
+  constructor(private ser:NetServiceService, private router: Router,private dialogService: NbDialogService) { 
     
    console.log(ser.A);
    console.log(ser.e);
@@ -38,6 +42,21 @@ export class TopnavComponent implements OnInit {
 
   logout(){
     this.router.navigate(['./login']);
+  }
+
+
+  openWithBackdropClick() {
+    this.open(true);
+  }
+  protected open(closeOnBackdropClick: boolean) {
+    this.dialogService.open(ChatComponent, { closeOnBackdropClick });
+  }
+
+  openWithBackdropnClick() {
+    this.opeen(true);
+  }
+  protected opeen(closeOnBackdropClick: boolean) {
+    this.dialogService.open(NotiComponent, { closeOnBackdropClick });
   }
 
 }

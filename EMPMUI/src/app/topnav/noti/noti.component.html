@@ -1,0 +1,23 @@
+<div style="width: 900px;"  >
+            
+
+            
+    <nb-card accent="info" style="height: 400px;">
+        <nb-card-header>Notification</nb-card-header>
+        <nb-card-body>
+            <div *ngFor="let a of notif">
+            <nb-card  *ngIf = "check(a.pn_Level)" style="width: 700px; margin-left: 75px;">
+                <nb-card-body>
+                    <div >
+                        <div  style="width: 600px;" ><b>{{a.pn_Message}}</b></div>
+                        <div style="font-size: 0.7em;" >{{a.pn_Date_Time|date}}</div>
+                    </div>
+                 
+                </nb-card-body>
+              </nb-card></div>
+           
+        </nb-card-body>
+      </nb-card>
+   
+
+</div>

@@ -176,7 +176,7 @@ public class RControler {
 			            	Tstatus a = new Tstatus();
 			            	int pcount = teamService.getcountbyid(t2.get(j).getT_Emp_Id());
 			            	a.setOpen(ticketService.getopenbyEid(t2.get(j).getT_Emp_Id()));
-			            	a.setClose(ticketService.getopenbyEid(t2.get(j).getT_Emp_Id()));
+			            	a.setClose(ticketService.getclosebyEid(t2.get(j).getT_Emp_Id()));
 			            	l1.add(pcount);
 			            	a1.add(a);
 			            }
@@ -269,11 +269,11 @@ public class RControler {
 	 	  	
 // display count by employee id			
 			
-	 				@GetMapping("/teamempid") 	
-	 				public Long getT_Emp_Id(@RequestParam String id)
-	 				{
-	 					return teamService.getT_Emp_Id(id);
-	 				}
+//	 				@GetMapping("/teamempid") 	
+//	 				public Long getT_Emp_Id(@RequestParam String id)
+//	 				{
+//	 					return teamService.getT_Emp_Id(id);
+//	 				}
 	 	  	
 	 	  	
 	 	  	

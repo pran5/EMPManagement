@@ -45,11 +45,13 @@ export class AemployeeComponent implements OnInit {
         })
       }
       console.log(data);
+      this.employee = new Emp();
     });
   }
   }
 
   select(id:String){
+    this.msg = "";
     this.employee = new Emp();
     console.log("select called");
     this.ser.singleSelect(id).subscribe(( data : any)=>{

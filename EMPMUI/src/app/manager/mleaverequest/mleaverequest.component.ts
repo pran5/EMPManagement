@@ -164,7 +164,7 @@ export class MLeaverequestComponent implements OnInit {
   insLeave(l:Leave) {
     this.lev = new Leave();
     l.lrequest_A_Status = 2;
-    l.lrequest_M_Status = 2;
+    l.lrequest_M_Status = 1;
     l.lrequest_Emp_Id = this.empid;
     
 

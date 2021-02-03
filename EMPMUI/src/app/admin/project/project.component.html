@@ -67,7 +67,7 @@
                             
                             <div class="column is-6">
                             
-                                <textarea nbInput fullWidth placeholder="Technology will be used"status="primary" [(ngModel)]="project.project_Technology"></textarea>
+                                <textarea nbInput fullWidth placeholder="Technologies"status="primary" [(ngModel)]="project.project_Technology"></textarea>
                                
                             </div>
                             <div class="column is-6">
@@ -93,7 +93,7 @@
                              </div>
                       
                         <div class="column is-4">
-                            <input type="text" nbInput fullWidth status="primary" placeholder="Expacted Duration in Hr." [(ngModel)]="project.project_Duration">
+                            <input type="text" nbInput fullWidth status="primary" placeholder="Expected Duration in Hr." [(ngModel)]="project.project_Duration">
                         </div>
 
                         <div class="column is-3">
@@ -152,7 +152,7 @@
                                        <td>{{c.roll[j]}}</td>
                                        <td>{{c.otherProject[j]}}</td>
                                        <td><div *ngIf = "fl(c.performance[j])" class="column is-8 " style="padding: 0;">
-                                        <nb-progress-bar [value]="c.performance[j]" status="primary" [displayValue]="true"></nb-progress-bar>
+                                        <nb-progress-bar [value]="c.performance[j]" status="primary" >{{c.performance[j]| number : '1.2-2'}}</nb-progress-bar>
                                     </div>
                                     <div *ngIf = "!fl(c.performance[j])" class="column is-8 " style="padding: 0;"><b>Data Not Available</b></div>
                                        </td>
@@ -162,7 +162,7 @@
                           </nb-accordion-item-body>
                         </nb-accordion-item>
                       
-                        <nb-accordion-item>
+                        <!-- <nb-accordion-item>
                           <nb-accordion-item-header>
                             Project name 2
                           </nb-accordion-item-header>
@@ -197,7 +197,7 @@
                                 </tbody>
                             </table>
                           </nb-accordion-item-body>
-                        </nb-accordion-item>
+                        </nb-accordion-item> -->
                       
                         
                       </nb-accordion>
@@ -208,54 +208,23 @@
                 <nb-tab tabTitle="Project Progress">
                    
                    <div class="columns is-multiline" >
-                       <div class="column is-3 card" style="margin-top: 20px;">
+                       <div class="column is-3 card" style="margin-top: 20px; padding: 20px; margin-left: 20px;" *ngFor ="let c of custom; index as i">
                            <div class="columns is-centered" style="margin-top: 30px;">
                         <nb-user size="large"
-                        name="Judo Bank"
+                        name="P"
                         
                         onlyPicture>
                         </nb-user>
 
                         </div>
-                        <div class="columns is-centered" style="margin-top: 10px;"><h4>Judo Bank</h4></div>
-                        <div class="columns is-centered" style="margin-top: -10%;"><h6>Manager Id: M002</h6></div>
+                        <div class="columns is-centered" style="margin-top: 10px;"><h6>{{c.projectName}}</h6></div>
+                        <div class="columns is-centered" style="margin-top: -10%; font-size: .8em;" ><b>Manager Id: {{c.MangerId}}</b></div>
                         <div class="columns is-centered" > 
-                            <div class=" column is-10" style="margin-bottom: 20px;"><nb-progress-bar [value]="80" status="primary" [displayValue]="true"></nb-progress-bar>
+                            <div class=" column is-10" style="margin-bottom: 20px;"><nb-progress-bar [value]="((c.close/(c.open+c.close))*100)" *ngIf="fll(c.open+c.close)" status="primary" >{{((c.close/(c.open+c.close))*100)| number : '1.2-2' }}</nb-progress-bar>
                             </div>
                         </div>
                        </div>
-                       <div class="column is-3 card is-offset-1" style="margin-top: 20px;">
-                        <div class="columns is-centered" style="margin-top: 30px;">
-                            <nb-user size="large"
-                            name="AID School"
-                            
-                            onlyPicture>
-                            </nb-user>
-    
-                            </div>
-                            <div class="columns is-centered" style="margin-top: 10px;"><h4>AID School</h4></div>
-                            <div class="columns is-centered" style="margin-top: -10%;"><h6>Manager Id: M003</h6></div>
-                            <div class="columns is-centered" > 
-                                <div class=" column is-10" style="margin-bottom: 20px;"><nb-progress-bar [value]="66" status="primary" [displayValue]="true"></nb-progress-bar>
-                                </div>
-                            </div>
-                       </div>
-                       <div class="column is-3 card is-offset-1" style="margin-top: 20px;">
-                        <div class="columns is-centered" style="margin-top: 30px;">
-                            <nb-user size="large"
-                            name="Apolo Hospital"
-                            
-                            onlyPicture>
-                            </nb-user>
-    
-                            </div>
-                            <div class="columns is-centered" style="margin-top: 10px;"><h4>Apolo Hospital</h4></div>
-                            <div class="columns is-centered" style="margin-top: -10%;"><h6>Manager Id: M001</h6></div>
-                            <div class="columns is-centered" > 
-                                <div class=" column is-10" style="margin-bottom: 20px;"><nb-progress-bar [value]="72" status="primary" [displayValue]="true"></nb-progress-bar>
-                                </div>
-                            </div>
-                       </div>
+                     
                       
                        
                    </div>

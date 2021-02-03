@@ -63,13 +63,18 @@ export class ProjectComponent implements OnInit {
         temp.roll = [];
         temp.otherProject = [];
         temp.performance = [];
+        temp.close = 0;
+        temp.open = 0;
       temp.projectName = data.pp[i].project_Name;
+      temp.MangerId = data.pp[i].manager.m_Id;
       
       for(let j = 0; j<data.tt[i].length;j++){
         temp.employeeName.push(data.tt[i][j].employee.emp_Firstname+" "+data.tt[i][j].employee.emp_Lastname);
         temp.roll.push(data.tt[i][j].employee.emp_Designation);
         temp.employeeId.push(data.tt[i][j].employee.emp_Id);
         temp.otherProject.push(data.pc[i][j]);
+        temp.open = temp.open+data.tc[i][j].open;
+        temp.close = temp.close+data.tc[i][j].close;
         if((data.tc[i][j].open+data.tc[i][j].close)==0){
           temp.performance.push(-1);
         }else{
@@ -82,7 +87,7 @@ export class ProjectComponent implements OnInit {
       }
       console.log(this.custom);
       console.log(this.custom);
-      console.log("************************************************************");
+      console.log("*************************************************************");
     });
   }
 
@@ -95,8 +100,17 @@ export class ProjectComponent implements OnInit {
     }
   }
 
+  fll(n:number):boolean{
+    if(n==0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
   addClient(cl:Client){
-    console.log("client insert");
+    console.log("client  insert");
     this.ser.insertClient(cl).subscribe(( data : any)=>{
       console.log(data);
     });
