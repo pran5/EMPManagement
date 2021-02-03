@@ -4,3 +4,9 @@
     transition: 0.3s;
     background-color: rgb(255, 255, 255);
   }
+
+ 
+  nb-chat {
+    width: 300px;
+    margin: 1rem;
+  }

@@ -29,9 +29,18 @@ public class TicketService {
 	
 	
 	
+	
 //fetching Team by manager id
 	public List<Ticket> getEmp_Id(String id){
 		return ticketRepo.findT(id);
+	}
+	
+	public int getopenbyEid(String id){
+		return ticketRepo.getOpencount(id);
+	}
+	
+	public int getclosebyEid(String id){
+		return ticketRepo.getClosecount(id);
 	}
 	
 	
@@ -55,6 +64,13 @@ public class TicketService {
 			return tk;
 		
 		}
+
+		public List<Ticket> getByProjectId(String project_Id) {
+			// TODO Auto-generated method stub
+			return ticketRepo.findTByProjectID(project_Id);
+		}
+
+		
 			
 	
 	

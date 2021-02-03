@@ -4,6 +4,10 @@ export interface Custom{
     employeeId?: Array<String>;
     employeeName?: Array<String>;
     roll?: Array<String>;
+    otherProject?: Array<number>;
     performance?: Array<number>;
+    open?:Number;
+    close?:Number;
+    MangerId?:String;
    
 }

@@ -15,13 +15,19 @@ import com.example.EmpManagmentBack.Model.Team;
 	
 	
 	 @Query("SELECT COUNT(u) FROM Team u WHERE u.T_Emp_Id=:id")
-	    long aMethodNameOrSomething(@Param("id") String id);
+	    int getcount(@Param("id") String id);
 		
+	 
 	
+	 @Query("from Team where T_Emp_Id = :x")
+		List<Team> getAllbyEid(@Param("x") String x);
 	
 	
 	@Query("from Team where Team_M_Id = :x")
 	List<Team> findM(@Param("x") String x);
+	
+	@Query("from Team where Team_M_Id = :x and T_Emp_Id = :y")
+	Team findByMidnEid(@Param("x") String x,@Param("y") String y);
 	
 
 }
