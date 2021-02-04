@@ -1,0 +1,62 @@
+<div class="column " style="margin-top: 5%;" >
+
+    <nb-card accent="info">
+       
+        <nb-card-body>
+<nb-accordion multi>
+    <!-- <nb-accordion-item *ngFor ="let c of custom; index as i">
+      <nb-accordion-item-header>
+        {{c.projectName}}
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+        <table class="table is-striped is-hoverable">
+            <tbody>
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Name</th>
+                    <th>Roll</th>
+                    
+                </tr>
+                <tr *ngFor ="let d of c.employeeName; index as j" >
+                   <td>{{c.employeeId[j]}}</td>
+                   <td>{{d}}</td>
+                   <td>{{c.roll[j]}}</td>
+                  
+                </tr> 
+            </tbody>
+        </table>
+      </nb-accordion-item-body>
+    </nb-accordion-item> -->
+  
+    <nb-accordion-item *ngFor = "let p of apidataa;index as i">
+      <nb-accordion-item-header>
+        {{p.projectName}}
+      </nb-accordion-item-header>
+      <nb-accordion-item-body >
+        <table class="table is-striped is-hoverable">
+            <tbody>
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Name</th>
+                    <th>Roll</th>
+                    
+                </tr>
+                <ng-container *ngFor = "let e of p.employeeName;index as j">
+                <tr>
+                   <td>{{p.employeeId[j]}}</td>
+                   <td>{{e}}</td>
+                   <td>{{p.roll[j]}}</td>
+                   
+                </tr>
+              </ng-container>
+                
+            </tbody>
+        </table>
+      </nb-accordion-item-body>
+    </nb-accordion-item>
+
+    
+  </nb-accordion>
+  </nb-card-body>
+  </nb-card>
+  </div>

@@ -35,6 +35,11 @@ public class ResourcerequestService {
 				resourceRepo.save(req);
 				return req;
 			}
+			
+			//get resource request by emp id
+			public List<Resourcerequests> getResourceByEmpId(String id){
+				return resourceRepo.getbyEid(id);
+			}
 
 			
 			

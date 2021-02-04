@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule, NbFormFieldModule, NbIconComponent, NbIconModule, NbSelectComponent, NbSelectModule, NbDatepickerModule, NbStepperModule, NbTabsetModule, NbAccordionModule, NbProgressBarModule } from '@nebular/theme';
+import { NbSidebarService, NbThemeModule, NbInputModule, NbActionsModule, NbUserModule, NbFormFieldModule, NbIconComponent, NbIconModule, NbSelectComponent, NbSelectModule, NbDatepickerModule, NbStepperModule, NbTabsetModule, NbAccordionModule, NbProgressBarModule, NbChatModule, NbDialogModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule  } from '@nebular/theme';
 import { AdminComponent } from './admin/admin.component';
@@ -20,6 +20,23 @@ import { AnotificationComponent } from './admin/anotification/anotification.comp
 import { AleaveComponent } from './admin/aleave/aleave.component';
 import { AresourceComponent } from './admin/aresource/aresource.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MsidenavComponent } from './manager/msidenav/msidenav.component';
+import { MLeaverequestComponent } from './manager/mleaverequest/mleaverequest.component';
+import { MProjectprogressComponent } from './manager/mprojectprogress/mprojectprogress.component';
+import { MRRequestComponent } from './manager/mrrequest/mrrequest.component';
+import { MaddmemberComponent } from './manager/maddmember/maddmember.component';
+import { MTicketComponent } from './manager/mticket/mticket.component';
+import { EsidenavComponent } from './employee/esidenav/esidenav.component';
+import { DashbordComponent } from './employee/dashbord/dashbord.component';
+import { TeamComponent } from './employee/team/team.component';
+import { LeaveComponent } from './employee/leave/leave.component';
+import { ResourceComponent } from './employee/resource/resource.component';
+import { TicketComponent } from './employee/dashbord/ticket/ticket.component';
+import { ProgressComponent } from './employee/dashbord/progress/progress.component';
+import { ChatComponent } from './topnav/chat/chat.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { NotiComponent } from './topnav/noti/noti.component';
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: { secure: true, transports: [ "flashsocket","polling","websocket" ] }  };
 
  
 
@@ -39,7 +56,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProjectComponent,
     AnotificationComponent,
     AleaveComponent,
-    AresourceComponent
+    AresourceComponent,
+    MsidenavComponent,
+    MProjectprogressComponent,
+    MLeaverequestComponent,
+    MRRequestComponent,
+    MaddmemberComponent,
+    MTicketComponent,
+    EsidenavComponent,
+    DashbordComponent,
+    TeamComponent,
+    LeaveComponent,
+    ResourceComponent,
+    TicketComponent,
+    ProgressComponent,
+    ChatComponent,
+    NotiComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +96,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NbAccordionModule,
     BrowserAnimationsModule,
     NbProgressBarModule,
-    NbUserModule
+    NbUserModule,
+    NbChatModule,
+    NbDialogModule.forRoot(),
+    SocketIoModule.forRoot(config)
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent]

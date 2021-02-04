@@ -23,6 +23,7 @@ import com.example.EmpManagmentBack.Model.Pushnotification;
 import com.example.EmpManagmentBack.Model.Resourcerequests;
 import com.example.EmpManagmentBack.Model.Team;
 import com.example.EmpManagmentBack.Model.Ticket;
+import com.example.EmpManagmentBack.Model.Tstatus;
 import com.example.EmpManagmentBack.Model.test;
 import com.example.EmpManagmentBack.SERVICE.ClientService;
 import com.example.EmpManagmentBack.SERVICE.DepartmentServices;
@@ -153,30 +154,71 @@ public class RControler {
 				
 				
 				
-		//$$$$$$$$$$$$$$		
+		//$$$$$$$$$$$$$$		by Nikhil project details plus team details
 				
 		@GetMapping("/projectexpnddata")
 				public test getAllProjectt(){
 			test testt = new test();
 			List<Team> t2;
+			List<Integer> l1;
 			List<List<Team>> t = new ArrayList<List<Team>>() ;
+			List<List<Integer>> l2 = new ArrayList<List<Integer>>();
+			List<List<Tstatus>> a2 = new ArrayList<List<Tstatus>>();
 				List<Project> p = projectService.getAllProject();
 				 System.out.println("hello----------------------------------");
 				 for(int i = 0; i < p.size(); i++) {
 			            System.out.println(p.get(i).getProject_M_Id());
 			            System.out.println("hello----------------------------------");
 			            t2=  teamService.getTeam_MId(p.get(i).getProject_M_Id());
+			            l1 = new ArrayList<Integer>();
+			            List<Tstatus> a1 = new ArrayList<Tstatus>();
+			            for(int j = 0 ; j < t2.size(); j++){
+			            	Tstatus a = new Tstatus();
+			            	int pcount = teamService.getcountbyid(t2.get(j).getT_Emp_Id());
+			            	a.setOpen(ticketService.getopenbyEid(t2.get(j).getT_Emp_Id()));
+			            	a.setClose(ticketService.getclosebyEid(t2.get(j).getT_Emp_Id()));
+			            	l1.add(pcount);
+			            	a1.add(a);
+			            }
 			            t.add(t2);
+			            l2.add(l1);
+			            a2.add(a1);
 			          
 			        }
 				 testt.setPp(p);
 				 testt.setTt(t);
+				 testt.setPc(l2);
+				 testt.setTc(a2);
 				 
 				
 				return testt;
-						}								
-					
-				
+						}	
+		
+		
+		
+		@GetMapping("/projectddataByEmp")
+		public test getAllProjectByEmp(@RequestParam String id){
+			test testt = new test();
+			List<Team> t2;
+			List<Team> t3;
+			List<List<Team>> t = new ArrayList<List<Team>>() ;
+			List<Project> p = new ArrayList<Project>();
+			Project Pro ;
+			 
+			t2 = teamService.getAllTeamByEid(id);
+			for(int i = 0; i < t2.size(); i++){
+				t3 = teamService.getTeam_MId(t2.get(i).getTeam_M_Id());
+				t.add(t3);
+				System.out.println(t2.get(i).getTeam_M_Id()+"=======================");
+			 Pro = projectService.getByMAnagerID(t2.get(i).getTeam_M_Id());
+			 p.add(Pro);
+			}
+			testt.setPp(p);
+			 testt.setTt(t);
+			 
+			 return testt;
+			
+		}
 				
 				
 				
@@ -212,7 +254,12 @@ public class RControler {
 	  	@GetMapping("/manager/{id}_A")
 		public Optional<Manager> getManager(@RequestParam String id){
 		return managerService.getM_Id(id);
-				}		
+				}	
+	 // displaying all Manager by null project id	  	
+	  	@GetMapping("/manager/{id}_k")
+		public List<Manager> getalManager(){
+		return managerService.getM_Idnull();
+				}
 		
  // displaying Team by id
 	 	  	@GetMapping("/Team/{id}_A")
@@ -222,11 +269,11 @@ public class RControler {
 	 	  	
 // display count by employee id			
 			
-	 				@GetMapping("/teamempid") 	
-	 				public Long getT_Emp_Id(@RequestParam String id)
-	 				{
-	 					return teamService.getT_Emp_Id(id);
-	 				}
+//	 				@GetMapping("/teamempid") 	
+//	 				public Long getT_Emp_Id(@RequestParam String id)
+//	 				{
+//	 					return teamService.getT_Emp_Id(id);
+//	 				}
 	 	  	
 	 	  	
 	 	  	
@@ -246,12 +293,18 @@ public class RControler {
 	 	  	
 	 	  	
 	 	  	
-//$$$$$$$$$$$$$$$$$$ 	  	
+//$$$$$$$$$$$$$$$$$$ 	by Nikhil  	team by manger id
 	 	  	@GetMapping("/Team/{id}_B")
 	 		public List<Team> getTeam_MId(@RequestParam String id){
 	 		return teamService.getTeam_MId(id); 
 	 				}	
 	 		
+	 	  	
+// team by Emp id
+	 	  	@GetMapping("/Team/byEmpid")
+	 		public List<Team> getTeamByEid(@RequestParam String id){
+	 		return teamService.getAllTeamByEid(id); 
+	 				}
 	 	  	
 	 	  	
 // displaying ticket by id
@@ -264,9 +317,47 @@ public class RControler {
 	 	  	@GetMapping("/ticket/{id}_B")
 	 		public List<Ticket> getEmp_Id(@RequestParam String id){
 	 		return ticketService.getEmp_Id(id); 
-	 				}			
-			
-			
+	 				}	
+
+	 	  	
+//get all ticket by manger id
+	 	  	@GetMapping("/ticket/{id}_nc")
+	 		public List<Ticket> getByM_Id(@RequestParam String id){
+	 	  		Manager m = managerService.getByEid(id);
+	 	  		Project p  = projectService.getByMAnagerID(m.getM_Id());
+	 		return ticketService.getByProjectId(p.getProject_Id()); 
+	 				}
+	 	  	
+	 	  	
+// get all team member of manager by manager empid
+	 	  	@GetMapping("/team/ofmanager")
+	 	  	public List<Team> getByMeid(@RequestParam String id){
+	 	  		Manager m = managerService.getByEid(id);
+	 	  		return teamService.getTeam_MId(m.getM_Id());
+	 	  	}
+
+//get employee from team by manager empid and employee empid
+	 	  	
+	 	  	@GetMapping("/team/Bymangeridnempid")
+	 	  	public Team getEmpByMeid(@RequestParam String meid,@RequestParam String eeid){
+	 	  		Manager m = managerService.getByEid(meid);
+	 	  		return teamService.getTeam_MId_EId(m.getM_Id(),eeid);
+	 	  	}
+	 	  	
+// get employee leave request under one manager
+	 	  	
+	 	  	@GetMapping("/allLeave/Bymangerid")
+	 	  	public List<List<Leaverequests>> getAllLeaveByMid(@RequestParam String meid){
+	 	  		Manager m = managerService.getByEid(meid);
+	 	  		List<Team> t =  teamService.getTeam_MId(m.getM_Id());
+	 	  		List<Leaverequests> l1 = new ArrayList<Leaverequests>();
+	 	  		List<List<Leaverequests>> l2 =  new ArrayList<List<Leaverequests>>()  ;
+	 	  		for(int i = 0; i < t.size(); i++){
+	 	  			l1 = leaverequests.getLeaveByEmpId(t.get(i).getT_Emp_Id());
+	 	  			l2.add(l1);
+	 	  		}
+	 	  		return l2;
+	 	  	}
 			
 			
 			
@@ -295,8 +386,20 @@ public class RControler {
 	 		 	  	@GetMapping("/leaverequests/{id}_A")
 	 		 		public Optional<Leaverequests> getLRequest_Id(@RequestParam String id){
 	 		 		return leaverequests.getLRequest_Id(id);
-	 		 				}	 
-	 	  	
+	 		 				}	
+	 		 	  	
+// display Leave Request By Employee id
+	 		 	  	
+	 		 	  @GetMapping("/leaverequests/getleave")
+	 		 		public List<Leaverequests> getLreqByEmpId(@RequestParam String id){
+	 		 		return leaverequests.getLeaveByEmpId(id);
+	 		 				}	
+// display Resource Request By Employee id
+	 		 	  
+	 		 	  @GetMapping("/Resource/ByEid")
+	 		 	  public List<Resourcerequests> getReqByID(@RequestParam String id){
+	 		 		  return resourcerequestService.getResourceByEmpId(id);
+	 		 	  }
 	 	  	
 	 	  	
 	 	  	

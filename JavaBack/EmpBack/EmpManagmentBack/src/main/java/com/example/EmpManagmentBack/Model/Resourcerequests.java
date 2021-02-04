@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -12,10 +14,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="resourcerequests")
 public class Resourcerequests {
-	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name=" RR_Id")
-	@Id
-	private String  RR_Id;
+	private int  RR_Id;
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
@@ -43,11 +44,11 @@ public class Resourcerequests {
 	private int RR_Status;
 	private Date RR_Date;
 
-	public String getRR_Id() {
+	public int getRR_Id() {
 		return RR_Id;
 	}
 
-	public void setRR_Id(String rR_Id) {
+	public void setRR_Id(int rR_Id) {
 		RR_Id = rR_Id;
 	}
 

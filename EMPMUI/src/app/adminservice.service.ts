@@ -21,6 +21,14 @@ export class AdminserviceService {
     return this.con.post(url, obj);
   }
 
+  
+
+  insertMan(obj: any): Observable<any>
+  {
+    const url = 'http://localhost:6500/manager_B';
+    return this.con.post(url, obj);
+  }
+
   singleSelect(id:String): Observable<any>
   {
     const url = 'http://localhost:6500/employees/{id}_A?id='+id;
@@ -52,7 +60,7 @@ export class AdminserviceService {
     
     const url = 'http://localhost:6500/projectexpnddata';
     return this.con.get(url);
-  }
+  } 
 
 
   insertPushnotification(obj: Notify): Observable<any> 
@@ -91,10 +99,23 @@ export class AdminserviceService {
     return this.con.get(url);
   }
 
-  ResourceAres(obj:Leave): Observable<any>{
+  ResourceAres(obj:Leave): Observable<any> {
     const url = 'http://localhost:6500/resourcerequest_C';
     return this.con.put(url,obj);
   }
+
+  getManagerNull(): Observable<any>{
+    const url = 'http://localhost:6500/manager/{id}_k';
+    return this.con.get(url);
+  }
+
+  updateMan(obj: any): Observable<any>
+  {
+    const url = 'http://localhost:6500/manager_C';
+    return this.con.put(url, obj);
+  }
+
+  
 
 
 

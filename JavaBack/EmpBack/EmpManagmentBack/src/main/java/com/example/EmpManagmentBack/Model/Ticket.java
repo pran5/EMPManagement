@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -18,10 +20,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name="ticket")
 public class Ticket {
-	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name=" Ticket_No")
-	@Id
-	private String  Ticket_No;
+	
+	private int  Ticket_No;
 	
 	
 	
@@ -74,11 +76,11 @@ public class Ticket {
 		super();
 	}
 
-	public String getTicket_No() {
+	public int getTicket_No() {
 		return Ticket_No;
 	}
 
-	public void setTicket_No(String ticket_No) {
+	public void setTicket_No(int ticket_No) {
 		Ticket_No = ticket_No;
 	}
 
