@@ -46,8 +46,8 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if(data.access == 'a'){
         this.router.navigate(['./Admin'], { relativeTo: this.route });
-        this.access ='a';
-      }
+        this.access ='a';   
+      } 
       else if(data.access == 'm'){
         this.router.navigate(['./Manager'], { relativeTo: this.route });
         this.access ='m';
