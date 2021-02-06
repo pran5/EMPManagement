@@ -1,0 +1,43 @@
+<div class="column " >
+
+  <nb-card accent="info">
+    <nb-card-header>Raise Ticket</nb-card-header>
+    <nb-card-body>
+        <div class="columns is-multiline" style="z-index: -1;">
+            <div class="column is-4">
+                <input type="text" nbInput fullWidth status="primary" placeholder="Employee Id (Ex. E001)" [(ngModel)]="id" (blur)="select(id)">
+            </div>
+            <div class="column is-4">
+              <input type="text" nbInput fullWidth status="primary" placeholder="First Name" [(ngModel)] ="employee.emp_Firstname">
+          </div>
+          <div class="column is-4">
+              <input type="text" nbInput fullWidth status="primary" placeholder="Last Name" [(ngModel)] = "employee.emp_Lastname">
+          </div>
+          <div class="column is-4">
+            <input type="text" nbInput fullWidth status="primary" placeholder="Type" [(ngModel)]= "Tec.ticket_Type">
+        </div>
+        <div class="column is-6">
+          <input type="text" nbInput fullWidth status="primary" placeholder="Detail" [(ngModel)]= "Tec.ticket_Details">
+      </div>
+      <div class="column is-3">
+        <nb-select placeholder="Select Priority" status="primary" [(selected)]="priority" [(ngModel)]= "Tec.ticket_Priority">
+                        
+          <nb-option value="H">High</nb-option>
+          <nb-option value="M">Medium</nb-option>
+          <nb-option value="L">Low</nb-option>
+         
+          
+          
+        </nb-select>
+      </div></div>
+      <div class="column is-5 is-offset-4"><p *ngIf="flag" style="color: red;">{{msg}}</p></div>
+      <div class=" column is-2 is-offset-9 " >
+                    
+        <button nbButton hero status="primary" (click)="addTicket(Tec)" >Raise Ticket</button>
+        
+     
+    </div>
+          
+    </nb-card-body>
+  </nb-card>
+</div>

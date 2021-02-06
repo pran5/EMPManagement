@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.EmpManagmentBack.Model.Department;
+
 import com.example.EmpManagmentBack.REPO.DepRepo;
 
 
@@ -28,4 +29,18 @@ public class DepartmentServices {
 			}
 	
 	
+			/// deleting employee by id
+			public void deleteDepartmentByID(String id){
+				departmentRepository.deleteById(id);
+			}
+			
+
+			
+					
+			
+				
+			
+			
+			
+			
 }

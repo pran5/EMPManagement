@@ -1,0 +1,79 @@
+<div class="column " style="margin-top: 5%;" >
+
+  <nb-card accent="info">
+      <nb-card-header>Generate Resource Request</nb-card-header>
+      <nb-card-body>
+          <div class="columns is-multiline" style="z-index: -1;">
+              <div class="column is-3">
+                  <input type="text" nbInput fullWidth status="primary" placeholder="Resource Name" [(ngModel)] = "res.rr_Name" >
+              </div>
+              <div class="column is-6">
+                  <input type="text" nbInput fullWidth status="primary" placeholder="Description" [(ngModel)] = "res.rr_Description" >
+              </div>
+                 
+             
+
+              <div class="column " ><button nbButton hero status="primary" (click) = "genrateReq(res)" >Generate Request</button></div>
+             
+         
+          </div>
+      </nb-card-body>
+  </nb-card>
+
+  <nb-accordion multi>
+      <!-- <nb-accordion-item *ngFor ="let c of custom; index as i" >
+        <nb-accordion-item-header>
+          {{c.projectName}}
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <table class="table is-striped is-hoverable">
+              <tbody>
+                  <tr>
+                      <th>Employee Id</th>
+                      <th>Name</th>
+                      <th>Roll</th>
+                      
+                  </tr>
+                  <tr *ngFor ="let d of c.employeeName; index as j" >
+                     <td>{{c.employeeId[j]}}</td>
+                     <td>{{d}}</td>
+                     <td>{{c.roll[j]}}</td>
+                    
+                  </tr> 
+              </tbody>
+          </table>
+        </nb-accordion-item-body>
+      </nb-accordion-item> -->
+    
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          Request  Status
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <table class="table is-striped is-hoverable">
+              <tbody>
+                  <tr>
+                    <th>Date</th>
+                      <th>Resource</th>
+                      <th>Description</th>
+                      
+                      <th>Status</th>
+                      
+                  </tr>
+                  <ng-container>
+                  <tr *ngFor = "let re of r; index as i">
+                    <td>{{re.rr_Date|date}}</td>
+                     <td>{{re.rr_Name}} <div class=""></div></td>
+                     <td>{{re.rr_Description}}</td>
+                     
+                     <td><p *ngIf="gr(re.rr_Status)" style="color: green;">Accepted</p><p *ngIf="bl(re.rr_Status)" style="color: blue;">Pending</p><p *ngIf="rd(re.rr_Status)" style="color: red;">Rejected</p></td>
+                     
+                  </tr>
+                </ng-container>
+                 
+              </tbody>
+          </table>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+      </nb-accordion>
+</div>

@@ -1,0 +1,82 @@
+<div class="column " >
+
+    <nb-card accent="info">
+        <nb-card-header>Employee Leave Request</nb-card-header>
+            <nb-card-body>
+                <nb-accordion multi>
+                    <nb-accordion-item>
+                      <nb-accordion-item-header>
+                       Active Requests
+                      </nb-accordion-item-header>
+                      <nb-accordion-item-body>
+                        <table class="table is-striped is-hoverable">
+                            <tbody>
+                                <tr>
+                                    <th>Employee Id</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Status</th>
+                                </tr>
+                                <ng-container *ngFor ="let c of LR; index as i">
+                                <tr *ngIf="showp(c)" >
+                                  
+                                   <td>{{c.lrequest_Emp_Id}}</td>
+                                   <td>{{c.lemp_Name}}</td>
+                                   <td>{{c.lrequest_Description}}</td>
+                                   <td>{{c.lrequest_From | date}}</td>
+                                   <td>{{c.lrequest_To | date}}</td>
+                                   <td><div class="columns is-8 ">
+                                    <div><button nbButton size="tiny" status="success" style="margin: 10px;" (click) = "btt(c)" >Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;" (click) = "bttt(c)" >Reject</button></div>
+                                </div>
+                                   </td>
+                                   
+                                </tr> 
+                              </ng-container>
+
+                                
+                            </tbody>
+                        </table>
+                      </nb-accordion-item-body>
+                    </nb-accordion-item>
+                  
+                    <nb-accordion-item>
+                      <nb-accordion-item-header>
+                        Old Requests
+                      </nb-accordion-item-header>
+                      <nb-accordion-item-body>
+                        <table class="table is-striped is-hoverable">
+                            <tbody>
+                                <tr>
+                                    <th>Employee Id</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Status</th>
+                                </tr>
+                                <ng-container *ngFor ="let c of LR; index as i">
+                                  <tr *ngIf="showR(c)" >
+                                    <td>{{c.lrequest_Emp_Id}}</td>
+                                    <td>{{c.lemp_Name}}</td>
+                                    <td>{{c.lrequest_Description}}</td>
+                                    <td>{{c.lrequest_From | date}}</td>
+                                    <td>{{c.lrequest_To | date}}</td>
+                                   <td>
+                                    <p style="color: green;" *ngIf="showStatus(c.lrequest_A_Status)" ><b >Accepted</b></p>
+                                    <p style="color:red;" *ngIf="!showStatus(c.lrequest_A_Status)" ><b >Rejected</b></p>
+                                   </td>
+                                </tr> 
+                                </ng-container>
+                               
+                            </tbody>
+                        </table>
+                      </nb-accordion-item-body>
+                    </nb-accordion-item>
+                  
+                    
+                  </nb-accordion>
+            </nb-card-body>
+    </nb-card>
+</div>
