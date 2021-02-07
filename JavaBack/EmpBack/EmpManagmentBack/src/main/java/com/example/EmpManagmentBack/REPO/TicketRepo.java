@@ -15,9 +15,14 @@ import com.example.EmpManagmentBack.Model.Ticket;
 public interface TicketRepo extends CrudRepository<Ticket,String>{
 
 	
+	@Query("SELECT COUNT(u) FROM Ticket u WHERE u.KEmp_Id=:id and Ticket_Status = 'OPEN'")
+    int getOpencount(@Param("id") String id);
 	
+	@Query("SELECT COUNT(u) FROM Ticket u WHERE u.KEmp_Id=:id and Ticket_Status = 'CLOSE'")
+    int getClosecount(@Param("id") String id);
 	
-	
+	@Query("from Ticket where KProject_Id = :x")
+	List<Ticket> findTByProjectID(@Param("x") String x);
 	
 	
 	

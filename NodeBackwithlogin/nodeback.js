@@ -18,7 +18,9 @@ app.use(session(
         saveUninitialized:true
 
 
-  }))
+  }));
+
+  var ses;
 
 
 
@@ -52,7 +54,7 @@ var con = mysql.createConnection({
 app.post('/poc1', function (req, res) {
 
     let x={};
-    if(req.session.access=='o')
+    if(req.session.access=='O')
         {
             x.msg='already logged off';
             res.send(x);
@@ -83,45 +85,38 @@ app.post('/login', function (req, res) {
 
     let x={};
     console.log(req.body);
-     if(req.body.uname=='nikhil'&& req.body.pass=='bhati')
-     {
-         req.session.uname=req.body.uname;
-         req.session.pass=req.body.pass;
-         req.session.access='m';
-         x.access=req.session.access;
-         x.msg='login success,manager logged in';
-         res.send(x);
-     }
-     else if(req.body.uname=='pranav'&& req.body.pass=='zade')
-     {
-         req.session.uname=req.body.uname;
-         req.session.pass=req.body.pass;
-         req.session.access='a';
-         x.access=req.session.access;
-         x.msg='login success,admin logged in';
-         res.send(x);
-     }
-     else if(req.body.uname=='amit'&& req.body.pass=='mishra')
-     {
-         req.session.uname=req.body.uname;
-         req.session.pass=req.body.pass;
-         req.session.access='e';
-         x.access=req.session.access;
-         x.msg='login success,employee logged in';
-         res.send(x);
-     }
-     else
-     {
-        req.session.access='o';
-        x.msg='login failed,try again';
-        res.send(x);
-     }
+    let uname = req.body.uname;
+    let pass = req.body.pass;
+    con.query('select *  from employee where Emp_Email = ? and Emp_Pass = ?',[uname,pass], (err, res1) => {
+        if (err) {
+            req.session.access='O';
+            x.msg='login failed,try again';
+            ses = req.session;
+            res.send(x);
+           
+        }
+        else{
+
+           
+                req.session.uname=req.body.uname;
+                req.session.pass=req.body.pass;
+                req.session.Emp_Access=res1[0].Emp_Access;
+                ses = req.session;
+                res.send(res1);
+            
+                
+
+        }
+
+       
+    });
+    
 
 });
 app.post('/logout', function (req, res) {
 
         let x={}
-        if(req.session.access=='o')
+        if(req.session.Emp_Access=='O')
         {
             x.msg='already logged off';
             res.send(x);
@@ -129,11 +124,25 @@ app.post('/logout', function (req, res) {
         }
         else
         {
-            req.session.access='o';
-            x.msg='log off successful';
-            res.send(x);
+            req.session.Emp_Access='O';
+            req.session.msg='log off successful';
+            ses = req.session;
+            res.send(ses);
+
 
         }
+
+});
+
+app.get('/logcheck', function (req, res) {
+
+    let x={}
+   
+    
+        console.log(ses);
+        res.send(ses);
+
+    
 
 });
 

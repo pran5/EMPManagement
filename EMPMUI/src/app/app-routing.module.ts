@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -15,12 +15,60 @@ import { MRRequestComponent } from './manager/mrrequest/mrrequest.component';
 import { MaddmemberComponent } from './manager/maddmember/maddmember.component';
 import { MTicketComponent } from './manager/mticket/mticket.component';
 
+import { DashbordComponent } from './employee/dashbord/dashbord.component';
+import { TeamComponent } from './employee/team/team.component';
+import { LeadingComment } from '@angular/compiler';
+import { LeaveComponent } from './employee/leave/leave.component';
+import { ResourceComponent } from './employee/resource/resource.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {path : 'login' , 
-    component: LoginComponent,
+    component: AppComponent,
     children:[
-      {path : './Admin' , component: AdminComponent }
+      {path : 'Admin' , component: AdminComponent, children:[{
+        path: 'editemp', component:AemployeeComponent
+      },
+    {
+      path: 'project', component:ProjectComponent
+    },
+    {
+      path: 'notification', component:AnotificationComponent
+    },
+    {
+      path: 'leave', component:AleaveComponent
+    },
+    {
+      path: 'resource', component:AresourceComponent
+    }
+    ]
+      
+    
+    },
+    {path : 'Manager' , component: ManagerComponent ,children:[{
+      path: 'mprojectprogress', component:MProjectprogressComponent
+    },
+  {
+    path: 'mleaverequest', component:MLeaverequestComponent
+  },
+  {
+    path: 'maddmember', component:MaddmemberComponent
+  },
+  {
+    path: 'mticket', component:MTicketComponent
+  },
+  {
+    path: 'mrrequest', component:MRRequestComponent
+  }
+  ]
+  }, 
+    
+    {path : 'Employee' , component: EmployeeComponent, children : [
+      { path : 'Dashbord', component: DashbordComponent },
+      { path : 'Team' , component:  TeamComponent},
+      { path: 'LeaveR' , component: LeaveComponent},
+      { path: 'eResource' , component: ResourceComponent} 
+    ]}
     ]
   },
   {path : 'Admin' , component: AdminComponent, children:[{
@@ -59,7 +107,13 @@ const routes: Routes = [
 }
 ]
 }, 
-  {path : 'Employee' , component: EmployeeComponent},
+  
+  {path : 'Employee' , component: EmployeeComponent, children : [
+    { path : 'Dashbord', component: DashbordComponent },
+    { path : 'Team' , component:  TeamComponent},
+    { path: 'LeaveR' , component: LeaveComponent},
+    { path: 'eResource' , component: ResourceComponent} 
+  ]},
   
 
   

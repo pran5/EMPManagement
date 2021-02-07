@@ -27,11 +27,11 @@ public class TeamService {
 	
 		
 		
-		// fetching count by employee id		
-				public Long getT_Emp_Id(String id){
-					return TeamRepository.aMethodNameOrSomething(id);
-				}	
-		
+//		// fetching count by employee id		
+//				public Long getT_Emp_Id(String id){
+//					return TeamRepository.aMethodNameOrSomething(id);
+//				}	
+//		
 		
 		
 		
@@ -42,6 +42,11 @@ public class TeamService {
 	//fetching Team by manager id
 		public List<Team> getTeam_MId(String id){
 			return TeamRepository.findM(id);
+		}
+		
+	// get all team by Employee id
+		public List<Team> getAllTeamByEid(String id){
+			return TeamRepository.getAllbyEid(id);
 		}
 		
 		
@@ -59,6 +64,16 @@ public class TeamService {
 				TeamRepository.save(id);
 				return id;
 				
+			}
+
+			public Team getTeam_MId_EId(String m_Id, String eeid) {
+				// TODO Auto-generated method stub
+				return TeamRepository.findByMidnEid(m_Id, eeid);
+			}
+
+			public int getcountbyid(String t_Emp_Id) {
+				// TODO Auto-generated method stub
+				return TeamRepository.getcount(t_Emp_Id);
 			}
 					
 		

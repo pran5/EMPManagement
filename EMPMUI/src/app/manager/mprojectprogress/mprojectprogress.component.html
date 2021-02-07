@@ -1,36 +1,142 @@
-<p>mprojectprogress works!</p>
+<div class="column is-12" >
+
+  
 <nb-card>
-    <nb-card-body>
-        <div class="columns">
-            <div class="column is-6" style="padding-bottom: 10px;margin-top: 20px; ">
-                <div style="padding-bottom: 10px; font-size: 1.2em;"><b>Performance</b></div>
-                <div style="margin-top: 45px;">
-                <nb-progress-bar [value]="77" status="primary">77%</nb-progress-bar>
-                </div>
-                </div>
-                <div class="column is-5 is-offset-1 " style=" border: 1px solid rgb(226, 226, 226); border-radius: 10px; margin-top: 20px;">
-                    <div style="font-size: 1.2em;"><b>Ticket Statistics</b></div>
-                    <div class="columns is-12" style="margin-top: 15px;">
-                        <div class="column is-6"><div class="circle "><div style="text-align: center;margin-top: 28px; font-size: 1.7em; color: rgb(179, 179, 179);">19</div></div><div style="text-align: center; font-size: 1em; margin-left: -20px; margin-top: 10px;"><b>Closed</b></div> </div>
-                        <div class="column is-6" style="margin-left: 20px;"><div class="circle "><div style="text-align: center;margin-top: 28px; font-size: 1.7em; color: rgb(179, 179, 179);">8</div></div><div style="text-align: center; font-size: 1em; margin-left: -15px; margin-top: 10px;"><b>Open</b></div> </div>
-                    </div>
-                </div>
-        </div>
-        
-    </nb-card-body>
-  </nb-card>
-
-
-  <nb-card status="success">
-    <nb-card-header>Nebula</nb-card-header>
-    <nb-card-body>
-      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-      Originally, nebula was a name for any diffuse astronomical object,
-      including galaxies beyond the Milky Way.
-    </nb-card-body>
-    <nb-card-footer>By Wikipedia</nb-card-footer>
-  </nb-card>
+  <nb-card-body>
+      <div class="columns">
+          <div class="column is-6" style="padding-bottom: 10px;margin-top: 20px; ">
+              <div style="padding-bottom: 10px; font-size: 1.2em;"><b>Performance</b></div>
+              <div style="margin-top: 45px;">
+              <nb-progress-bar [value]="(close/(close+open))*100" status="primary">{{(close/(close+open))*100| number : '1.2-2'}}%</nb-progress-bar>
+              </div>
+              </div>
+              <div class="column is-5 is-offset-1 " style=" border: 1px solid rgb(226, 226, 226); border-radius: 10px; margin-top: 20px;margin-bottom: 25px;">
+                  <div style="font-size: 1.2em;"><b>Ticket Statistics</b></div>
+                  <div class="columns is-12" style="margin-top: 15px; ">
+                      <div class="column is-6"><div class="circle "><div style="text-align: center;margin-top: 28px; font-size: 1.7em; color: rgb(179, 179, 179);">{{close}}</div></div><div style="text-align: center; font-size: 1em; margin-left: -20px; margin-top: 10px;"><b>Closed</b></div> </div>
+                      <div class="column  is-6" style="margin-left: 20px;"><div class="circle "><div style="text-align: center;margin-top: 28px; font-size: 1.7em; color: rgb(179, 179, 179);">{{open}}</div></div><div style="text-align: center; font-size: 1em; margin-left: -15px; margin-top: 10px;"><b>Open</b></div> </div>
+                  </div>
+              </div>
+          </div>
+      
+  </nb-card-body>
+</nb-card>
 
 
 
+  <!-- <app-progress [op]="open" [cl]="close"></app-progress> -->
+  <div class="column " >
 
+   <nb-card accent="info">
+       <nb-card-header>Tickets</nb-card-header>
+           <nb-card-body>
+               <nb-accordion multi>
+                   <nb-accordion-item>
+                     <nb-accordion-item-header>
+                      Open Tickets
+                     </nb-accordion-item-header>
+                     <nb-accordion-item-body>
+                       <table class="table is-striped is-hoverable">
+                           <tbody>
+                               <tr>
+                                   <th>Ticket Id</th>
+                                   <th>Project Name</th>
+                                   <th>Description</th>
+                                   <th>Date</th>
+                                   <th>Type</th>
+                                   <th>Mark as close</th>
+                               </tr>
+                               <ng-container *ngFor="let t of tickets; index as i">
+                               <tr *ngIf = "check(t.ticket_Status)">
+                                 
+                                   <td>{{t.ticket_No}}</td>
+                                   <td>{{t.project_Name}}</td>
+                                   <td>{{t.ticket_Details}}</td>
+                                   <td>{{t.ticket_Update | date}}</td>
+                                   <td>{{t.ticket_Type}}</td>
+                                   <td><div class="columns is-8 ">
+                                    <div style="margin-left: 20px;"><button nbButton size="tiny" status="danger" style="margin: 10px;" (click)="closse(t)" >Close</button></div>
+                                </div>
+                                   </td>
+                                   
+                                </tr> 
+                               </ng-container>
+                               <!-- <ng-container *ngFor ="let c of LR; index as i">
+                               <tr *ngIf="showp(c)" >
+                                 
+                                  <td>{{c.lrequest_Emp_Id}}</td>
+                                  <td>{{c.lemp_Name}}</td>
+                                  <td>{{c.lrequest_Description}}</td>
+                                  <td>{{c.lrequest_From | date}}</td>
+                                  <td>{{c.lrequest_To | date}}</td>
+                                  <td><div class="columns is-8 ">
+                                   <div><button nbButton size="tiny" status="success" style="margin: 10px;" (click) = "btt(c)" >Accept</button></div><div><button nbButton size="tiny" status="danger" style="margin: 10px;" (click) = "bttt(c)" >Reject</button></div>
+                               </div>
+                                  </td>
+                                  
+                               </tr> 
+                             </ng-container> -->
+
+                               
+                           </tbody>
+                       </table>
+                     </nb-accordion-item-body>
+                   </nb-accordion-item>
+                 
+                   <nb-accordion-item>
+                     <nb-accordion-item-header>
+                       Closed Tickets
+                     </nb-accordion-item-header>
+                     <nb-accordion-item-body>
+                       <table class="table is-striped is-hoverable">
+                           <tbody>
+                               <tr>
+                                   <th>Ticket Id</th>
+                                   <th>Project Name</th>
+                                   <th>Description</th>
+                                   <th>Date</th>
+                                   <th>Type</th>
+                                   
+                               </tr>
+                               <ng-container *ngFor="let t of tickets; index as i">
+                               <tr *ngIf = "!check(t.ticket_Status)" >
+                                 
+                                   <td>{{t.ticket_No}}</td>
+                                   <td>{{t.project_Name}}</td>
+                                   <td>{{t.ticket_Details}}</td>
+                                   <td>{{t.ticket_Update|date}}</td>
+                                   <td>{{t.ticket_Type}}</td>
+                                   
+                                   
+                                </tr> 
+                               </ng-container>
+                               <!-- <ng-container *ngFor ="let c of LR; index as i">
+                                 <tr *ngIf="showR(c)" >
+                                   <td>{{c.lrequest_Emp_Id}}</td>
+                                   <td>{{c.lemp_Name}}</td>
+                                   <td>{{c.lrequest_Description}}</td>
+                                   <td>{{c.lrequest_From | date}}</td>
+                                   <td>{{c.lrequest_To | date}}</td>
+                                  <td>
+                                   <p style="color: green;" *ngIf="showStatus(c.lrequest_A_Status)" ><b >Accepted</b></p>
+                                   <p style="color:red;" *ngIf="!showStatus(c.lrequest_A_Status)" ><b >Rejected</b></p>
+                                  </td>
+                               </tr> 
+                               </ng-container> -->
+                              
+                           </tbody>
+                       </table>
+                     </nb-accordion-item-body>
+                   </nb-accordion-item>
+                 
+                   
+                 </nb-accordion>
+           </nb-card-body>
+   </nb-card>
+</div>
+
+
+   
+
+
+</div>

@@ -47,6 +47,19 @@ public class ManagerService {
 				
 			
 			}
+
+			
+			//get Manager by Emp id
+			public Manager getByEid(String id) {
+				// TODO Auto-generated method stub
+				
+				return managerRepo.getManagerbyEid(id);
+			}
+
+			public List<Manager> getM_Idnull() {
+				// TODO Auto-generated method stub
+				return managerRepo.getallmanagernull();
+			}
 	
 	
 }

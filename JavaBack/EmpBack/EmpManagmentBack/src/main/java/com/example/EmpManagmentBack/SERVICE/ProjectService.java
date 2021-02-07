@@ -24,6 +24,11 @@ public class ProjectService {
 				return projectRepo.findById(id);
 			}
 			
+	// get By Manger id
+			public Project getByMAnagerID(String id){
+				return projectRepo.getbyMid(id);
+			}
+			
 	 // inserting Project
 			public void addProject(Project e) {
 				projectRepo.save(e);

@@ -4,6 +4,8 @@ package com.example.EmpManagmentBack.Model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -13,9 +15,9 @@ import javax.persistence.Table;
 @Table(name="Team")
 public class Team {
 	
-	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name=" Team_Id")
-	@Id
+	
 	 private int Team_Id;
 	
 	
