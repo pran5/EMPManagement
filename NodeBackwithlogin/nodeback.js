@@ -59,8 +59,10 @@ app.post('/poc1', function (req, res) {
         
         }
 	
-		console.log("reading inputs " + req.body.v1 +  "  second " + req.body.v2)
-        con.query('select *  from emp',[], (err, res1) => {
+        console.log("reading inputs " + req.body.v1 +  "  second " + req.body.v2)
+        let y = req.body.email;
+        let z = req.body.pass;
+        con.query('select *  from employee where Emp_Email = ? and Emp_Pass = ?',[y,z], (err, res1) => {
             if (err) {
     
                 result.status=-1;

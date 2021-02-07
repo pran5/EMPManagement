@@ -10,7 +10,7 @@ import { Leave } from './LeaveReq';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminserviceService {
+export class AdminserviceService { 
 
   constructor(private con: HttpClient) { 
 
