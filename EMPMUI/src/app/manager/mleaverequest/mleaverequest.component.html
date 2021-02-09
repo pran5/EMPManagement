@@ -66,8 +66,8 @@
                           <td>{{c.lrequest_From | date}}</td>
                           <td>{{c.lrequest_To | date}}</td>
                          <td>
-                          <p style="color: green;" *ngIf="showStatus(c.lrequest_A_Status)" ><b >Accepted</b></p>
-                          <p style="color:red;" *ngIf="!showStatus(c.lrequest_A_Status)" ><b >Rejected</b></p>
+                          <p style="color: green;" *ngIf="showStatus(c.lrequest_M_Status)" ><b >Accepted</b></p>
+                          <p style="color:red;" *ngIf="!showStatus(c.lrequest_M_Status)" ><b >Rejected</b></p>
                          </td>
                       </tr> 
                       </ng-container>
