@@ -26,7 +26,7 @@ export class AemployeeComponent implements OnInit {
 
   addEmp(em:Emp){
     if(this.id.length<3){
-      this.msg = "Please enter Employee ID";
+      this.msg = "Please Enter Employee ID";
     }
     else{
     em.emp_Id = this.id;

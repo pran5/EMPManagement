@@ -87,7 +87,7 @@ app.post('/login', function (req, res) {
     let pass = req.body.pass;
     con.query('select *  from employee where Emp_Email = ? and Emp_Pass = ?',[uname,pass], (err, res1) => {
         if (err) {
-            req.session.access='O';
+            req.session.Emp_Access='O';
             x.msg='login failed,try again';
             ses = req.session;
             res.send(x);
@@ -95,12 +95,24 @@ app.post('/login', function (req, res) {
         }
         else{
 
-           
+            if(res1.length<1){
+                req.session.Emp_Access='O';
+                x.msg='login failed,try again';
+                x.Emp_Access='O';
+                ses = req.session;
+                res.send(x);
+
+            }
+            else{
                 req.session.uname=req.body.uname;
                 req.session.pass=req.body.pass;
                 req.session.Emp_Access=res1[0].Emp_Access;
+                req.session.login = true;
                 ses = req.session;
+                console.log( req.session);
                 res.send(res1);
+            }
+               
             
                 
 
@@ -111,10 +123,10 @@ app.post('/login', function (req, res) {
     
 
 });
-app.post('/logout', function (req, res) {
+app.get('/logout', function (req, res) {
 
         let x={}
-        if(req.session.Emp_Access=='O')
+        if(!ses.login)
         {
             x.msg='already logged off';
             res.send(x);
@@ -122,9 +134,9 @@ app.post('/logout', function (req, res) {
         }
         else
         {
-            req.session.Emp_Access='O';
-            req.session.msg='log off successful';
-            ses = req.session;
+            ses.Emp_Access='O';
+            console.log("log off successful");
+            ses.login = false;
             res.send(ses);
 
 
@@ -134,11 +146,7 @@ app.post('/logout', function (req, res) {
 
 app.get('/logcheck', function (req, res) {
 
-    let x={}
-   
-    
-        console.log(ses);
-        res.send(ses);
+    res.send(ses);
 
     
 

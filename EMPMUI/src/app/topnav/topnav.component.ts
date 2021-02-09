@@ -41,7 +41,11 @@ export class TopnavComponent implements OnInit {
   }
 
   logout(){
-    this.router.navigate(['./login']);
+    this.ser.logout().subscribe((x:any)=>{console.log();
+      this.ser.A = 'O';
+      this.router.navigate(['./login']);
+    });
+    
   }
 
 
