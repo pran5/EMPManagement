@@ -13,7 +13,7 @@ export class ManagerService {
   constructor(private con: HttpClient) { }
 
 
-  getTicket(id:String):Observable<any>{
+  getTicket(id:String):Observable<any>{ 
 
     const url = 'http://localhost:6500/ticket/{id}_nc?id='+id;
         return this.con.get(url);
