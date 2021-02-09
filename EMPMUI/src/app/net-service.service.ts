@@ -10,11 +10,12 @@ export class NetServiceService {
 
 
  
-  public A : String;
+  public A = 'O';
   public e : Emp;
 
   constructor(private con: HttpClient) { 
- this.A = new String();
+ 
+
  this.e = new Emp();
   }
 
@@ -27,12 +28,12 @@ export class NetServiceService {
   loga(obj: any): Observable<any>
   {
     const url = 'http://localhost:8081/login';
-    let data = this.con.post(url, obj);
-    data.subscribe((val:any) => {console.log(val);this.A = val[0].Emp_Firstname; this.e = val[0]; console.log(this.e)});
+  
+    // data.subscribe((val:any) => {console.log(val);this.A = val[0].Emp_Firstname; this.e = val[0]; console.log(this.e)});
     
    
     
-    return data;
+    return this.con.post(url, obj);
   }
 
   loginCheck(): Observable<any>
@@ -53,6 +54,11 @@ export class NetServiceService {
   getnotification(): Observable<any>{
     
     const url = 'http://localhost:6500/pushnotification';
+    return this.con.get(url);
+  }
+
+  logout(): Observable<any>{
+    const url = 'http://localhost:8081/logout'; 
     return this.con.get(url);
   }
 }

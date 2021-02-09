@@ -5,6 +5,7 @@ import { Emp } from '../EmpModle';
 import { NetServiceService } from '../net-service.service';
 import { CompileShallowModuleMetadata } from '@angular/compiler';
 import { checkServerIdentity } from 'tls';
+import { CloseScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-login',
@@ -23,18 +24,19 @@ export class LoginComponent implements OnInit {
     this.uname = "";
     this.pass = "";
     this.msg = "";
-    this.access = "O"; 
+    this.access = this.ser.A; 
    }
 
   ngOnInit(): void {
     // this.ser.loginCheck().subscribe((x:any)=>{console.log("============= " + x.Emp_Access); this.check(x);});
-    this.access = "O";
+    this.access = this.ser.A; 
+    console.log(this.ser.A);
   }
 
   loginVisible(): boolean{
     var a = true;
    
-    if(this.access=="O"){
+    if(this.ser.A=="O"){
      
     return a;}
 
@@ -47,21 +49,31 @@ export class LoginComponent implements OnInit {
   login(){
     console.log("login clicked");
     this.ser.loga({uname:this.uname,pass:this.pass}).subscribe(( data : any)=>{
-      console.log(data[0].Emp_Access);
-      this.check(data[0]);
+      console.log(data.length +"  " +data);
+      if(!Array.isArray(data)){
+        this.msg = "Login Fail Please Try Again"; 
+        console.log(this.msg);
+     }
+      else{
+        this.check(data[0]); 
+      }
+     
     });
   }
 
   check(data:any){
     if(data.Emp_Access == 'A'){
+      this.ser.A = data.Emp_Firstname; this.ser.e = data; console.log(this.e);
       this.router.navigate(['./Admin'], { relativeTo: this.route });
       this.access ='A';
     }
     else if(data.Emp_Access == 'M'){
+      this.ser.A = data.Emp_Firstname; this.ser.e = data; console.log(this.e);
       this.router.navigate(['./Manager'], { relativeTo: this.route });
       this.access ='M';
     }
     else if(data.Emp_Access == 'E'){
+      this.ser.A = data.Emp_Firstname; this.ser.e = data; console.log(this.e);
       this.router.navigate(['./Employee'], { relativeTo: this.route });
       this.access ='E';
     }

@@ -38,6 +38,7 @@ export class MProjectprogressComponent implements OnInit {
         if(data[i].ticket_Status == "OPEN"){
           this.open++;
         }
+        
         else{
           this.close++;
         }
